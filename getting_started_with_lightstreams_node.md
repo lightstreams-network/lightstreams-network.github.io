@@ -217,8 +217,8 @@ Note:
 - `--nodeid=1; --network=rinkeby` we are executing the command from Leth node 1 and deploying the ACL to file on Rinkeby network
 - `--file=` flag is an absolute path to the file you want to share
 - `--fileOwnerKeystore=` flag is an absolute path to your Ethereum account key located inside of your Leth directory. If you have multiple accounts created, you will recognise the associated account keystore by the suffix `UTC--<created_at UTC ISO8601>-<your Ethereum account address hex>`
--- `"hash":"QmNkbFAo5jSKm7KLCdCr8c8ue2X53ShATD5yjyQq3ynoaf"` this is the address of your private file in a secure IPFS storage
--- `"aclid"` this is the smart contract addr controlling file's ACL. You can use it `leth acl grant` cmd to grant permissions to other accounts
+- `"hash":"QmNkbFAo5jSKm7KLCdCr8c8ue2X53ShATD5yjyQq3ynoaf"` this is the address of your private file in a secure IPFS storage
+- `"aclid"` this is the smart contract addr controlling file's ACL. You can use it `leth acl grant` cmd to grant permissions to other accounts
 
 PS: You can always run any command with `--help` flag to get explanation of all required/optional flags
 
