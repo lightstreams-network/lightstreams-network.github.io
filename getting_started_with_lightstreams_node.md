@@ -220,7 +220,7 @@ Note:
 -- `"hash":"QmNkbFAo5jSKm7KLCdCr8c8ue2X53ShATD5yjyQq3ynoaf"` this is the address of your private file in a secure IPFS storage
 -- `"aclid"` this is the smart contract addr controlling file's ACL. You can use it `leth acl grant` cmd to grant permissions to other accounts
 
-PS: Yo can always run any command with `--help` flag to get explanation of all required/optional flags
+PS: You can always run any command with `--help` flag to get explanation of all required/optional flags
 
 ```bash
 leth acl grant --help
