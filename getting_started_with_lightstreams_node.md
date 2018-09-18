@@ -21,7 +21,7 @@ Lightstreams Node (`Leth`) is an executable binary compiled from our Lightstream
 
 `IPFS` is a heavily customized decentralised file system enhanced with our award winning **PermissionedBlocks** technology.
 
-## Installing Leth node
+## Installing Leth node on MacOS
 
 Download `Leth` and `IPFS` from our AWS S3 Server:
 
@@ -52,6 +52,10 @@ Validate installed binaries:
 ![versions](/public/images/installing_leth_node_version_verification.png)
 
 Perfect, binaries are successfully executable!
+
+## Installing Leth node on Linux
+
+// Todo: documentation will be added soon
 
 ## Interacting with Leth node over CLI
 
