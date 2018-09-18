@@ -13,7 +13,7 @@ Lightstreams technical stack:
 - Ethereum Node `Geth` (Rinkeby Test Network)
 - IPFS Node `IPFS` (Secure Storage with custom **PermissionedBlocks**)
 
-Lightstreams Node (`Leth`) is an executable binary compiled from our Lightstreams SDK that will be publicly available in the near future.
+Lightstreams Node (`Leth`) is an executable binary compiled from our Lightstreams SDK, the souce code that will be publicly available in the near future.
 
 `Leth` is used for initializing, running, controlling and interacting with the Lightstreams Node (Blockchain + Secured InterPlanetary File System).
 
