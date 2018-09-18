@@ -26,25 +26,25 @@ Lightstreams Node (`Leth`) is an executable binary compiled from our Lightstream
 Download `Leth` and `IPFS` from our AWS S3 Server:
 
 ```bash
-wget "https://s3.amazonaws.com/lightstreams/leth" -O $GOPATH/bin/leth
-wget "https://s3.amazonaws.com/lightstreams/ipfs" -O $GOPATH/bin/ipfs
+wget "https://s3.amazonaws.com/lightstreams/leth" -O /usr/local/bin/leth
+wget "https://s3.amazonaws.com/lightstreams/ipfs" -O /usr/local/bin/ipfs
 ```
 
 Ensure the executables have all the necessary permissions:
 
 ```bash
-chmod 777 $GOPATH/bin/leth && chmod 777 $GOPATH/bin/ipfs
+chmod 777 /usr/local/bin/leth && chmod 777 /usr/local/bin/ipfs
 ```
 
 Download the `geth` version 1.8.* from an official [Ethereum downloads page](https://geth.ethereum.org/downloads/).
 We recommend to download version: v1.8.15, Khazad-dûm².
 
-Unzip and copy the downloaded `geth` executable as well into `$GOPATH/bin/`.
+Unzip and copy the downloaded `geth` executable as well into `/usr/local/bin/`.
 
 Apply permissions:
 
 ```bash
-chmod 777 $GOPATH/bin/geth
+chmod 777 /usr/local/bin/geth
 ```
 
 Validate installed binaries:
