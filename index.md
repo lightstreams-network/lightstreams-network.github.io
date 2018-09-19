@@ -15,5 +15,5 @@ We are committed to providing a user-friendly and easy adoption path for users, 
 
 
 - [Overview](overview)
-- [How does it work?](how_does_it_work)
-- [Getting started with Lightstreams Node](getting_started_with_lightstreams_node)
+- [How does it work?](how-does-it-work)
+- [Getting started with Lightstreams Node](getting-started-with-lightstreams-node)
