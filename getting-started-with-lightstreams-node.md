@@ -21,22 +21,31 @@ Lightstreams Node (`Leth`) is an executable binary compiled from our Lightstream
 
 `IPFS` is a heavily customized decentralised file system enhanced with our award winning **PermissionedBlocks** technology.
 
-## Installing Leth node on MacOS
+## Installing Leth node
 
-Download `Leth` and `IPFS` from our AWS S3 Server:
+### Download MacOS compiled `Leth` and `IPFS` from our AWS S3 Server:
 
 ```bash
-wget "https://s3.amazonaws.com/lightstreams/leth" -O /usr/local/bin/leth
-wget "https://s3.amazonaws.com/lightstreams/ipfs" -O /usr/local/bin/ipfs
+wget "https://s3.amazonaws.com/lightstreams/leth-osx" -O /usr/local/bin/leth
+wget "https://s3.amazonaws.com/lightstreams/ipfs-osx" -O /usr/local/bin/ipfs
 ```
 
-Ensure the executables have all the necessary permissions:
+### Download Liux compiled `Leth` and `IPFS` from our AWS S3 Server:
+
+```bash
+wget "https://s3.amazonaws.com/lightstreams/leth-linux-amd64" -O /usr/local/bin/leth
+wget "https://s3.amazonaws.com/lightstreams/ipfs-liux-amd64" -O /usr/local/bin/ipfs
+```
+
+### Ensure the executables have all the necessary permissions:
 
 ```bash
 chmod 777 /usr/local/bin/leth && chmod 777 /usr/local/bin/ipfs
 ```
 
-Download the `geth` version 1.8.* from an official [Ethereum downloads page](https://geth.ethereum.org/downloads/).
+### Download Geth
+
+Download your OS specific `geth` version 1.8.* from an official [Ethereum downloads page](https://geth.ethereum.org/downloads/).
 We recommend to download version: v1.8.15, Khazad-dûm².
 
 Unzip and copy the downloaded `geth` executable as well into `/usr/local/bin/`.
@@ -47,15 +56,11 @@ Apply permissions:
 chmod 777 /usr/local/bin/geth
 ```
 
-Validate installed binaries:
+## Validate installed binaries
 
 ![versions](/public/images/installing_leth_node_version_verification.png)
 
 Perfect, binaries are successfully executable!
-
-## Installing Leth node on Linux
-
-// Todo: documentation will be added soon
 
 ## Interacting with Leth node over CLI
 
