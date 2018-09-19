@@ -5,7 +5,7 @@ title:  "Getting started with Lightstreams Node"
 
 | Version | Release Date |
 |---------|--------------|
-|v0.0.5 (Alpha)|14.09.2018|
+|v0.0.6 (Alpha)|19.09.2018|
 
 Lightstreams technical stack:
 
