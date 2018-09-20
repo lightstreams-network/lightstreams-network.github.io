@@ -34,7 +34,7 @@ wget "https://s3.amazonaws.com/lightstreams/ipfs-osx" -O /usr/local/bin/ipfs
 
 ```bash
 wget "https://s3.amazonaws.com/lightstreams/leth-linux-amd64" -O /usr/local/bin/leth
-wget "https://s3.amazonaws.com/lightstreams/ipfs-liux-amd64" -O /usr/local/bin/ipfs
+wget "https://s3.amazonaws.com/lightstreams/ipfs-linux-amd64" -O /usr/local/bin/ipfs
 ```
 
 ### Ensure the executables have all the necessary permissions:
