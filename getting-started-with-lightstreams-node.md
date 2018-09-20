@@ -5,7 +5,7 @@ title:  "Getting started with Lightstreams Node"
 
 | Version | Release Date |
 |---------|--------------|
-|v0.0.6 (Alpha)|19.09.2018|
+|0.1.0-alpha|19.09.2018|
 
 Lightstreams technical stack:
 
@@ -58,7 +58,7 @@ chmod 777 /usr/local/bin/geth
 
 ## Validate installed binaries
 
-![versions](/public/images/installing_leth_node_version_verification.png)
+![binaries versions](/public/images/verify_binaries.png)
 
 Perfect, binaries are successfully executable!
 
@@ -93,7 +93,7 @@ Display current version:
 
 ```bash
 leth version
-Version: 0.0.5 Alpha
+Version: 0.1.0-alpha
 ```
 
 Display instructions for initializing new Lightstreams Node:
