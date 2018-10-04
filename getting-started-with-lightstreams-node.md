@@ -40,7 +40,7 @@ wget "https://s3.amazonaws.com/lightstreams/ipfs-linux-amd64" -O /usr/local/bin/
 ### Ensure the executables have all the necessary permissions:
 
 ```bash
-chmod 777 /usr/local/bin/leth && chmod 777 /usr/local/bin/ipfs
+chmod u+x /usr/local/bin/leth && chmod u+x /usr/local/bin/ipfs
 ```
 
 ### Download Geth
@@ -53,7 +53,7 @@ Unzip and copy the downloaded `geth` executable as well into `/usr/local/bin/`.
 Apply permissions:
 
 ```bash
-chmod 777 /usr/local/bin/geth
+chmod u+x /usr/local/bin/geth
 ```
 
 ## Validate installed binaries
