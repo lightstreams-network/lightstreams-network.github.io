@@ -5,7 +5,7 @@ title:  "Getting started with Lightstreams Node"
 
 | Version | Release Date |
 |---------|--------------|
-|0.2.0-alpha|10.10.2018|
+|0.4.0-alpha|25.10.2018|
 
 Lightstreams technical stack:
 
@@ -82,6 +82,8 @@ Available Commands:
   run         Runs full Leth node by spawning blockchain and IPFS daemons.
   storage     Features LethStorage's pkg capabilities over CLI such as file upload/download, access authorization...
   version     Describes version.
+  ...
+  ...
 
 Flags:
   -h, --help   help for leth
@@ -93,7 +95,7 @@ Display current version:
 
 ```bash
 leth version
-Version: 0.1.0-alpha
+Version: 0.4.0-alpha Wallet
 ```
 
 Display instructions for initializing new Lightstreams Node:
@@ -208,7 +210,7 @@ Given a file: "secret_file.txt" with content "hello secret world".
 To share a private file using `leth` execute the following command:
 
 ```bash
-leth storage upload --nodeid=1 --network=rinkeby --file=/Users/enchanterio/Documents/secret_file.txt --fileOwnerKeystore=/Users/enchanterio/.lightstreams_1/rinkeby/keystore/UTC--2018-09-13T12-55-28.129616463Z--a92e3705e6d70cb45782bf055e41813060e4ce07
+leth storage upload --nodeid=1 --network=rinkeby --file=/Users/enchanterio/Documents/secret_file.txt --account=0xa92e3705e6d70cb45782bf055e41813060e4ce07
 ```
 
 Output:
@@ -225,7 +227,7 @@ Note:
 
 - `--nodeid=1; --network=rinkeby` we are executing the command from Leth node 1 and deploying the ACL to file on Rinkeby network
 - `--file=` flag is an absolute path to the file you want to share
-- `--fileOwnerKeystore=` flag is an absolute path to your Ethereum account key located inside of your Leth directory. If you have multiple accounts created, you will recognise the associated account keystore by the suffix `UTC--<created_at UTC ISO8601>-<your Ethereum account address hex>`
+- `--account=` flag is file owner address who will pay for the file ACL. The account address was generated when you signed-up
 - `"hash":"QmNkbFAo5jSKm7KLCdCr8c8ue2X53ShATD5yjyQq3ynoaf"` this is the address of your private file in a secure IPFS storage
 - `"aclid"` this is the smart contract addr controlling file's ACL. You can use it `leth acl grant` cmd to grant permissions to other accounts
 
@@ -249,7 +251,7 @@ leth run --nodeid=2 --network=rinkeby
 Once your Leth node is full synced, attempt to read the private file from your new Leth node 2:
 
 ```bash
-leth storage read --nodeid=2 --network=rinkeby --ipfsFileHash=QmZYSewpHNvdW1TTgska792QAT7Yd6yxZAoybpYFskTZSf --keystore=/Users/enchanterio/.lightstreams_2/rinkeby/keystore/UTC--2018-10-13T12-55-28.129616463Z--0xnode2ethAddr0cb45782bf055e41813060e4ce89
+leth storage read --nodeid=2 --network=rinkeby --hash=QmZYSewpHNvdW1TTgska792QAT7Yd6yxZAoybpYFskTZSf --account=0xnode2ethAddr0cb45782bf055e41813060e4ce89
 ```
 
 Output:
@@ -267,7 +269,7 @@ Let's grant a read permission.
 Execute :
 
 ```bash
-leth acl grant --nodeid=1 --network=rinkeby --permission=read --aclid=0x2F15B633b4bC41BdFBBD8AAf2Be7Dae958D27C7E --keystore=/Users/enchanterio/.lightstreams_1/rinkeby/keystore/UTC--2018-09-13T12-55-28.129616463Z--a92e3705e6d70cb45782bf055e41813060e4ce07 --account=0xnode2ethAddr0cb45782bf055e41813060e4ce89
+leth acl grant --nodeid=1 --network=rinkeby --permission=read --aclid=0x2F15B633b4bC41BdFBBD8AAf2Be7Dae958D27C7E --owner=0xa92e3705e6d70cb45782bf055e41813060e4ce07 --account=0xnode2ethAddr0cb45782bf055e41813060e4ce89
 ```
 
 Output:
@@ -281,7 +283,7 @@ Output:
 Let's try to read the secret_file.txt file now:
 
 ```bash
-leth storage read --nodeid=2 --network=rinkeby --ipfsFileHash=QmZYSewpHNvdW1TTgska792QAT7Yd6yxZAoybpYFskTZSf --keystore=/Users/enchanterio/.lightstreams_2/rinkeby/keystore/UTC--2018-10-13T12-55-28.129616463Z--0xnode2ethAddr0cb45782bf055e41813060e4ce89
+leth storage read --nodeid=2 --network=rinkeby --hash=QmZYSewpHNvdW1TTgska792QAT7Yd6yxZAoybpYFskTZSf --account=0xnode2ethAddr0cb45782bf055e41813060e4ce89
 ```
 
 Output:
