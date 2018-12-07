@@ -5,7 +5,7 @@ title:  "Getting started with Lightstreams Node"
 
 | Version | Release Date |
 |---------|--------------|
-|0.6.0-alpha ACL Admin|16.11.2018|
+|0.7.0-alpha Meta && PoA Test Ntw|07.12.2018|
 
 Lightstreams technical stack:
 
@@ -323,6 +323,28 @@ Example, let's grant an `admin` right to the Leth Node 2 account. With such a pr
 ```bash
 leth acl grant --nodeid=1 --network=rinkeby --permission=admin --acl=0x2F15B633b4bC41BdFBBD8AAf2Be7Dae958D27C7E --owner=0xa92e3705e6d70cb45782bf055e41813060e4ce07 --account=0xnode2ethAddr0cb45782bf055e41813060e4ce89
 ```
+
+### Reading the public Meta file
+
+In case you want to get information about the privately stored file, you can do so using the `leth storage meta` command.
+
+```bash
+leth storage meta --nodeid=1 --network=rinkeby --meta=QmZYSewpHNvdW1TTgska792QAT7Yd6yxZAoybpYFskTZSf
+```
+
+Output:
+
+```
+{"filename":"secret_file.txt","ext":"txt","owner":"0xadC486F16F003897fb927e22438cb1b820f79879","hash":"QmRnXxBJg3NjXzuTi91iNYcMff4oz4NwjN7fgtBXp2UbG9","acl":"0x3cb99420c7F16f00ef41B5ace9e0C815F3736879"}
+```
+
+Note:
+
+- `filename` is the original filename when file was uploaded
+- `ext` is the original file extension
+- `owner` who uploaded the file
+- `hash` the hash of the protected file stored in IPFS (not the public Meta file hash)
+- `acl` address of the contract handling file permissions
 
 ## SDK Help
 
