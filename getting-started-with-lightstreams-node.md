@@ -120,12 +120,12 @@ First, initialize new Leth node with ID 1 for Rinkeby network:
 leth init --nodeid=1 --network=rinkeby
 
 {"msg":"Initializing Leth node...","nodeID":1,"network":"rinkeby"}
-{"msg":"IPFS: initializing IPFS node at /Users/enchanterio/.lightstreams_1/ipfs"}
+{"msg":"IPFS: initializing IPFS node at $HOME/.lightstreams_1/ipfs"}
 {"msg":"IPFS: generating 2048-bit RSA keypair...done"}
 {"msg":"IPFS: peer identity: Qma1bKbQVYqHMhWzaRHAkKU5s5FsDnhR5bMzWLbjwxUaN6"}
-{"msg":"IPFS successfully initialized.","dataDir":"/Users/enchanterio/.lightstreams_1/ipfs"}
-{"msg":"Rinkeby node successfully initialized.","dataDir":"/Users/enchanterio/.lightstreams_1/rinkeby"}
-{"msg":"Leth node fully initialized!!!","nodeDir":"/Users/enchanterio/.lightstreams_1"}
+{"msg":"IPFS successfully initialized.","dataDir":"$HOME/.lightstreams_1/ipfs"}
+{"msg":"Rinkeby node successfully initialized.","dataDir":"$HOME/.lightstreams_1/rinkeby"}
+{"msg":"Leth node fully initialized!!!","nodeDir":"$HOME/.lightstreams_1"}
 ```
 
 Second, run Leth node:
@@ -152,6 +152,49 @@ Leave it running for few hours until you see your node is fully synced with Rink
 GETH: INFO [09-13|10:31:14.044] Imported new chain segment blocks=1 txs=12 mgas=1.134 elapsed=83.860ms mgasps=20.680 number=2980046 hash=1b5fff…3bff4e cache=31.55mB"
 ```
 
+### Expose Leth HTTP API
+
+To initialize `leth` over HTTPs protocol you need to follow the next steps. At first you need to use
+valid SSL certificates which can be generated, for instance, by running the following bash command:
+
+```bash
+mkdir -p /etc/ssl/leth
+cd /etc/ssl/leth
+openssl req -x509 -out localhost.crt -keyout localhost.key \
+  -newkey rsa:2048 -nodes -sha256 \
+  -subj '/CN=localhost' -extensions EXT -config <( \
+   printf "[dn]\nCN=localhost\n[req]\ndistinguished_name = dn\n[EXT]\nsubjectAltName=DNS:localhost\nkeyUsage=digitalSignature\nextendedKeyUsage=serverAuth")
+chmod a+r localhost.crt localhost.key
+```
+
+Once you have valid ssl certificates are allocated in your local machine, you have to edit
+leth node configuration file, at `$HOME/.lightstreams_1/config.json`, and include the path
+for your ssl certificates and the port where the HTTPs server is going to be exposed.
+
+```js
+{
+	"https_server": {
+		"port": 8080,
+		"certificate_pem_filepath": "/etc/ssl/leth/localhost.crt",
+		"certificate_pem_priv_key_filepath": "/etc/ssl/leth/localhost.key"
+	},
+....
+```
+
+At last, you need to run your `leth` server again, but this time using the `--https` flag as follow:
+```bash
+leth run --nodeid=1 --network=rinkeby --https
+```
+
+Within the first debug output shown in your terminal you will see the next one:
+````
+...
+{"level":"debug","ts":1544091804.1871579,"caller":"http/server.go:28","msg":"Starting Leth HTTP server listening on port: 8080."}
+...
+````
+
+Visit the following [link](/http-api-doc) to learn how to use leth http api.
+
 ## Get FREE Testing Tokens
 
 ### Obtaining Ether
@@ -159,13 +202,13 @@ GETH: INFO [09-13|10:31:14.044] Imported new chain segment blocks=1 txs=12 mgas=
 Connect to the Leth node via IPC:
 
 ```bash
-geth --datadir=/Users/enchanterio/.lightstreams_1/rinkeby attach ipc:/Users/enchanterio/.lightstreams_1/rinkeby/geth.ipc
+geth --datadir=$HOME/.lightstreams_1/rinkeby attach ipc:$HOME/.lightstreams_1/rinkeby/geth.ipc
 ```
 
 Create a new Leth node account using the attached Geth JavaScript console and check the its balance:
 
 ```javascript
-geth --datadir=/Users/enchanterio/.lightstreams_1/rinkeby attach ipc:/Users/enchanterio/.lightstreams_1/rinkeby/geth.ipc
+geth --datadir=$HOME/.lightstreams_1/rinkeby attach ipc:$HOME/.lightstreams_1/rinkeby/geth.ipc
 
 Welcome to the Geth JavaScript console!
 
@@ -226,7 +269,7 @@ Given a file: "secret_file.txt" with content "hello secret world".
 To share a private file using `leth` execute the following command:
 
 ```bash
-leth storage add --nodeid=1 --network=rinkeby --file=/Users/enchanterio/Documents/secret_file.txt --account=0xa92e3705e6d70cb45782bf055e41813060e4ce07
+leth storage add --nodeid=1 --network=rinkeby --file=$HOME/Documents/secret_file.txt --owner=0xa92e3705e6d70cb45782bf055e41813060e4ce07
 ```
 
 Output:
@@ -236,14 +279,14 @@ Enter keystore's password to unlock account:
 
 ...some logs, we keep logging on DEBUG level in Alpha version for debugging early bugs
 
-{"meta":"QmZYSewpHNvdW1TTgska792QAT7Yd6yxZAoybpYFskTZSf","acl":"0xc2DBC8CdAba2df432C821639B80302f0675D6f74","error":""}
+{"meta":"QmZYSewpHNvdW1TTgska792QAT7Yd6yxZAoybpYFskTZSf","acl":"0xc2DBC8CdAba2df432C821639B80302f0675D6f74"}
 ```
 
 Note:
 
 - `--nodeid=1; --network=rinkeby` we are executing the command from Leth node 1 and deploying the ACL to file on Rinkeby network
 - `--file=` flag is an absolute path to the file you want to share
-- `--account=` flag is file owner address who will pay for the file ACL. The account address was generated when you signed-up
+- `--owner=` flag is file owner address who will pay for the file ACL. The account address was generated when you signed-up
 - `"meta":"QmNkbFAo5jSKm7KLCdCr8c8ue2X53ShATD5yjyQq3ynoaf"` this is the address of a public Meta file linking to your private file in a secure IPFS storage
 - `"acl"` this is the file's ACL. A smart contract addr controlling all the access rules. You can use it `leth acl grant` cmd to grant permissions to other accounts
 
@@ -273,7 +316,7 @@ leth storage fetch --nodeid=2 --network=rinkeby --meta=QmZYSewpHNvdW1TTgska792QA
 Output:
 
 ```bash
-{"output":"","error":"unable to download file to IPFS storage. Error: ipfs cat cmd timed out"}
+{"error": {"code": "err_cli", "message": "unable to download file to IPFS storage. Error: ipfs cat cmd timed out"}
 ```
 
 This error is expected because the file owner never actually granted permission to Leth node 2 account, 0xnode2ethAddr0cb45782bf055e41813060e4ce89.
@@ -294,7 +337,7 @@ Output:
 {"msg":"Granting 'read' permission to account '0xnode2ethAddr0cb45782bf055e41813060e4ce89'..."}
 {"msg":"Account '0xnode2ethAddr0cb45782bf055e41813060e4ce89' was granted 'read' permission."}
 
-{"error":"","is_granted":"true"}
+{"is_granted":"true"}
 ```
 
 Let's try to read the `secret_file.txt` file now:
@@ -309,7 +352,7 @@ and the extension of the uploaded file resolved from the JSON Meta file.
 Output:
 
 ```bash
-{"output":"/tmp/QmProtIpfsHashdGXrvCgmQHo8Yqo8eLQTvC1sEJh6suBi.txt","error":""}
+{"output":"/tmp/QmProtIpfsHashdGXrvCgmQHo8Yqo8eLQTvC1sEJh6suBi.txt"}
 ```
 
 Congratulation, you just shared a private file over internet in a decentralised manner.
@@ -321,7 +364,7 @@ Going step further. You can also grant admin rights to other accounts, devices s
 Example, let's grant an `admin` right to the Leth Node 2 account. With such a privilege, Leth Node 2 account will be able to further grant access to other devices in the network/users.
 
 ```bash
-leth acl grant --nodeid=1 --network=rinkeby --permission=admin --acl=0x2F15B633b4bC41BdFBBD8AAf2Be7Dae958D27C7E --owner=0xa92e3705e6d70cb45782bf055e41813060e4ce07 --account=0xnode2ethAddr0cb45782bf055e41813060e4ce89
+leth acl grant --nodeid=1 --network=rinkeby --permission=admin --acl=0x2F15B633b4bC41BdFBBD8AAf2Be7Dae958D27C7E --owner=0xa92e3705e6d70cb45782bf055e41813060e4ce07 --to=0xnode2ethAddr0cb45782bf055e41813060e4ce89
 ```
 
 ### Reading the public Meta file
