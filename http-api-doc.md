@@ -17,7 +17,7 @@ title:  "API documentation"
 
 Base URL
 ```
-https://localhost:8080/user/signup
+https://gateway.lightstreams.network:9091/user/signup
 ```
 
 Params
@@ -25,8 +25,8 @@ Params
 
 Example request
 ```bash
-curl --insecure -X POST \
-  https://localhost:8080/user/signup \
+curl -X POST \
+  https://gateway.lightstreams.network:9091/user/signup \
   -H 'Content-Type: application/json' \
   -d '{"password":"password"}'
 ```
@@ -39,12 +39,13 @@ Output
 ```
 
 > Note: If you are running the HTTPs node on localhost you will likely need to run the curl call using `--insecure`
+as follow `curl --insecure localhost:8080/user/signup....`
 
 ### Sign in
 
 Base URL
 ```
-https://localhost:8080/user/signin
+https://gateway.lightstreams.network:9091/user/signin
 ```
 
 Params
@@ -53,8 +54,8 @@ Params
 
 Example request
 ```bash
-curl --insecure -X POST \
-  https://localhost:8080/user/signin \
+curl -X POST \
+  https://gateway.lightstreams.network:9091/user/signin \
   -H 'Content-Type: application/json' \
   -d '{"account":"E41b5C21671C22f1f054F1896d18b4773Dd9deC0","password":"password"}'
 ```
@@ -72,7 +73,7 @@ Output
 
 Base URL
 ```
-https://localhost:8080/wallet/balance
+https://gateway.lightstreams.network:9091/wallet/balance
 ```
 
 Params
@@ -80,8 +81,8 @@ Params
 
 Example request
 ```bash
-curl --insecure -X GET \
-  'https://localhost:8080/wallet/balance?account=0x0dd46808e9780e4a23dd562962300ba029bcffef'
+curl -X GET \
+  'https://gateway.lightstreams.network:9091/wallet/balance?account=0x0dd46808e9780e4a23dd562962300ba029bcffef'
 ```
 
 Output
@@ -96,7 +97,7 @@ Output
 
 Base URL
 ```
-https://localhost:8080/wallet/transfer
+https://gateway.lightstreams.network:9091/wallet/transfer
 ```
 
 Params
@@ -107,10 +108,10 @@ Params
 
 Example request
 ```bash
-curl --insecure -X POST \
-  https://localhost:8080/wallet/transfer \
+curl -X POST \
+  https://gateway.lightstreams.network:9091/wallet/transfer \
   -H 'Content-Type: application/json' \
-  -d '{"from":"4eaaad8ea38d5ef75ebdeb3d1be59d56f86c4ca9","password":"password","to":"4f5adedca6d869e9f5f7dcf4b7a9dfa8231a095f","amount_wei":"1000000000000000000"}'
+  -d '{"from":"0x50c9406f0942711b6e2e28301CE86bFbF42eBE3F","password":"password","to":"E41b5C21671C22f1f054F1896d18b4773Dd9deC0","amount_wei":"1000000000000000000"}'
 ```
 
 Output
@@ -120,96 +121,13 @@ Output
 }
 ```
 
-## <a name="ERC20" />ERC20 Tokens
-
-### Get balance
-
-Base URL
-```
-https://localhost:8080/erc20/balance
-```
-
-Params
-- account -> Account address to request balance from
-- erc20_address -> ERC20 token address
-
-Example request
-```bash
-curl --insecure -X GET \
-  'https://localhost:8080/erc20/balance?erc20_address=0x7251e7005dba3abb0aee4e772a5ff378a8eea885&account=4f5adedca6d869e9f5f7dcf4b7a9dfa8231a095f'
-```
-
-Output
-```json
-{
-    "balance": "100"
-}
-```
-
-### Purchase tokens
-
-Base URL
-```
-https://localhost:8080/erc20/purchase
-```
-
-Params
-- erc20_address -> ERC20 token address
-- account -> Account address who performs the purchasing action
-- password -> Account password
-- amount_wei -> Amount of wei send for the purchasing action
-
-Example request
-```bash
-curl --insecure -X POST \
-  https://localhost:8080/erc20/purchase \
-  -H 'Content-Type: application/json' \
-  -d '{"erc20_address":"0x7251e7005dba3abb0aee4e772a5ff378a8eea885","password":"password","account":"4f5adedca6d869e9f5f7dcf4b7a9dfa8231a095f","amount_wei":"100000000000000000"}'
-```
-
-Output
-```json
-{
-    "balance": "622"
-}
-```
-
-### Transfer tokens
-
-Base URL
-```
-https://localhost:8080/erc20/transfer
-```
-
-Params
-- erc20_address -> ERC20 token address
-- account -> Source account address
-- password -> Source account password
-- to -> Destination account address
-- amount -> Amount of tokens sent
-
-Example request
-```bash
-curl --insecure -X POST \
-  https://localhost:8080/erc20/transfer \
-  -H 'Content-Type: application/json' \
-  -d '{"erc20_address":"0x7251e7005dba3abb0aee4e772a5ff378a8eea885","account":"4f5adedca6d869e9f5f7dcf4b7a9dfa8231a095f","password":"password","to":"0xE41b5C21671C22f1f054F1896d18b4773Dd9deC0","amount":"10"}'
-```
-
-Output
-```json
-{
-    "balance": "612"
-}
-```
-
 ## <a name="Storage" />Storage
 
 ### Add new file
 
 Base URL
 ```
-https://localhost:8080/storage/add
+https://gateway.lightstreams.network:9091/storage/add
 ```
 
 Params
@@ -219,8 +137,8 @@ Params
 
 Example request
 ```bash
-curl --insecure -X POST \
-  https://localhost:8080/storage/add \
+curl -X POST \
+  https://gateway.lightstreams.network:9091/storage/add \
   -H 'Content-Type: multipart/form-data' \
   -F owner=4f5adedca6d869e9f5f7dcf4b7a9dfa8231a095f \
   -F password=password \
@@ -239,7 +157,7 @@ Output
 
 Base URL
 ```
-https://localhost:8080/acl/grant
+https://gateway.lightstreams.network:9091/acl/grant
 ```
 Params
 - acl -> ACL address of stored file
@@ -251,10 +169,10 @@ Params
 
 Example request
 ```bash
-curl --insecure -X POST \
-  https://localhost:8080/acl/grant \
+curl -X POST \
+  https://gateway.lightstreams.network:9091/acl/grant \
   -H 'Content-Type: application/json' \
-  -d '{"acl":"0x5307C0F1146233884B3A9BC857738d8bDe0802E4","password":"password","owner":"4f5adedca6d869e9f5f7dcf4b7a9dfa8231a095f","to":"0xE41b5C21671C22f1f054F1896d18b4773Dd9deC0", "permission": "read"}'
+  -d '{"acl":"0x5307C0F1146233884B3A9BC857738d8bDe0802E4","owner":"4f5adedca6d869e9f5f7dcf4b7a9dfa8231a095f","password":"password","to":"0xE41b5C21671C22f1f054F1896d18b4773Dd9deC0", "permission": "read"}'
 ```
 
 Output
@@ -268,7 +186,7 @@ Output
 
 Base URL
 ```
-https://localhost:8080/storage/fetch
+https://gateway.lightstreams.network:9091/storage/fetch
 ```
 
 Params
@@ -277,8 +195,8 @@ Params
 
 Example request
 ```bash
-curl --insecure -X GET \
-  'https://localhost:8080/storage/fetch?meta=QmceeUk5pbXoRRuZs7syD7jtUosPH2K6wuQaWCFi8ba2dc&token=eyJibG9ja2NoYWluIjoiRVRIIiwiZXRoX2FkZHJlc3MiOiIweDRGNWFERWRDYTZkODY5RTlGNUY3ZENmNEI3QTlkRmE4MjMxYTA5NWYiLCJpYXQiOjI1LCJlYXQiOjEwMjV9.78mSE4Z9SiHO9fcY5vtCZpK-rdDGuJXpW4qEOzyH9-Zy5HySKGVH9aB-j_ixUb0q91S-I9_Cktj_OVl0LcRvmgE'
+curl -X GET \
+  'https://gateway.lightstreams.network:9091/storage/fetch?meta=QmceeUk5pbXoRRuZs7syD7jtUosPH2K6wuQaWCFi8ba2dc&token=eyJibG9ja2NoYWluIjoiRVRIIiwiZXRoX2FkZHJlc3MiOiIweDRGNWFERWRDYTZkODY5RTlGNUY3ZENmNEI3QTlkRmE4MjMxYTA5NWYiLCJpYXQiOjI1LCJlYXQiOjEwMjV9.78mSE4Z9SiHO9fcY5vtCZpK-rdDGuJXpW4qEOzyH9-Zy5HySKGVH9aB-j_ixUb0q91S-I9_Cktj_OVl0LcRvmgE'
 ```
 
 Output
@@ -286,6 +204,88 @@ Output
 *** STORE FILE RAW CONTENT ****
 ```
 
+## <a name="ERC20" />ERC20 Tokens
+
+### Get balance
+
+Base URL
+```
+https://gateway.lightstreams.network:9091/erc20/balance
+```
+
+Params
+- account -> Account address to request balance from
+- erc20_address -> ERC20 token address
+
+Example request
+```bash
+curl -X GET \
+  'https://gateway.lightstreams.network:9091/erc20/balance?erc20_address=0x7251e7005dba3abb0aee4e772a5ff378a8eea885&account=4f5adedca6d869e9f5f7dcf4b7a9dfa8231a095f'
+```
+
+Output
+```json
+{
+    "balance": "100"
+}
+```
+
+### Purchase tokens
+
+Base URL
+```
+https://gateway.lightstreams.network:9091/erc20/purchase
+```
+
+Params
+- erc20_address -> ERC20 token address
+- account -> Account address who performs the purchasing action
+- password -> Account password
+- amount_wei -> Amount of wei send for the purchasing action
+
+Example request
+```bash
+curl -X POST \
+  https://gateway.lightstreams.network:9091/erc20/purchase \
+  -H 'Content-Type: application/json' \
+  -d '{"erc20_address":"0x7251e7005dba3abb0aee4e772a5ff378a8eea885","password":"password","account":"4f5adedca6d869e9f5f7dcf4b7a9dfa8231a095f","amount_wei":"100000000000000000"}'
+```
+
+Output
+```json
+{
+    "balance": "622"
+}
+```
+
+### Transfer tokens
+
+Base URL
+```
+https://gateway.lightstreams.network:9091/erc20/transfer
+```
+
+Params
+- erc20_address -> ERC20 token address
+- account -> Source account address
+- password -> Source account password
+- to -> Destination account address
+- amount -> Amount of tokens sent
+
+Example request
+```bash
+curl -X POST \
+  https://gateway.lightstreams.network:9091/erc20/transfer \
+  -H 'Content-Type: application/json' \
+  -d '{"erc20_address":"0x7251e7005dba3abb0aee4e772a5ff378a8eea885","account":"4f5adedca6d869e9f5f7dcf4b7a9dfa8231a095f","password":"password","to":"0xE41b5C21671C22f1f054F1896d18b4773Dd9deC0","amount":"10"}'
+```
+
+Output
+```json
+{
+    "balance": "612"
+}
+```
 
 ## <a name="Error Types" />Error Types
 
