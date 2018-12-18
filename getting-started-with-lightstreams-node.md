@@ -5,7 +5,7 @@ title:  "Getting started with Lightstreams Node"
 
 | Version | Release Date |
 |---------|--------------|
-|0.7.0-alpha Meta && PoA Test Ntw|07.12.2018|
+|0.7.1-alpha Meta && PoA Test Ntw|18.12.2018|
 
 Lightstreams technical stack:
 
@@ -399,4 +399,4 @@ leth acl --help
 
 ## Need human help?
 
-We are happy to get you started! Join our [telegram channel](https://t.me/lightstreams) and ask as many questions as you want!
+We are happy to get you started! Join our [telegram channel](https://t.me/lightstreams) or ask as many questions as you want in our open [forum](http://discuss.lightstreams.network)!
