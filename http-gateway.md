@@ -6,7 +6,7 @@ title: "Try-out our HTTPs Gateway"
 <br>
 
 > IMPORTANT: Be aware that we are currently working on the development
-of this APIand therefore the environment might suffer short outages and
+of this API and therefore the environment might suffer short outages and
 data could be removed without beforehand notice.
 
 # Introduction
@@ -23,9 +23,9 @@ Ethereum Blockchain and IPFS protocol functionalities such as upload
 new file to lightstreams IPFS network and create ethereum accounts and transfer
 funds among them.
 
-Every transaction executed runs over `rinkeby` network and IPFS content
-is stored, only provisionally, within lightstreams private network,
-therefore content is only accessible using the provided API.
+Every transaction is executed and validated over `rinkeby` network. IPFS content
+is stored and protected by lightstreams authorization protocol,
+and uploaded content will be only accessible by lightstreams nodes.
 
 Leth Gateway is running on the following domain
 ```
