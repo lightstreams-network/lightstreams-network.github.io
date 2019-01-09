@@ -53,7 +53,7 @@
 	"title": "API",
 	"tags": [],
 	"description": "",
-	"content": " Table of content  HTTP API Reference  Error Types HTTP status code summary 200 - OK Everything worked as expected. 400 - Bad Request Sent parameters were invalid. 403 - Unauthorized Not authorized request or invalid API token. 500 - Server Error Something went wrong on server side.  "
+	"content": " Table of contents  HTTP API Reference  Error Types HTTP status code summary 200 - OK Everything worked as expected. 400 - Bad Request Sent parameters were invalid. 403 - Unauthorized Not authorized request or invalid API token. 500 - Server Error Something went wrong on server side.  "
 },
 {
 	"uri": "https://docs.lightstreams.network/06.faqs/",
