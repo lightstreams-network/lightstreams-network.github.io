@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>/01.getting-started/</loc>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+  </url>
+  
+  <url>
+    <loc>/02.guides/</loc>
+  </url>
+  
+  <url>
+    <loc>/03.examples/</loc>
+  </url>
+  
+  <url>
+    <loc>/04.cli-docs/</loc>
+  </url>
+  
+  <url>
+    <loc>/05.http-api/</loc>
+  </url>
+  
+  <url>
+    <loc>/06.faqs/</loc>
+  </url>
+  
+  <url>
+    <loc>/01.getting-started/01.quick-start/</loc>
+  </url>
+  
+  <url>
+    <loc>/01.getting-started/02.install/</loc>
+  </url>
+  
+  <url>
+    <loc>/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/04.cli-docs/acl/</loc>
+  </url>
+  
+  <url>
+    <loc>/04.cli-docs/acl/grant/</loc>
+  </url>
+  
+  <url>
+    <loc>/04.cli-docs/auth/</loc>
+  </url>
+  
+  <url>
+    <loc>/04.cli-docs/docs/</loc>
+  </url>
+  
+  <url>
+    <loc>/04.cli-docs/fee/</loc>
+  </url>
+  
+  <url>
+    <loc>/04.cli-docs/init/</loc>
+  </url>
+  
+  <url>
+    <loc>/04.cli-docs/run/</loc>
+  </url>
+  
+  <url>
+    <loc>/04.cli-docs/storage/</loc>
+  </url>
+  
+  <url>
+    <loc>/04.cli-docs/storage/add/</loc>
+  </url>
+  
+  <url>
+    <loc>/04.cli-docs/storage/authorized/</loc>
+  </url>
+  
+  <url>
+    <loc>/04.cli-docs/storage/fetch/</loc>
+  </url>
+  
+  <url>
+    <loc>/04.cli-docs/storage/meta/</loc>
+  </url>
+  
+  <url>
+    <loc>/04.cli-docs/storage/read/</loc>
+  </url>
+  
+  <url>
+    <loc>/04.cli-docs/storage/upload/</loc>
+  </url>
+  
+  <url>
+    <loc>/04.cli-docs/user/</loc>
+  </url>
+  
+  <url>
+    <loc>/04.cli-docs/user/signin/</loc>
+  </url>
+  
+  <url>
+    <loc>/04.cli-docs/user/signup/</loc>
+  </url>
+  
+  <url>
+    <loc>/04.cli-docs/version/</loc>
+  </url>
+  
+  <url>
+    <loc>/04.cli-docs/wallet/</loc>
+  </url>
+  
+  <url>
+    <loc>/04.cli-docs/wallet/balance/</loc>
+  </url>
+  
+  <url>
+    <loc>/04.cli-docs/wallet/transfer/</loc>
+  </url>
+  
+</urlset>

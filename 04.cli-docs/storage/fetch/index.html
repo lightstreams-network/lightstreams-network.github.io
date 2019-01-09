@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lightstreams Documentation</title>
+    
+      <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="revised" content="2019-01-09T14:17:39 CET">
+<title>leth storage fetch :: Lightstreams Documentation</title>
+<link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+<link href="/css/nucleus.css" rel="stylesheet">
+<link href="/css/font-awesome.min.css" rel="stylesheet">
+<link href="/css/hybrid.css" rel="stylesheet">
+<link href="/css/featherlight.min.css" rel="stylesheet">
+<link href="/css/auto-complete.css" rel="stylesheet">
+<link href="/theme-original/style.css" rel="stylesheet">
+
+  <link href="/theme-original/variant-navy.css" rel="stylesheet">
+
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<script src="/js/jquery-2.x.min.js"></script>
+<style type="text/css">
+  :root #header + #content > #left > #rlblock_left {
+    display:none !important;
+  }
+</style>
+<meta name="description" content="">
+
+
+    
+  </head>
+  <body data-url="/04.cli-docs/storage/fetch/">
+    
+      <div id="headermain"></div>
+<nav id="sidebar" class="showVisitedLinks">
+
+
+
+<div class="highlightable">
+  <div id="header-wrapper">
+    <div id="header">
+      
+	
+  
+    <a class="baselink" href="">Lightstreams Documentation</a>
+  
+
+
+    </div>
+        <div class="searchbox">
+		    <label for="search-by"><i class="fa fa-search"></i></label>
+		    <input data-search-input id="search-by" type="text" placeholder="Search...">
+		    <span data-search-clear=""><i class="fa fa-close"></i></span>
+		</div>
+		<script type="text/javascript" src="/js/lunr.min.js"></script>
+		<script type="text/javascript" src="/js/auto-complete.js"></script>
+		<script type="text/javascript">
+        
+            var baseurl = "";
+        
+		</script>
+		<script type="text/javascript" src="/js/search.js"></script>
+  </div>
+
+      <ul class="topics">
+    <li data-nav-id="/01.getting-started/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/01.getting-started/">Getting Started</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+    <li data-nav-id="/01.getting-started/01.quick-start/" class="dd-item
+        ">
+      <div>
+      <a href="/01.getting-started/01.quick-start/">01. Quick Start</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/01.getting-started/02.install/" class="dd-item
+        ">
+      <div>
+      <a href="/01.getting-started/02.install/">02. Install</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/02.guides/" class="dd-item
+        ">
+      <div>
+      <a href="/02.guides/">Guides</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/03.examples/" class="dd-item
+        ">
+      <div>
+      <a href="/03.examples/">Examples</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/04.cli-docs/" class="dd-item parent haschildren
+        ">
+      <div>
+      <a href="/04.cli-docs/">Command line documentation</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+    <li data-nav-id="/04.cli-docs/acl/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/04.cli-docs/acl/">leth acl</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+    <li data-nav-id="/04.cli-docs/acl/grant/" class="dd-item
+        ">
+      <div>
+      <a href="/04.cli-docs/acl/grant/">leth acl grant</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/04.cli-docs/auth/" class="dd-item
+        ">
+      <div>
+      <a href="/04.cli-docs/auth/">leth auth</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/04.cli-docs/docs/" class="dd-item
+        ">
+      <div>
+      <a href="/04.cli-docs/docs/">leth docs</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/04.cli-docs/fee/" class="dd-item
+        ">
+      <div>
+      <a href="/04.cli-docs/fee/">leth fee</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/04.cli-docs/init/" class="dd-item
+        ">
+      <div>
+      <a href="/04.cli-docs/init/">leth init</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/04.cli-docs/run/" class="dd-item
+        ">
+      <div>
+      <a href="/04.cli-docs/run/">leth run</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/04.cli-docs/storage/" class="dd-item parent haschildren
+        ">
+      <div>
+      <a href="/04.cli-docs/storage/">leth storage</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+    <li data-nav-id="/04.cli-docs/storage/add/" class="dd-item
+        ">
+      <div>
+      <a href="/04.cli-docs/storage/add/">leth storage add</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/04.cli-docs/storage/authorized/" class="dd-item
+        ">
+      <div>
+      <a href="/04.cli-docs/storage/authorized/">leth storage authorized</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/04.cli-docs/storage/fetch/" class="dd-item parent active
+        ">
+      <div>
+      <a href="/04.cli-docs/storage/fetch/">leth storage fetch</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/04.cli-docs/storage/meta/" class="dd-item
+        ">
+      <div>
+      <a href="/04.cli-docs/storage/meta/">leth storage meta</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/04.cli-docs/storage/read/" class="dd-item
+        ">
+      <div>
+      <a href="/04.cli-docs/storage/read/">leth storage read</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/04.cli-docs/storage/upload/" class="dd-item
+        ">
+      <div>
+      <a href="/04.cli-docs/storage/upload/">leth storage upload</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/04.cli-docs/user/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/04.cli-docs/user/">leth user</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+    <li data-nav-id="/04.cli-docs/user/signin/" class="dd-item
+        ">
+      <div>
+      <a href="/04.cli-docs/user/signin/">leth user signin</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/04.cli-docs/user/signup/" class="dd-item
+        ">
+      <div>
+      <a href="/04.cli-docs/user/signup/">leth user signup</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/04.cli-docs/version/" class="dd-item
+        ">
+      <div>
+      <a href="/04.cli-docs/version/">leth version</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/04.cli-docs/wallet/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/04.cli-docs/wallet/">leth wallet</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+    <li data-nav-id="/04.cli-docs/wallet/balance/" class="dd-item
+        ">
+      <div>
+      <a href="/04.cli-docs/wallet/balance/">leth wallet balance</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/04.cli-docs/wallet/transfer/" class="dd-item
+        ">
+      <div>
+      <a href="/04.cli-docs/wallet/transfer/">leth wallet transfer</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/05.http-api/" class="dd-item
+        ">
+      <div>
+      <a href="/05.http-api/">API</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/06.faqs/" class="dd-item
+        ">
+      <div>
+      <a href="/06.faqs/">FAQs</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+
+
+
+        <section id="shortcuts">
+                <li class="" role=""><h3>More</h3><a href="https://github.com/lightstreams-network/cli-docs" target="_blank" rel="noopener"><i class='fa fa-github'></i> <label>Github repo</label></a></li>
+                <li class="" role=""><a href="https://wiki.lightstreams.network/" target="_blank" rel="noopener"><i class='fa fa-cloud-download'></i> <label>Docs</label></a></li>
+                <li class="" role=""><a href="https://wiki.lightstreams.network/docs" target="_blank" rel="noopener"><i class='fa fa-bookmark'></i> <label>HTTP API</label></a></li>
+        </section>
+            <a id="clear-history" class="" href="#" data-clear-history-toggle=""><i class="fa  fa-history"></i> Clear History</a>
+
+    <hr />
+    <li></li>
+    
+    </ul>
+
+ <section id="footer">
+    </section>
+  </div>
+</nav>
+
+
+
+<section id="body">
+<div id="overlay"></div>
+<div class="padding highlightable">
+
+  <div id="top-bar">
+    
+      
+      
+      
+    <div id="top-github-link">
+      <a class="github-link" href="https://github.com/lightstreams-network/go-lightstreams/04.cli-docs/storage/fetch/_index.md" target="blank">
+        <i class="fa fa-code-fork"></i>
+        Improve this page
+      </a>
+    </div><div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+        <span id="sidebar-toggle-span">
+          <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+            <i class="fa fa-bars"></i>
+          </a>
+        </span>
+        <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+        <span class="links">
+        
+
+
+
+
+
+
+
+
+
+
+ <a href='/'>Lightstreams documentation</a> > <a href='/04.cli-docs/'>Command line documentation</a> > <a href='/04.cli-docs/storage/'>leth storage</a> > leth storage fetch
+
+ 
+
+ 
+
+ 
+
+   
+        </span>
+    </div>
+    
+    
+    <div class="progress">
+        <div class="wrapper">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#leth-storage-fetch">leth storage fetch</a>
+<ul>
+<li><a href="#synopsis">Synopsis</a></li>
+<li><a href="#options">Options</a></li>
+<li><a href="#see-also">SEE ALSO</a>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#auto-generated-by-spf13-cobra-on-17-dec-2018">Auto generated by spf13/cobra on 17-Dec-2018</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+        </div>
+    </div>
+    
+
+  </div>
+
+
+<div id="body-inner">
+  
+    <h1>leth storage fetch</h1>
+  
+
+
+
+    
+    
+    
+
+
+
+<h2 id="leth-storage-fetch">leth storage fetch</h2>
+
+<p>Downloads file content from secured IPFS storage based on the meta file.</p>
+
+<h3 id="synopsis">Synopsis</h3>
+
+<p>Usage:</p>
+
+<pre><code>leth storage fetch --nodeid=1 --network=rinkeby --account=0xadC486F16F003897fb927e22438cb1b820f79879 --meta=QmZnx4FPooZoy2kTFzAKhZAzhuQ3EHG8yx2E57GvN2t1vb
+</code></pre>
+
+<p>Possible Outputs:</p>
+
+<pre><code>{&quot;output&quot;:&quot;/tmp/secret_file.txt&quot;}
+{&quot;error&quot;: {&quot;code&quot;: &quot;internal error code&quot;, &quot;message&quot;: &quot;explanatory error message&quot;}}
+</code></pre>
+
+<pre><code>leth storage fetch [flags]
+</code></pre>
+
+<h3 id="options">Options</h3>
+
+<pre><code>      --account string             The account address who should be authorized against the content's ACL. The account address was generated when you signed-up.
+  -h, --help                       help for fetch
+      --meta leth storage upload   IPFS file hash of content you want to read from secured storage returned by leth storage upload command.
+      --network string             Possible values: 'rinkeby, ganache, sirius'.
+      --nodeid int                 ID of the node in order to support multiple nodes on the same machine. 0 by default.
+</code></pre>
+
+<h3 id="see-also">SEE ALSO</h3>
+
+<ul>
+<li><a href="leth_storage.md">leth storage</a>    - Features LethStorage&rsquo;s pkg capabilities over CLI such as file upload/download, access authorization&hellip;</li>
+</ul>
+
+<h6 id="auto-generated-by-spf13-cobra-on-17-dec-2018">Auto generated by spf13/cobra on 17-Dec-2018</h6>
+
+
+
+    
+    
+          <footer class=" footline" >
+	
+</footer>
+  </div>
+</div>
+
+<div id="navigation">
+</div>
+
+</section>
+<div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+  <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+</div>    
+
+<script src="/js/clipboard.min.js"></script>
+<script src="/js/featherlight.min.js"></script>
+<script src="/js/html5shiv-printshiv.min.js"></script>
+
+<script src="/js/modernizr.custom.71422.js"></script>
+<script src="/js/docdock.js"></script>
+<script src="/theme-original/script.js"></script>
+
+
+    
+
+    
+    
+
+    
+  </body>
+</html>
