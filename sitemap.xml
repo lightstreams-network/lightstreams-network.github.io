@@ -3,133 +3,133 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://wiki.lightstreams.network/01.getting-started/</loc>
+    <loc>https://docs.lightstreams.network/01.getting-started/</loc>
   </url>
   
   <url>
-    <loc>https://wiki.lightstreams.network/</loc>
+    <loc>https://docs.lightstreams.network/</loc>
   </url>
   
   <url>
-    <loc>https://wiki.lightstreams.network/01.getting-started/01.quick-start/</loc>
+    <loc>https://docs.lightstreams.network/01.getting-started/01.quick-start/</loc>
   </url>
   
   <url>
-    <loc>https://wiki.lightstreams.network/02.guides/</loc>
+    <loc>https://docs.lightstreams.network/02.guides/</loc>
   </url>
   
   <url>
-    <loc>https://wiki.lightstreams.network/01.getting-started/02.install/</loc>
+    <loc>https://docs.lightstreams.network/01.getting-started/02.install/</loc>
   </url>
   
   <url>
-    <loc>https://wiki.lightstreams.network/03.examples/</loc>
+    <loc>https://docs.lightstreams.network/03.examples/</loc>
   </url>
   
   <url>
-    <loc>https://wiki.lightstreams.network/04.cli-docs/</loc>
+    <loc>https://docs.lightstreams.network/04.cli-docs/</loc>
   </url>
   
   <url>
-    <loc>https://wiki.lightstreams.network/05.http-api/</loc>
+    <loc>https://docs.lightstreams.network/05.http-api/</loc>
   </url>
   
   <url>
-    <loc>https://wiki.lightstreams.network/06.faqs/</loc>
+    <loc>https://docs.lightstreams.network/06.faqs/</loc>
   </url>
   
   <url>
-    <loc>https://wiki.lightstreams.network/categories/</loc>
+    <loc>https://docs.lightstreams.network/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://wiki.lightstreams.network/tags/</loc>
+    <loc>https://docs.lightstreams.network/tags/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://wiki.lightstreams.network/04.cli-docs/acl/</loc>
+    <loc>https://docs.lightstreams.network/04.cli-docs/acl/</loc>
   </url>
   
   <url>
-    <loc>https://wiki.lightstreams.network/04.cli-docs/acl/grant/</loc>
+    <loc>https://docs.lightstreams.network/04.cli-docs/acl/grant/</loc>
   </url>
   
   <url>
-    <loc>https://wiki.lightstreams.network/04.cli-docs/auth/</loc>
+    <loc>https://docs.lightstreams.network/04.cli-docs/auth/</loc>
   </url>
   
   <url>
-    <loc>https://wiki.lightstreams.network/04.cli-docs/docs/</loc>
+    <loc>https://docs.lightstreams.network/04.cli-docs/docs/</loc>
   </url>
   
   <url>
-    <loc>https://wiki.lightstreams.network/04.cli-docs/fee/</loc>
+    <loc>https://docs.lightstreams.network/04.cli-docs/fee/</loc>
   </url>
   
   <url>
-    <loc>https://wiki.lightstreams.network/04.cli-docs/init/</loc>
+    <loc>https://docs.lightstreams.network/04.cli-docs/init/</loc>
   </url>
   
   <url>
-    <loc>https://wiki.lightstreams.network/04.cli-docs/run/</loc>
+    <loc>https://docs.lightstreams.network/04.cli-docs/run/</loc>
   </url>
   
   <url>
-    <loc>https://wiki.lightstreams.network/04.cli-docs/storage/</loc>
+    <loc>https://docs.lightstreams.network/04.cli-docs/storage/</loc>
   </url>
   
   <url>
-    <loc>https://wiki.lightstreams.network/04.cli-docs/storage/add/</loc>
+    <loc>https://docs.lightstreams.network/04.cli-docs/storage/add/</loc>
   </url>
   
   <url>
-    <loc>https://wiki.lightstreams.network/04.cli-docs/storage/authorized/</loc>
+    <loc>https://docs.lightstreams.network/04.cli-docs/storage/authorized/</loc>
   </url>
   
   <url>
-    <loc>https://wiki.lightstreams.network/04.cli-docs/storage/fetch/</loc>
+    <loc>https://docs.lightstreams.network/04.cli-docs/storage/fetch/</loc>
   </url>
   
   <url>
-    <loc>https://wiki.lightstreams.network/04.cli-docs/storage/meta/</loc>
+    <loc>https://docs.lightstreams.network/04.cli-docs/storage/meta/</loc>
   </url>
   
   <url>
-    <loc>https://wiki.lightstreams.network/04.cli-docs/storage/read/</loc>
+    <loc>https://docs.lightstreams.network/04.cli-docs/storage/read/</loc>
   </url>
   
   <url>
-    <loc>https://wiki.lightstreams.network/04.cli-docs/storage/upload/</loc>
+    <loc>https://docs.lightstreams.network/04.cli-docs/storage/upload/</loc>
   </url>
   
   <url>
-    <loc>https://wiki.lightstreams.network/04.cli-docs/user/</loc>
+    <loc>https://docs.lightstreams.network/04.cli-docs/user/</loc>
   </url>
   
   <url>
-    <loc>https://wiki.lightstreams.network/04.cli-docs/user/signin/</loc>
+    <loc>https://docs.lightstreams.network/04.cli-docs/user/signin/</loc>
   </url>
   
   <url>
-    <loc>https://wiki.lightstreams.network/04.cli-docs/user/signup/</loc>
+    <loc>https://docs.lightstreams.network/04.cli-docs/user/signup/</loc>
   </url>
   
   <url>
-    <loc>https://wiki.lightstreams.network/04.cli-docs/version/</loc>
+    <loc>https://docs.lightstreams.network/04.cli-docs/version/</loc>
   </url>
   
   <url>
-    <loc>https://wiki.lightstreams.network/04.cli-docs/wallet/</loc>
+    <loc>https://docs.lightstreams.network/04.cli-docs/wallet/</loc>
   </url>
   
   <url>
-    <loc>https://wiki.lightstreams.network/04.cli-docs/wallet/balance/</loc>
+    <loc>https://docs.lightstreams.network/04.cli-docs/wallet/balance/</loc>
   </url>
   
   <url>
-    <loc>https://wiki.lightstreams.network/04.cli-docs/wallet/transfer/</loc>
+    <loc>https://docs.lightstreams.network/04.cli-docs/wallet/transfer/</loc>
   </url>
   
 </urlset>

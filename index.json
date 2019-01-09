@@ -1,223 +1,223 @@
 [
 {
-	"uri": "https://wiki.lightstreams.network/01.getting-started/",
+	"uri": "https://docs.lightstreams.network/01.getting-started/",
 	"title": "Getting Started",
 	"tags": [],
 	"description": "",
 	"content": "    Version Release Date     0.7.1-alpha Meta \u0026amp;\u0026amp; PoA Test Ntw 18.12.2018    Lightstreams technical stack:\n Lightstreams Node Leth (Controller, SDK) Ethereum Node Geth (Rinkeby Test Network) IPFS Node IPFS (Secure Storage with custom PermissionedBlocks)  Lightstreams Node (Leth) is an executable binary compiled from our Lightstreams SDK, the souce code that will be publicly available in the near future.\nLeth is used for initializing, running, controlling and interacting with the Lightstreams Node (Blockchain + Secured InterPlanetary File System).\nGeth is currently used as a Rinkeby PoA test network instead of our Lightstreams PoA Test Network due to smoother, go to market strategy with release of an ERC20 PHT token.\nIPFS is a heavily customized decentralised file system enhanced with our award winning PermissionedBlocks technology.\nInstall from prebuilt package macOS wget \u0026quot;https://s3.amazonaws.com/lightstreams/leth-osx\u0026quot; -O /usr/local/bin/leth wget \u0026quot;https://s3.amazonaws.com/lightstreams/ipfs-osx\u0026quot; -O /usr/local/bin/ipfs wget \u0026quot;https://s3.amazonaws.com/lightstreams/geth-osx\u0026quot; -O /usr/local/bin/geth  Linux wget \u0026quot;https://s3.amazonaws.com/lightstreams/leth-linux-amd64\u0026quot; -O /usr/local/bin/leth wget \u0026quot;https://s3.amazonaws.com/lightstreams/ipfs-linux-amd64\u0026quot; -O /usr/local/bin/ipfs wget \u0026quot;https://s3.amazonaws.com/lightstreams/geth-linux-amd64\u0026quot; -O /usr/local/bin/geth  Windows Not yet available.\nEnsure the executables have all the necessary permissions chmod u+x /usr/local/bin/leth chmod u+x /usr/local/bin/ipfs chmod u+x /usr/local/bin/geth Validate installed binaries \u0026gt; leth version Version: 0.1.0-alpha \u0026gt; ipfs version ipfs version 0.4.9-rc2 \u0026gt; geth version Geth Version: 1.8.20-stable Git Commit: 24d727b6d6e2c0cde222fa12155c4a6db5caaf2e Architecture: amd64 Protocol Versions: [63 62] Network Id: 1 Go Version: go1.10.4 Operating System: linux GOPATH=/home/a/go GOROOT=/usr/lib/go-1.10  Perfect, binaries are executable!\nInteracting with Leth node over CLI Run leth help command to display all commands you have in disposition in the current version.\nLightstreams CLI for interacting with a configured node. Usage: leth [flags] leth [command] Available Commands: acl Features LethACL's pkg capabilities over CLI such as granting ACL permissions. auth Features LethAuth's pkg capabilities over CLI such as token generation, verification... docs Generates LETH cmd usage docs based on code into the: 'docs/cmd/auto_generated'. help Help about any command init Initializes new LS local node for a chosen network. run Runs full Leth node by spawning blockchain and IPFS daemons. storage Features LethStorage's pkg capabilities over CLI such as file upload/download, access authorization... version Describes version. ... ... Flags: -h, --help help for leth Use \u0026quot;leth [command] --help\u0026quot; for more information about a command.  Display current version:\nleth version Version: 0.6.0-alpha ACL Admin Display instructions for initializing new Lightstreams Node:\nleth init --help Initializes new LS local node for a chosen network. Usage: leth init [flags] Flags: -h, --help help for init --network string Possible values: \u0026#39;rinkeby\u0026#39;. --nodeid int ID of the node in order to support multiple nodes on the same machine. 0 by default. Running Leth node First, initialize new Leth node with ID 1 for Rinkeby network:\nleth init --nodeid=1 --network=rinkeby {\u0026#34;msg\u0026#34;:\u0026#34;Initializing Leth node...\u0026#34;,\u0026#34;nodeID\u0026#34;:1,\u0026#34;network\u0026#34;:\u0026#34;rinkeby\u0026#34;} {\u0026#34;msg\u0026#34;:\u0026#34;IPFS: initializing IPFS node at $HOME/.lightstreams_1/ipfs\u0026#34;} {\u0026#34;msg\u0026#34;:\u0026#34;IPFS: generating 2048-bit RSA keypair...done\u0026#34;} {\u0026#34;msg\u0026#34;:\u0026#34;IPFS: peer identity: Qma1bKbQVYqHMhWzaRHAkKU5s5FsDnhR5bMzWLbjwxUaN6\u0026#34;} {\u0026#34;msg\u0026#34;:\u0026#34;IPFS successfully initialized.\u0026#34;,\u0026#34;dataDir\u0026#34;:\u0026#34;$HOME/.lightstreams_1/ipfs\u0026#34;} {\u0026#34;msg\u0026#34;:\u0026#34;Rinkeby node successfully initialized.\u0026#34;,\u0026#34;dataDir\u0026#34;:\u0026#34;$HOME/.lightstreams_1/rinkeby\u0026#34;} {\u0026#34;msg\u0026#34;:\u0026#34;Leth node fully initialized!!!\u0026#34;,\u0026#34;nodeDir\u0026#34;:\u0026#34;$HOME/.lightstreams_1\u0026#34;} Second, run Leth node:\nleth run --nodeid=1 --network=rinkeby {\u0026#34;msg\u0026#34;:\u0026#34;Starting Leth node online services (blockchain, IPFS)...\u0026#34;} {\u0026#34;msg\u0026#34;:\u0026#34;GETH: INFO [09-13|11:30:40.138] Maximum peer count ETH=25 LES=0 total=25\u0026#34;} {\u0026#34;msg\u0026#34;:\u0026#34;GETH: INFO [09-13|11:30:40.148] Starting peer-to-peer node instance=Geth/v1.8.15-stable-89451f1c/darwin-amd64/go1.10.4\u0026#34;} ...... {\u0026#34;msg\u0026#34;:\u0026#34;GETH: INFO [09-13|11:31:26.189] Imported new block receipts count=906 elapsed=9.521ms number=960 hash=413833…8d126d size=4.13kB ignored=0\u0026#34;} {\u0026#34;msg\u0026#34;:\u0026#34;GETH: INFO [09-13|11:31:26.390] Imported new block headers count=384 elapsed=149.265ms number=1344 hash=4524ae…5d3fff ignored=0\u0026#34;} {\u0026#34;msg\u0026#34;:\u0026#34;GETH: INFO [09-13|11:31:26.406] Imported new block receipts count=384 elapsed=2.144ms number=1344 hash=4524ae…5d3fff size=1.54kB ignored=0\u0026#34;} Leave it running for few hours until you see your node is fully synced with Rinkeby Test Network:\nGETH: INFO [09-13|10:31:14.044] Imported new chain segment blocks=1 txs=12 mgas=1.134 elapsed=83.860ms mgasps=20.680 number=2980046 hash=1b5fff…3bff4e cache=31.55mB\u0026#34; Expose Leth HTTP API To initialize leth over HTTPs protocol you need to follow the next steps. At first you need to use valid SSL certificates which can be generated, for instance, by running the following bash command:\nmkdir -p /etc/ssl/leth cd /etc/ssl/leth openssl req -x509 -out localhost.crt -keyout localhost.key \\  -newkey rsa:2048 -nodes -sha256 \\  -subj \u0026#39;/CN=localhost\u0026#39; -extensions EXT -config \u0026lt;( \\  printf \u0026#34;[dn]\\nCN=localhost\\n[req]\\ndistinguished_name = dn\\n[EXT]\\nsubjectAltName=DNS:localhost\\nkeyUsage=digitalSignature\\nextendedKeyUsage=serverAuth\u0026#34;) chmod a+r localhost.crt localhost.key Once you have valid ssl certificates are allocated in your local machine, you have to edit leth node configuration file, at $HOME/.lightstreams_1/config.json, and include the path for your ssl certificates and the port where the HTTPs server is going to be exposed.\n{ \u0026#34;https_server\u0026#34;: { \u0026#34;port\u0026#34;: 8080, \u0026#34;certificate_pem_filepath\u0026#34;: \u0026#34;/etc/ssl/leth/localhost.crt\u0026#34;, \u0026#34;certificate_pem_priv_key_filepath\u0026#34;: \u0026#34;/etc/ssl/leth/localhost.key\u0026#34; }, ....  At last, you need to run your leth server again, but this time using the --https flag as follow:\nleth run --nodeid=1 --network=rinkeby --https Within the first debug output shown in your terminal you will see the next one:\n... {\u0026quot;level\u0026quot;:\u0026quot;debug\u0026quot;,\u0026quot;ts\u0026quot;:1544091804.1871579,\u0026quot;caller\u0026quot;:\u0026quot;http/server.go:28\u0026quot;,\u0026quot;msg\u0026quot;:\u0026quot;Starting Leth HTTP server listening on port: 8080.\u0026quot;} ...  Visit the following link to learn how to use leth http api.\nGet FREE Testing Tokens Obtaining Ether Connect to the Leth node via IPC:\ngeth --datadir=$HOME/.lightstreams_1/rinkeby attach ipc:$HOME/.lightstreams_1/rinkeby/geth.ipc Create a new Leth node account using the attached Geth JavaScript console and check the its balance:\ngeth --datadir=$HOME/.lightstreams_1/rinkeby attach ipc:$HOME/.lightstreams_1/rinkeby/geth.ipc Welcome to the Geth JavaScript console! Instance: Geth/v1.8.15 \u0026gt; personal.newAccount() \u0026gt;\u0026gt; ...type your password... \u0026#34;0xa92e3705e6d70cb45782bf055e41813060e4ce07\u0026#34; \u0026gt; eth.accounts [\u0026#34;0xa92e3705e6d70cb45782bf055e41813060e4ce07\u0026#34;] \u0026gt; eth.coinbase \u0026#34;0xa92e3705e6d70cb45782bf055e41813060e4ce07\u0026#34; \u0026gt; eth.getBalance(eth.coinbase) 0 \u0026gt;  Request FREE ETH from Rinkeby Faucet:\n Publish your Ethereum address (0xa92e3705e6d70cb45782bf055e41813060e4ce07) anywhere in a public social network E.g, post your address to my Google Plus group Open https://www.rinkeby.io/#faucet and paste the post url Wait few seconds, if the blockchain is fully synced, check the balance once again eth.getBalance(eth.coinbase) -\u0026gt; 3000000000000000000  Obtaining Photons Todo: Add documentation how to obtain PHTs token in the next release of Lightstreams Faucet!\nPrivate File Sharing for dApps, content producers Once your Leth node is fully synced and you own some ETH, you can access our most important feature!\nPrivate file sharing.\nFiles are protected with ACL and access is authenticated and authorized before any content seeding starts! Not just encrypted publicly in IPFS, what majority of projects do. Privacy vs Confidentiality in action.\nLeth storage file Each file uploaded using Leth SDK generates 2 IPFS files.\n A public Meta JSON file, accessible by everyone describing the protected file  { \u0026#34;ext\u0026#34;: \u0026#34;txt\u0026#34;, \u0026#34;owner\u0026#34;: \u0026#34;0xa92e3705e6d70cb45782bf055e41813060e4ce07\u0026#34;, \u0026#34;hash\u0026#34;: \u0026#34;QmZYSewpHNvdW1TTgska792QAT7Yd6yxZAoybpYFskTZSf\u0026#34;, // of the protected file \u0026#34;acl\u0026#34;: \u0026#34;0x5D780255679c55846c1fE1E738e7604425171B50\u0026#34; // smart contract access rules }  The protected file itself.  Adding a private file Given a file: \u0026ldquo;secret_file.txt\u0026rdquo; with content \u0026ldquo;hello secret world\u0026rdquo;.\nTo share a private file using leth execute the following command:\nleth storage add --nodeid=1 --network=rinkeby --file=$HOME/Documents/secret_file.txt --owner=0xa92e3705e6d70cb45782bf055e41813060e4ce07 Output:\nEnter keystore\u0026#39;s password to unlock account: ...some logs, we keep logging on DEBUG level in Alpha version for debugging early bugs {\u0026#34;meta\u0026#34;:\u0026#34;QmZYSewpHNvdW1TTgska792QAT7Yd6yxZAoybpYFskTZSf\u0026#34;,\u0026#34;acl\u0026#34;:\u0026#34;0xc2DBC8CdAba2df432C821639B80302f0675D6f74\u0026#34;} Note:\n --nodeid=1; --network=rinkeby we are executing the command from Leth node 1 and deploying the ACL to file on Rinkeby network --file= flag is an absolute path to the file you want to share --owner= flag is file owner address who will pay for the file ACL. The account address was generated when you signed-up \u0026quot;meta\u0026quot;:\u0026quot;QmNkbFAo5jSKm7KLCdCr8c8ue2X53ShATD5yjyQq3ynoaf\u0026quot; this is the address of a public Meta file linking to your private file in a secure IPFS storage \u0026quot;acl\u0026quot; this is the file\u0026rsquo;s ACL. A smart contract addr controlling all the access rules. You can use it leth acl grant cmd to grant permissions to other accounts  PS: You can always run any command with --help flag to get explanation of all required/optional flags\nleth acl grant --help Reading the private file Now you can tell your friend running different Leth node to download your private file! If you would like to test it yourself, setup another Leth node on the same machine in another terminal, Leth node 2 and create also another account!\nleth init --nodeid=2 --network=rinkeby leth run --nodeid=2 --network=rinkeby ...wait a few hours for a full sync... Once your Leth node is full synced, attempt to read the private file from your new Leth node 2:\nleth storage fetch --nodeid=2 --network=rinkeby --meta=QmZYSewpHNvdW1TTgska792QAT7Yd6yxZAoybpYFskTZSf --account=0xnode2ethAddr0cb45782bf055e41813060e4ce89 Output:\n{\u0026#34;error\u0026#34;: {\u0026#34;code\u0026#34;: \u0026#34;err_cli\u0026#34;, \u0026#34;message\u0026#34;: \u0026#34;unable to download file to IPFS storage. Error: ipfs cat cmd timed out\u0026#34;} This error is expected because the file owner never actually granted permission to Leth node 2 account, 0xnode2ethAddr0cb45782bf055e41813060e4ce89.\nLet\u0026rsquo;s grant a read permission.\nGranting read access to the private file Execute :\nleth acl grant --nodeid=1 --network=rinkeby --permission=read --acl=0x2F15B633b4bC41BdFBBD8AAf2Be7Dae958D27C7E --owner=0xa92e3705e6d70cb45782bf055e41813060e4ce07 --account=0xnode2ethAddr0cb45782bf055e41813060e4ce89 Output:\n{\u0026#34;msg\u0026#34;:\u0026#34;Granting \u0026#39;read\u0026#39; permission to account \u0026#39;0xnode2ethAddr0cb45782bf055e41813060e4ce89\u0026#39;...\u0026#34;} {\u0026#34;msg\u0026#34;:\u0026#34;Account \u0026#39;0xnode2ethAddr0cb45782bf055e41813060e4ce89\u0026#39; was granted \u0026#39;read\u0026#39; permission.\u0026#34;} {\u0026#34;is_granted\u0026#34;:\u0026#34;true\u0026#34;} Let\u0026rsquo;s try to read the secret_file.txt file now:\nleth storage fetch --nodeid=2 --network=rinkeby --meta=QmZYSewpHNvdW1TTgska792QAT7Yd6yxZAoybpYFskTZSf --account=0xnode2ethAddr0cb45782bf055e41813060e4ce89 Leth SDK will resolve the linked protected file out of the JSON Meta file and save it to a tmp directory using the hash of the protected file itself and the extension of the uploaded file resolved from the JSON Meta file.\nOutput:\n{\u0026#34;output\u0026#34;:\u0026#34;/tmp/QmProtIpfsHashdGXrvCgmQHo8Yqo8eLQTvC1sEJh6suBi.txt\u0026#34;} Congratulation, you just shared a private file over internet in a decentralised manner.\nGranting admin access to the private file Going step further. You can also grant admin rights to other accounts, devices so they can further have the privileges of granting read/admin access to other users.\nExample, let\u0026rsquo;s grant an admin right to the Leth Node 2 account. With such a privilege, Leth Node 2 account will be able to further grant access to other devices in the network/users.\nleth acl grant --nodeid=1 --network=rinkeby --permission=admin --acl=0x2F15B633b4bC41BdFBBD8AAf2Be7Dae958D27C7E --owner=0xa92e3705e6d70cb45782bf055e41813060e4ce07 --to=0xnode2ethAddr0cb45782bf055e41813060e4ce89 Reading the public Meta file In case you want to get information about the privately stored file, you can do so using the leth storage meta command.\nleth storage meta --nodeid=1 --network=rinkeby --meta=QmZYSewpHNvdW1TTgska792QAT7Yd6yxZAoybpYFskTZSf Output:\n{\u0026quot;filename\u0026quot;:\u0026quot;secret_file.txt\u0026quot;,\u0026quot;ext\u0026quot;:\u0026quot;txt\u0026quot;,\u0026quot;owner\u0026quot;:\u0026quot;0xadC486F16F003897fb927e22438cb1b820f79879\u0026quot;,\u0026quot;hash\u0026quot;:\u0026quot;QmRnXxBJg3NjXzuTi91iNYcMff4oz4NwjN7fgtBXp2UbG9\u0026quot;,\u0026quot;acl\u0026quot;:\u0026quot;0x3cb99420c7F16f00ef41B5ace9e0C815F3736879\u0026quot;}  Note:\n filename is the original filename when file was uploaded ext is the original file extension owner who uploaded the file hash the hash of the protected file stored in IPFS (not the public Meta file hash) acl address of the contract handling file permissions  SDK Help If in doubt, you can always run any command with a --help flag to show and explain to you all the possible flags and cmd usages.\nleth acl --help Need human help? We are happy to get you started! Join our telegram channel or ask as many questions as you want in the lightstreams forum!\n"
 },
 {
-	"uri": "https://wiki.lightstreams.network/",
+	"uri": "https://docs.lightstreams.network/",
 	"title": "Lightstreams documentation",
 	"tags": [],
 	"description": "",
 	"content": " Welcome Hi there! Welcome to the Lightstreams documentation! We\u0026rsquo;re happy to have you here.\n Getting started  "
 },
 {
-	"uri": "https://wiki.lightstreams.network/01.getting-started/01.quick-start/",
+	"uri": "https://docs.lightstreams.network/01.getting-started/01.quick-start/",
 	"title": "Quick Start",
 	"tags": [],
 	"description": "",
 	"content": " Introduction A Lightstreams node consists of the following pieces:\n leth is a command line interface used to run, interact, and control the Lightstreams node ipfs is a decentralised file system enhanced with our award winning “Permissioned Blocks” technology geth is the the command line interface for running a full ethereum node implemented in Go  In the next section, we will proceed to install everything required to run a complete Lightstreams node.\nQuick start  Install Check installation Run a Lightstreams node Create an account  "
 },
 {
-	"uri": "https://wiki.lightstreams.network/02.guides/",
+	"uri": "https://docs.lightstreams.network/02.guides/",
 	"title": "Guides",
 	"tags": [],
 	"description": "",
 	"content": " Introduction Guides will be available soon. In the meantime, you can start here\n"
 },
 {
-	"uri": "https://wiki.lightstreams.network/01.getting-started/02.install/",
+	"uri": "https://docs.lightstreams.network/01.getting-started/02.install/",
 	"title": "Install",
 	"tags": [],
 	"description": "",
 	"content": " Install We have compiled binaries for macOS and Linux available (Windows not yet available).\nInstall from prebuilt package macOS wget \u0026quot;https://s3.amazonaws.com/lightstreams/leth-osx\u0026quot; -O /usr/local/bin/leth wget \u0026quot;https://s3.amazonaws.com/lightstreams/ipfs-osx\u0026quot; -O /usr/local/bin/ipfs wget \u0026quot;https://s3.amazonaws.com/lightstreams/geth-osx\u0026quot; -O /usr/local/bin/geth  Linux wget \u0026quot;https://s3.amazonaws.com/lightstreams/leth-linux-amd64\u0026quot; -O /usr/local/bin/leth wget \u0026quot;https://s3.amazonaws.com/lightstreams/ipfs-linux-amd64\u0026quot; -O /usr/local/bin/ipfs wget \u0026quot;https://s3.amazonaws.com/lightstreams/geth-linux-amd64\u0026quot; -O /usr/local/bin/geth  Windows Not yet available.\nSet permissions chmod u+x /usr/local/bin/leth chmod u+x /usr/local/bin/ipfs chmod u+x /usr/local/bin/geth  Install with Docker docker run -it -p 9091:9091 --name ls-node1 -d lightstreams/node  Check installation \u0026gt; leth version Version: 0.1.0-alpha \u0026gt; ipfs version ipfs version 0.4.9-rc2 \u0026gt; geth version Geth Version: 1.8.20-stable Git Commit: 24d727b6d6e2c0cde222fa12155c4a6db5caaf2e Architecture: amd64 Protocol Versions: [63 62] Network Id: 1 Go Version: go1.10.4 Operating System: linux GOPATH=/home/a/go GOROOT=/usr/lib/go-1.10  Run a Lightstreams node Initialize the node; you need to specify a \u0026ndash;nodeid and a \u0026ndash;network to connect to (rinkeby)\nleth init --nodeid=1 --network=rinkeby  Run the node; you need to specify a \u0026ndash;nodeid and a \u0026ndash;network to connect to (rinkeby)\nleth run --nodeid=1 --network=rinkeby  Create an account leth user signup --nodeid=1 --network=sirius  "
 },
 {
-	"uri": "https://wiki.lightstreams.network/03.examples/",
+	"uri": "https://docs.lightstreams.network/03.examples/",
 	"title": "Examples",
 	"tags": [],
 	"description": "",
 	"content": " Examples  LightDrive, a decentralized file synchronization tool LightNote, a decentralized note taking application LightBookmark, a decentralized bookmarking and archiving tool  "
 },
 {
-	"uri": "https://wiki.lightstreams.network/04.cli-docs/",
+	"uri": "https://docs.lightstreams.network/04.cli-docs/",
 	"title": "Command line documentation",
 	"tags": [],
 	"description": "",
 	"content": " leth Lightstreams CLI for interacting with a configured node.\nSynopsis Lightstreams CLI for interacting with a configured node.\nleth [flags]  Options  -h, --help help for leth  SEE ALSO  leth acl - Features LethACL\u0026rsquo;s pkg capabilities over CLI such as granting ACL permissions. leth auth - Features LethAuth\u0026rsquo;s pkg capabilities over CLI such as token generation, verification\u0026hellip; leth docs - Generates LETH cmd usage docs based on code into the: \u0026lsquo;docs/cmd/auto_generated\u0026rsquo;. leth init - Initializes new LS local node for a chosen network. leth run - Runs full Leth node by spawning blockchain and IPFS daemons. leth storage - Features LethStorage\u0026rsquo;s pkg capabilities over CLI such as file upload/download, access authorization\u0026hellip; leth user - Features LethUser\u0026rsquo;s pkg capabilities over CLI such as creating a user, converting him to a token\u0026hellip; leth version - Describes version. leth wallet - Features LethWallet\u0026rsquo;s pkg capabilities over CLI such as retrieving current balance and transferring funds.  Auto generated by spf13/cobra on 17-Dec-2018 "
 },
 {
-	"uri": "https://wiki.lightstreams.network/05.http-api/",
+	"uri": "https://docs.lightstreams.network/05.http-api/",
 	"title": "API",
 	"tags": [],
 	"description": "",
 	"content": " Table of content  HTTP API Reference  Error Types HTTP status code summary 200 - OK Everything worked as expected. 400 - Bad Request Sent parameters were invalid. 403 - Unauthorized Not authorized request or invalid API token. 500 - Server Error Something went wrong on server side.  "
 },
 {
-	"uri": "https://wiki.lightstreams.network/06.faqs/",
+	"uri": "https://docs.lightstreams.network/06.faqs/",
 	"title": "FAQs",
 	"tags": [],
 	"description": "",
 	"content": " What is Lightstreams? Lightstreams brings the capability of storing assets (files) in conjunction with Blockchain technology in a efficient, low-priced and decentralized manner. The key innovation is an advanced permissioning system that lets content producers store and monetise their intellectual property (text, images, music, movies).\nA new generation of internet applications (known as Decentralised Applications or DApps) can also be developed using this technology. Lightstreams lets DApp developers store and manage access to files needed for their DApps that cannot be privately or cheaply be stored with other blockchains.\nLightstreams is a public blockchain. This means that is 100% open for anyone to connect without restrictions. However, unlike most public blockchains, files on Lightstreams are stored securely and privately and only distributed with permission on a peer-to-peer basis. Each content producer or DApp developer is able to share protected content quickly with granular control and access tracking. This ensures transparency and auditability of when, how, and by whom data was approved and transmitted between users. DApp developers developing smart contracts on blockchain (including but not limited to Ethereum’s public blockchain) can seamlessly reference files stored on the Lightstreams network.\nWhy build on Lightstreams?  Real-world identities Use people’s verified identity to build real-world applications. Distributed Secure Storage Network Distributed secure storage is made available to applications to permit access to content in a decentralised environment. Fast. Scalable Get all the benefits from a decentralized infrastructure for distributing content without blockchain scaling issues. Trustless Build decentralized marketplaces with peer-to-peer exchanges.  Why use DApps built on Lightstreams?  Self-sovereign identity Users control their identity. They decide who can see and use it. Users control \u0026amp; manage their own data. Applications always need to request permissions to use it. No single point of failure for data breaches that can occur in traditional highly centralised internet services. Monetise content Higher royalty earnings by digital content and intellectual property direct sales. Users earn income for curating discoverable content. Users can hold in tokens associated with content to benefit from appreciation in value. Decentralised network Participation in a network that is not controlled by any one entity. Self-governance for an open, fair and stable network Each user\u0026rsquo;s vote determines the direction of the network.  Who needs Lighststreams?  DApps that require high security for managing access to information. Data is protected through ensuring only the correct people (or businesses) can see the information (eg only your doctors or lawyer). Distributed sharing of data with authorised people eliminates any centralised point of weakness that can be breached.\n Consumers who want to control their data privacy by allowing them to be (monetarily) rewarded for sharing select information only to the companies they trust (and no one else)\n Those selling digital content (eg music/audio) with rights of ownership (and royalties for artists) automatically included.\n Business that require confidential legal documents to be digitally signed directly between parties without requiring an intermediary to facilitate execution.\n  How does it work? Lightstreams uses its own Ethereum-compatible blockchain for the transparent and auditable management of file-access permissions, and a separate enhanced IPFS protocol for encrypted file storage and peer-to-peer file distribution. The Lightstreams blockchain is based on Ethereum but modified for shorter block times and also replaces the wasteful proof-of-work protocol with proof-of-authority.\nWhat does this enable? Lightstreams allows content producers to monetise their intellectual property. Content producers will be able to share files, images, music and movies and monetise them directly without needing a third party to host the content or broker the details - the smart contracts on the Lightstreams blockchain manage the payments and permissioning.\nDApps that use Lightstreams will allow users to access content such as audio, video or images in a fast and responsive manner - currently not possible on Ethereum’s public blockchain. We imagine two scenarios, one being DApps built on Ethereum referencing files on Lightstreams, and the other being DApps built directly on Lightstreams. As Lightstreams’ blockchain is compatible with Ethereum, moving a DApp from Ethereum to Lightstreams is simple.\nWhat is an InterPlanetary File System (IPFS)? The InterPlanetary File System (IPFS) protocol can be described as a standard to create a content-addressable peer-to-peer method of storing and retrieving data in a distributed file system. The content-addressing system guarantees that the data retrieved always matches the address used for finding the data. It is decentralised, meaning there is no dependency on any one computer or entity for hosting the data. Data is be replicated to multiple computers as it is shared, this add many layers of redundancy. In other words, every computer hosting a specific piece of data would need to be compromised to lose the data.\nThe hypermedia protocol also scales on demand - the more demand there is for a file, the more copies are made and so the faster the data transfer of that file becomes by virtue of the increased number of computers sharing files/content/data at the same time.\nWhat is Ethereum? Ethereum is a public, open-source blockchain-based computing platform. Its main feature is that of a Ethereum Virtual Machine (EVM) for running modules of application code called smart contracts. A user may think of Ethereum as an operating system for running apps (like a smartphone that can run multiple apps). Ethereum is decentralised. The system or network is not run by one specific entity that owns the infrastructure.\nSmart Contracts are used to enact business logic, essential for DApps on the Ethereum network. A smart contract is suitable for small data, they are not suitable for the storage and retrieval of media files.\n"
 },
 {
-	"uri": "https://wiki.lightstreams.network/categories/",
+	"uri": "https://docs.lightstreams.network/categories/",
 	"title": "Categories",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "https://wiki.lightstreams.network/tags/",
+	"uri": "https://docs.lightstreams.network/tags/",
 	"title": "Tags",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "https://wiki.lightstreams.network/04.cli-docs/acl/",
+	"uri": "https://docs.lightstreams.network/04.cli-docs/acl/",
 	"title": "leth acl",
 	"tags": [],
 	"description": "",
 	"content": " leth acl Features LethACL\u0026rsquo;s pkg capabilities over CLI such as granting ACL permissions.\nSynopsis Features LethACL\u0026rsquo;s pkg capabilities over CLI such as granting ACL permissions.\nleth acl [flags]  Options  -h, --help help for acl  SEE ALSO  leth - Lightstreams CLI for interacting with a configured node. leth acl grant - Grant an ACL permission to another account.  Auto generated by spf13/cobra on 17-Dec-2018 "
 },
 {
-	"uri": "https://wiki.lightstreams.network/04.cli-docs/acl/grant/",
+	"uri": "https://docs.lightstreams.network/04.cli-docs/acl/grant/",
 	"title": "leth acl grant",
 	"tags": [],
 	"description": "",
 	"content": " leth acl grant Grant an ACL permission to another account.\nSynopsis Usage:\nleth acl grant --nodeid=1 --network=rinkeby --permission=read --acl=0xd966aa573f8AcBfEb3724B661B420c258ceA5D38 --owner=0xadC486F16F003897fb927e22438cb1b820f79879 --to=0xadc486f16f003897fb927e22438cb1b820f79879  Possible Outputs:\n{\u0026quot;is_granted\u0026quot;:\u0026quot;true\u0026quot;} {\u0026quot;error\u0026quot;: {\u0026quot;code\u0026quot;: \u0026quot;internal error code\u0026quot;, \u0026quot;message\u0026quot;: \u0026quot;explanatory error message\u0026quot;}}  leth acl grant [flags]  Options  --acl string ACL ID (Deployed Smart Contract Hex Addr) associated with the stored file. -h, --help help for grant --network string Possible values: 'rinkeby, ganache, sirius'. --nodeid int ID of the node in order to support multiple nodes on the same machine. 0 by default. --owner string The account with rights to grant the ACL permission. --permission string Permission to grant. Possible values: [noaccess,read,write,admin] --to string Account address to whom the permission should be granted.  SEE ALSO  leth acl - Features LethACL\u0026rsquo;s pkg capabilities over CLI such as granting ACL permissions.  Auto generated by spf13/cobra on 17-Dec-2018 "
 },
 {
-	"uri": "https://wiki.lightstreams.network/04.cli-docs/auth/",
+	"uri": "https://docs.lightstreams.network/04.cli-docs/auth/",
 	"title": "leth auth",
 	"tags": [],
 	"description": "",
 	"content": " leth auth Features LethAuth\u0026rsquo;s pkg capabilities over CLI such as token generation, verification\u0026hellip;\nSynopsis Usage:\nleth auth --nodeid=1 --network=rinkeby --token=eyJibG9ja2NoYWluIjoiRVRIIiwiZXRoX2FkZHJlc3MiOiIweEM5NjZhYTU3MzA4QWNCZkViMzcyNkI2NjFCQzIwYzI1OGNlQTVEMzgiLCJpYXQiOjI3NzExNDUsImVhdCI6Mjc3MTIwNX0.2Z2Qm8MSVaTTVZRbtIjuKjjQXYFuprmmo5Okat85RiIkEwIFQObaimFkCieonHG6dyFqKx6h-hFdGeV8DbtEbAE  Possible Outputs:\n{\u0026quot;is_authenticated\u0026quot;:\u0026quot;true\u0026quot;,\u0026quot;user\u0026quot;:\u0026quot;0xC966aa57308AcBfEb3726B661BC20c258ceA5D38\u0026quot;} {\u0026quot;error\u0026quot;: {\u0026quot;code\u0026quot;: \u0026quot;internal error code\u0026quot;, \u0026quot;message\u0026quot;: \u0026quot;explanatory error message\u0026quot;}}  leth auth [flags]  Options  -h, --help help for auth --network string Possible values: 'rinkeby, ganache, sirius'. --nodeid int ID of the node in order to support multiple nodes on the same machine. 0 by default. --token string Token to authenticate.  SEE ALSO  leth - Lightstreams CLI for interacting with a configured node.  Auto generated by spf13/cobra on 17-Dec-2018 "
 },
 {
-	"uri": "https://wiki.lightstreams.network/04.cli-docs/docs/",
+	"uri": "https://docs.lightstreams.network/04.cli-docs/docs/",
 	"title": "leth docs",
 	"tags": [],
 	"description": "",
 	"content": " leth docs Generates LETH cmd usage docs based on code into the: \u0026lsquo;docs/cmd/auto_generated\u0026rsquo;.\nSynopsis Generates LETH cmd usage docs based on code into the: \u0026lsquo;docs/cmd/auto_generated\u0026rsquo;.\nleth docs [flags]  Options  -h, --help help for docs  SEE ALSO  leth - Lightstreams CLI for interacting with a configured node.  Auto generated by spf13/cobra on 17-Dec-2018 "
 },
 {
-	"uri": "https://wiki.lightstreams.network/04.cli-docs/fee/",
+	"uri": "https://docs.lightstreams.network/04.cli-docs/fee/",
 	"title": "leth fee",
 	"tags": [],
 	"description": "",
 	"content": " leth fee Features LethFee\u0026rsquo;s pkg capabilities over CLI such as budget configurations/querying\u0026hellip;\nSynopsis Features LethFee\u0026rsquo;s pkg capabilities over CLI such as budget configurations/querying\u0026hellip;\nleth fee [flags]  Options  -h, --help help for fee  SEE ALSO  leth - Lightstreams CLI for interacting with a configured node. leth fee budget:set - Configures maximum amount of PHTs that can be spend on fees for running the LethNode.  Auto generated by spf13/cobra on 28-Aug-2018 "
 },
 {
-	"uri": "https://wiki.lightstreams.network/04.cli-docs/init/",
+	"uri": "https://docs.lightstreams.network/04.cli-docs/init/",
 	"title": "leth init",
 	"tags": [],
 	"description": "",
 	"content": " leth init Initializes new LS local node for a chosen network.\nSynopsis Initializes new LS local node for a chosen network.\nleth init [flags]  Options  --force Force node data initialization, erase previous folder in case this exists. False by default. -h, --help help for init --network string Possible values: 'rinkeby, ganache, sirius'. --nodeid int ID of the node in order to support multiple nodes on the same machine. 0 by default.  SEE ALSO  leth - Lightstreams CLI for interacting with a configured node.  Auto generated by spf13/cobra on 17-Dec-2018 "
 },
 {
-	"uri": "https://wiki.lightstreams.network/04.cli-docs/run/",
+	"uri": "https://docs.lightstreams.network/04.cli-docs/run/",
 	"title": "leth run",
 	"tags": [],
 	"description": "",
 	"content": " leth run Runs full Leth node by spawning blockchain and IPFS daemons.\nSynopsis Runs full Leth node by spawning blockchain and IPFS daemons.\nleth run [flags]  Options  -h, --help help for run --https Serves an HTTPs server on your localhost. False by default. --network string Possible values: 'rinkeby, ganache, sirius'. --nodeid int ID of the node in order to support multiple nodes on the same machine. 0 by default.  SEE ALSO  leth - Lightstreams CLI for interacting with a configured node.  Auto generated by spf13/cobra on 17-Dec-2018 "
 },
 {
-	"uri": "https://wiki.lightstreams.network/04.cli-docs/storage/",
+	"uri": "https://docs.lightstreams.network/04.cli-docs/storage/",
 	"title": "leth storage",
 	"tags": [],
 	"description": "",
 	"content": " leth storage Features LethStorage\u0026rsquo;s pkg capabilities over CLI such as file upload/download, access authorization\u0026hellip;\nSynopsis Features LethStorage\u0026rsquo;s pkg capabilities over CLI such as file upload/download, access authorization\u0026hellip;\nleth storage [flags]  Options  -h, --help help for storage  SEE ALSO  leth - Lightstreams CLI for interacting with a configured node. leth storage add - Adds file to the secured IPFS storage and returns its meta file. leth storage authorized - Authorizes token permission against specified ACL ID (Deployed Smart Contract Hex Addr). leth storage fetch - Downloads file content from secured IPFS storage based on the meta file. leth storage meta - Fetches the public meta information and returns them.  Auto generated by spf13/cobra on 17-Dec-2018 "
 },
 {
-	"uri": "https://wiki.lightstreams.network/04.cli-docs/storage/add/",
+	"uri": "https://docs.lightstreams.network/04.cli-docs/storage/add/",
 	"title": "leth storage add",
 	"tags": [],
 	"description": "",
 	"content": " leth storage add Adds file to the secured IPFS storage and returns its meta file.\nSynopsis Usage:\nleth storage add --nodeid=1 --network=rinkeby --owner=0xadC486F16F003897fb927e22438cb1b820f79879 --file=/Users/enchanterio/Documents/secret_file.txt  Possible Outputs:\n{\u0026quot;meta\u0026quot;:\u0026quot;QmSomeIpfsHashdGXrvCgmQHo8Yqo8eLQTvC1sEJh6suBi\u0026quot;,\u0026quot;acl\u0026quot;:\u0026quot;0x5D780255679c55846c1fE1E738e7604425171B50\u0026quot;} {\u0026quot;error\u0026quot;: {\u0026quot;code\u0026quot;: \u0026quot;internal error code\u0026quot;, \u0026quot;message\u0026quot;: \u0026quot;explanatory error message\u0026quot;}}  leth storage add [flags]  Options  --file string Absolute path to the file you want to upload to secured storage. -h, --help help for add --network string Possible values: 'rinkeby, ganache, sirius'. --nodeid int ID of the node in order to support multiple nodes on the same machine. 0 by default. --owner string File owner address who will pay for the file ACL. The account address was generated when you signed-up.  SEE ALSO  leth storage - Features LethStorage\u0026rsquo;s pkg capabilities over CLI such as file upload/download, access authorization\u0026hellip;  Auto generated by spf13/cobra on 17-Dec-2018 "
 },
 {
-	"uri": "https://wiki.lightstreams.network/04.cli-docs/storage/authorized/",
+	"uri": "https://docs.lightstreams.network/04.cli-docs/storage/authorized/",
 	"title": "leth storage authorized",
 	"tags": [],
 	"description": "",
 	"content": " leth storage authorized Authorizes token permission against specified ACL ID (Deployed Smart Contract Hex Addr).\nSynopsis Usage:\nleth storage authorized --nodeid=1 --network=rinkeby --permission=read --acl=0xd966aa573f8AcBfEb3724B661B420c258ceA5D38 --token=eyJibG9ja2NoYWluIjoiRVRIIiwiZXRoX2FkZHJlc3MiOiIweEM5NjZhYTU3MzA4QWNCZkViMzcyNkI2NjFCQzIwYzI1OGNlQTVEMzgiLCJpYXQiOjI3NzExNDUsImVhdCI6Mjc3MTIwNX0.2Z2Qm8MSVaTTVZRbtIjuKjjQXYFuprmmo5Okat85RiIkEwIFQObaimFkCieonHG6dyFqKx6h-hFdGeV8DbtEbAE  Possible Outputs:\n{\u0026quot;is_authorized\u0026quot;:\u0026quot;true\u0026quot;} {\u0026quot;error\u0026quot;: {\u0026quot;code\u0026quot;: \u0026quot;internal error code\u0026quot;, \u0026quot;message\u0026quot;: \u0026quot;explanatory error message\u0026quot;}}  leth storage authorized [flags]  Options  --acl string ACL ID (Deployed Smart Contract Hex Addr) associated with the stored file. -h, --help help for authorized --network string Possible values: 'rinkeby, ganache, sirius'. --nodeid int ID of the node in order to support multiple nodes on the same machine. 0 by default. --permission string Permission to validate. Possible values: [noaccess,read,write,admin] --token string Token to authenticate.  SEE ALSO  leth storage - Features LethStorage\u0026rsquo;s pkg capabilities over CLI such as file upload/download, access authorization\u0026hellip;  Auto generated by spf13/cobra on 17-Dec-2018 "
 },
 {
-	"uri": "https://wiki.lightstreams.network/04.cli-docs/storage/fetch/",
+	"uri": "https://docs.lightstreams.network/04.cli-docs/storage/fetch/",
 	"title": "leth storage fetch",
 	"tags": [],
 	"description": "",
 	"content": " leth storage fetch Downloads file content from secured IPFS storage based on the meta file.\nSynopsis Usage:\nleth storage fetch --nodeid=1 --network=rinkeby --account=0xadC486F16F003897fb927e22438cb1b820f79879 --meta=QmZnx4FPooZoy2kTFzAKhZAzhuQ3EHG8yx2E57GvN2t1vb  Possible Outputs:\n{\u0026quot;output\u0026quot;:\u0026quot;/tmp/secret_file.txt\u0026quot;} {\u0026quot;error\u0026quot;: {\u0026quot;code\u0026quot;: \u0026quot;internal error code\u0026quot;, \u0026quot;message\u0026quot;: \u0026quot;explanatory error message\u0026quot;}}  leth storage fetch [flags]  Options  --account string The account address who should be authorized against the content's ACL. The account address was generated when you signed-up. -h, --help help for fetch --meta leth storage upload IPFS file hash of content you want to read from secured storage returned by leth storage upload command. --network string Possible values: 'rinkeby, ganache, sirius'. --nodeid int ID of the node in order to support multiple nodes on the same machine. 0 by default.  SEE ALSO  leth storage - Features LethStorage\u0026rsquo;s pkg capabilities over CLI such as file upload/download, access authorization\u0026hellip;  Auto generated by spf13/cobra on 17-Dec-2018 "
 },
 {
-	"uri": "https://wiki.lightstreams.network/04.cli-docs/storage/meta/",
+	"uri": "https://docs.lightstreams.network/04.cli-docs/storage/meta/",
 	"title": "leth storage meta",
 	"tags": [],
 	"description": "",
 	"content": " leth storage meta Fetches the public meta information and returns them.\nSynopsis Usage:\nleth storage meta --nodeid=1 --network=rinkeby --meta=QmZnx4FPooZoy2kTFzAKhZAzhuQ3EHG8yx2E57GvN2t1vb  Possible Outputs:\n{\u0026quot;filename\u0026quot;:\u0026quot;secret_file.txt\u0026quot;,\u0026quot;ext\u0026quot;:\u0026quot;txt\u0026quot;,\u0026quot;owner\u0026quot;:\u0026quot;0xadC486F16F003897fb927e22438cb1b820f79879\u0026quot;,\u0026quot;hash\u0026quot;:\u0026quot;QmRnXxBJg3NjXzuTi91iNYcMff4oz4NwjN7fgtBXp2UbG9\u0026quot;,\u0026quot;acl\u0026quot;:\u0026quot;0x3cb99420c7F16f00ef41B5ace9e0C815F3736879\u0026quot;} {\u0026quot;error\u0026quot;: {\u0026quot;code\u0026quot;: \u0026quot;internal error code\u0026quot;, \u0026quot;message\u0026quot;: \u0026quot;explanatory error message\u0026quot;}}  leth storage meta [flags]  Options  -h, --help help for meta --meta leth storage upload IPFS file hash of content you want to get public meta info about. Meta hash was returned by leth storage upload command. --network string Possible values: 'rinkeby, ganache, sirius'. --nodeid int ID of the node in order to support multiple nodes on the same machine. 0 by default.  SEE ALSO  leth storage - Features LethStorage\u0026rsquo;s pkg capabilities over CLI such as file upload/download, access authorization\u0026hellip;  Auto generated by spf13/cobra on 17-Dec-2018 "
 },
 {
-	"uri": "https://wiki.lightstreams.network/04.cli-docs/storage/read/",
+	"uri": "https://docs.lightstreams.network/04.cli-docs/storage/read/",
 	"title": "leth storage read",
 	"tags": [],
 	"description": "",
 	"content": " leth storage read Reads file content from secured IPFS storage.\nSynopsis Usage:\nleth storage read --nodeid=1 --network=rinkeby --account=0xa92e3705e6d70cb45782bf055e41813060e4ce07 --hash=QmZnx4FPooZoy2kTFzAKhZAzhuQ3EHG8yx2E57GvN2t1vb  Possible Outputs:\n{\u0026quot;content\u0026quot;:\u0026quot;test_9\u0026quot;,\u0026quot;error\u0026quot;:\u0026quot;\u0026quot;} {\u0026quot;content\u0026quot;:\u0026quot;\u0026quot;,\u0026quot;error\u0026quot;:\u0026quot;some error message\u0026quot;}  leth storage read [flags]  Options  --account string The account address who should be authorized against the content's ACL. The account address was generated when you signed-up. --hash leth storage upload IPFS file hash of content you want to read from secured storage returned by leth storage upload command. -h, --help help for read --network string Possible values: 'rinkeby'. --nodeid int ID of the node in order to support multiple nodes on the same machine. 0 by default.  SEE ALSO  leth storage - Features LethStorage\u0026rsquo;s pkg capabilities over CLI such as file upload/download, access authorization\u0026hellip;  Auto generated by spf13/cobra on 26-Oct-2018 "
 },
 {
-	"uri": "https://wiki.lightstreams.network/04.cli-docs/storage/upload/",
+	"uri": "https://docs.lightstreams.network/04.cli-docs/storage/upload/",
 	"title": "leth storage upload",
 	"tags": [],
 	"description": "",
 	"content": " leth storage upload Uploads file to secured IPFS storage.\nSynopsis Usage:\nleth storage upload --nodeid=1 --network=rinkeby --account=0xa92e3705e6d70cb45782bf055e41813060e4ce07 --file=/Users/enchanterio/Documents/secret_file.txt  Possible Outputs:\n{\u0026quot;hash\u0026quot;:\u0026quot;QmSomeIpfsHashdGXrvCgmQHo8Yqo8eLQTvC1sEJh6suBi\u0026quot;,\u0026quot;acl\u0026quot;:\u0026quot;0xc2DBC8CdAba2df432C821639B80302f0675D6f74\u0026quot;,\u0026quot;error\u0026quot;:\u0026quot;\u0026quot;} {\u0026quot;hash\u0026quot;:\u0026quot;\u0026quot;,\u0026quot;acl\u0026quot;:\u0026quot;\u0026quot;,\u0026quot;error\u0026quot;:\u0026quot;some error message\u0026quot;}  leth storage upload [flags]  Options  --account string File owner address who will pay for the file ACL. The account address was generated when you signed-up. --file string Absolute path to the file you want to upload to secured storage. -h, --help help for upload --network string Possible values: 'rinkeby'. --nodeid int ID of the node in order to support multiple nodes on the same machine. 0 by default.  SEE ALSO  leth storage - Features LethStorage\u0026rsquo;s pkg capabilities over CLI such as file upload/download, access authorization\u0026hellip;  Auto generated by spf13/cobra on 26-Oct-2018 "
 },
 {
-	"uri": "https://wiki.lightstreams.network/04.cli-docs/user/",
+	"uri": "https://docs.lightstreams.network/04.cli-docs/user/",
 	"title": "leth user",
 	"tags": [],
 	"description": "",
 	"content": " leth user Features LethUser\u0026rsquo;s pkg capabilities over CLI such as creating a user, converting him to a token\u0026hellip;\nSynopsis Features LethUser\u0026rsquo;s pkg capabilities over CLI such as creating a user, converting him to a token\u0026hellip;\nleth user [flags]  Options  -h, --help help for user  SEE ALSO  leth - Lightstreams CLI for interacting with a configured node. leth user signin - Generates leth auth token to be used for auth purposes across the LS ecosystem. leth user signup - Creates a new Ethereum account and returns its HEX address.  Auto generated by spf13/cobra on 17-Dec-2018 "
 },
 {
-	"uri": "https://wiki.lightstreams.network/04.cli-docs/user/signin/",
+	"uri": "https://docs.lightstreams.network/04.cli-docs/user/signin/",
 	"title": "leth user signin",
 	"tags": [],
 	"description": "",
 	"content": " leth user signin Generates leth auth token to be used for auth purposes across the LS ecosystem.\nSynopsis Usage:\nleth user signin --nodeid=1 --network=rinkeby --account=0xadc486f16f003897fb927e22438cb1b820f79879  Possible Outputs:\n{\u0026quot;token\u0026quot;:\u0026quot;eyJibG9ja2NoYWluIjoiRVRIIiwiZXRoX2FkZHJlc3MiOiIweGU5Q2JmNjgzRjQ3OTkwMTEzNGE3QTc4RTkxYzljNTIzM2I4RjlDMDQiLCJpYXQiOjMwNTA0NjcsImVhdCI6MzA1MDUyN30.VkAWASrD_20MggH2laXjPlcFpVVPsoLniyTyyTPwFoYV5EQfZG_pomdYP-q8u1eyxOpm5Xq4ai5MMcFnu9HBbAE\u0026quot;} {\u0026quot;error\u0026quot;: {\u0026quot;code\u0026quot;: \u0026quot;internal error code\u0026quot;, \u0026quot;message\u0026quot;: \u0026quot;explanatory error message\u0026quot;}}  leth user signin [flags]  Options  --account string Your account HEX address to login with. -h, --help help for signin --network string Possible values: 'rinkeby, ganache, sirius'. --nodeid int ID of the node in order to support multiple nodes on the same machine. 0 by default.  SEE ALSO  leth user - Features LethUser\u0026rsquo;s pkg capabilities over CLI such as creating a user, converting him to a token\u0026hellip;  Auto generated by spf13/cobra on 17-Dec-2018 "
 },
 {
-	"uri": "https://wiki.lightstreams.network/04.cli-docs/user/signup/",
+	"uri": "https://docs.lightstreams.network/04.cli-docs/user/signup/",
 	"title": "leth user signup",
 	"tags": [],
 	"description": "",
 	"content": " leth user signup Creates a new Ethereum account and returns its HEX address.\nSynopsis Usage:\nleth user signup --nodeid=1 --network=rinkeby  Possible Outputs:\n{\u0026quot;account\u0026quot;:\u0026quot;0xadc486f16f003897fb927e22438cb1b820f79879\u0026quot;,\u0026quot;error\u0026quot;:\u0026quot;\u0026quot;} {\u0026quot;account\u0026quot;:\u0026quot;0x0000000000000000000000000000000000000000\u0026quot;,\u0026quot;error\u0026quot;:\u0026quot;some error message\u0026quot;}  leth user signup [flags]  Options  -h, --help help for signup --network string Possible values: 'rinkeby, ganache, sirius'. --nodeid int ID of the node in order to support multiple nodes on the same machine. 0 by default.  SEE ALSO  leth user - Features LethUser\u0026rsquo;s pkg capabilities over CLI such as creating a user, converting him to a token\u0026hellip;  Auto generated by spf13/cobra on 17-Dec-2018 "
 },
 {
-	"uri": "https://wiki.lightstreams.network/04.cli-docs/version/",
+	"uri": "https://docs.lightstreams.network/04.cli-docs/version/",
 	"title": "leth version",
 	"tags": [],
 	"description": "",
 	"content": " leth version Describes version.\nSynopsis Describes version.\nleth version [flags]  Options  -h, --help help for version  SEE ALSO  leth - Lightstreams CLI for interacting with a configured node.  Auto generated by spf13/cobra on 17-Dec-2018 "
 },
 {
-	"uri": "https://wiki.lightstreams.network/04.cli-docs/wallet/",
+	"uri": "https://docs.lightstreams.network/04.cli-docs/wallet/",
 	"title": "leth wallet",
 	"tags": [],
 	"description": "",
 	"content": " leth wallet Features LethWallet\u0026rsquo;s pkg capabilities over CLI such as retrieving current balance and transferring funds.\nSynopsis Features LethWallet\u0026rsquo;s pkg capabilities over CLI such as retrieving current balance and transferring funds.\nleth wallet [flags]  Options  -h, --help help for wallet  SEE ALSO  leth - Lightstreams CLI for interacting with a configured node. leth wallet balance - Get account\u0026rsquo;s balance in Wei. leth wallet transfer - Transfer funds from an account to another account.  Auto generated by spf13/cobra on 17-Dec-2018 "
 },
 {
-	"uri": "https://wiki.lightstreams.network/04.cli-docs/wallet/balance/",
+	"uri": "https://docs.lightstreams.network/04.cli-docs/wallet/balance/",
 	"title": "leth wallet balance",
 	"tags": [],
 	"description": "",
 	"content": " leth wallet balance Get account\u0026rsquo;s balance in Wei.\nSynopsis Usage:\nleth wallet balance --nodeid=1 --network=rinkeby --account=0xadc486f16f003897fb927e22438cb1b820f79879  Possible Outputs (3ETH):\n{\u0026quot;balance\u0026quot;:\u0026quot;3000000000000000000\u0026quot;,\u0026quot;error\u0026quot;:\u0026quot;\u0026quot;} {\u0026quot;balance\u0026quot;:\u0026quot;0\u0026quot;,\u0026quot;error\u0026quot;:\u0026quot;some error message\u0026quot;}  leth wallet balance [flags]  Options  --account string Account address to check balance for. -h, --help help for balance --network string Possible values: 'rinkeby, ganache, sirius'. --nodeid int ID of the node in order to support multiple nodes on the same machine. 0 by default.  SEE ALSO  leth wallet - Features LethWallet\u0026rsquo;s pkg capabilities over CLI such as retrieving current balance and transferring funds.  Auto generated by spf13/cobra on 17-Dec-2018 "
 },
 {
-	"uri": "https://wiki.lightstreams.network/04.cli-docs/wallet/transfer/",
+	"uri": "https://docs.lightstreams.network/04.cli-docs/wallet/transfer/",
 	"title": "leth wallet transfer",
 	"tags": [],
 	"description": "",
