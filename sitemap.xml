@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://docs.lightstreams.network/01.getting-started/</loc>
+    <loc>https://docs.lightstreams.network/getting-started/</loc>
   </url>
   
   <url>
@@ -11,27 +11,31 @@
   </url>
   
   <url>
-    <loc>https://docs.lightstreams.network/01.getting-started/01.quick-start/</loc>
+    <loc>https://docs.lightstreams.network/getting-started/quick-start/</loc>
   </url>
   
   <url>
-    <loc>https://docs.lightstreams.network/02.guides/</loc>
+    <loc>https://docs.lightstreams.network/guides/</loc>
   </url>
   
   <url>
-    <loc>https://docs.lightstreams.network/01.getting-started/02.install/</loc>
+    <loc>https://docs.lightstreams.network/getting-started/install/</loc>
   </url>
   
   <url>
-    <loc>https://docs.lightstreams.network/04.cli-docs/</loc>
+    <loc>https://docs.lightstreams.network/examples/</loc>
   </url>
   
   <url>
-    <loc>https://docs.lightstreams.network/05.http-api/</loc>
+    <loc>https://docs.lightstreams.network/cli-docs/</loc>
   </url>
   
   <url>
-    <loc>https://docs.lightstreams.network/06.faqs/</loc>
+    <loc>https://docs.lightstreams.network/http-api/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.lightstreams.network/faqs/</loc>
   </url>
   
   <url>
@@ -45,87 +49,107 @@
   </url>
   
   <url>
-    <loc>https://docs.lightstreams.network/04.cli-docs/leth/</loc>
+    <loc>https://docs.lightstreams.network/cli-docs/leth/</loc>
   </url>
   
   <url>
-    <loc>https://docs.lightstreams.network/04.cli-docs/leth/acl/</loc>
+    <loc>https://docs.lightstreams.network/cli-docs/leth/acl/</loc>
   </url>
   
   <url>
-    <loc>https://docs.lightstreams.network/04.cli-docs/leth/acl/grant/</loc>
+    <loc>https://docs.lightstreams.network/cli-docs/leth/acl/grant/</loc>
   </url>
   
   <url>
-    <loc>https://docs.lightstreams.network/04.cli-docs/leth/auth/</loc>
+    <loc>https://docs.lightstreams.network/cli-docs/leth/auth/</loc>
   </url>
   
   <url>
-    <loc>https://docs.lightstreams.network/04.cli-docs/leth/docs/</loc>
+    <loc>https://docs.lightstreams.network/cli-docs/leth/docs/</loc>
   </url>
   
   <url>
-    <loc>https://docs.lightstreams.network/04.cli-docs/leth/init/</loc>
+    <loc>https://docs.lightstreams.network/cli-docs/leth/init/</loc>
   </url>
   
   <url>
-    <loc>https://docs.lightstreams.network/04.cli-docs/leth/run/</loc>
+    <loc>https://docs.lightstreams.network/cli-docs/leth/run/</loc>
   </url>
   
   <url>
-    <loc>https://docs.lightstreams.network/04.cli-docs/leth/storage/</loc>
+    <loc>https://docs.lightstreams.network/cli-docs/leth/storage/</loc>
   </url>
   
   <url>
-    <loc>https://docs.lightstreams.network/04.cli-docs/leth/storage/add/</loc>
+    <loc>https://docs.lightstreams.network/cli-docs/leth/storage/add/</loc>
   </url>
   
   <url>
-    <loc>https://docs.lightstreams.network/04.cli-docs/leth/storage/authorized/</loc>
+    <loc>https://docs.lightstreams.network/cli-docs/leth/storage/authorized/</loc>
   </url>
   
   <url>
-    <loc>https://docs.lightstreams.network/04.cli-docs/leth/storage/fetch/</loc>
+    <loc>https://docs.lightstreams.network/cli-docs/leth/storage/fetch/</loc>
   </url>
   
   <url>
-    <loc>https://docs.lightstreams.network/04.cli-docs/leth/storage/meta/</loc>
+    <loc>https://docs.lightstreams.network/cli-docs/leth/storage/meta/</loc>
   </url>
   
   <url>
-    <loc>https://docs.lightstreams.network/04.cli-docs/leth/storage/read/</loc>
+    <loc>https://docs.lightstreams.network/cli-docs/leth/storage/read/</loc>
   </url>
   
   <url>
-    <loc>https://docs.lightstreams.network/04.cli-docs/leth/storage/upload/</loc>
+    <loc>https://docs.lightstreams.network/cli-docs/leth/storage/upload/</loc>
   </url>
   
   <url>
-    <loc>https://docs.lightstreams.network/04.cli-docs/leth/user/</loc>
+    <loc>https://docs.lightstreams.network/cli-docs/leth/user/</loc>
   </url>
   
   <url>
-    <loc>https://docs.lightstreams.network/04.cli-docs/leth/user/signin/</loc>
+    <loc>https://docs.lightstreams.network/cli-docs/leth/user/signin/</loc>
   </url>
   
   <url>
-    <loc>https://docs.lightstreams.network/04.cli-docs/leth/user/signup/</loc>
+    <loc>https://docs.lightstreams.network/cli-docs/leth/user/signup/</loc>
   </url>
   
   <url>
-    <loc>https://docs.lightstreams.network/04.cli-docs/leth/version/</loc>
+    <loc>https://docs.lightstreams.network/cli-docs/leth/version/</loc>
   </url>
   
   <url>
-    <loc>https://docs.lightstreams.network/04.cli-docs/leth/wallet/</loc>
+    <loc>https://docs.lightstreams.network/cli-docs/leth/wallet/</loc>
   </url>
   
   <url>
-    <loc>https://docs.lightstreams.network/04.cli-docs/leth/wallet/balance/</loc>
+    <loc>https://docs.lightstreams.network/cli-docs/leth/wallet/balance/</loc>
   </url>
   
   <url>
-    <loc>https://docs.lightstreams.network/04.cli-docs/leth/wallet/transfer/</loc>
+    <loc>https://docs.lightstreams.network/cli-docs/leth/wallet/transfer/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.lightstreams.network/cli-docs/lightchain/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.lightstreams.network/cli-docs/lightchain/docs/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.lightstreams.network/cli-docs/lightchain/init/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.lightstreams.network/cli-docs/lightchain/run/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.lightstreams.network/cli-docs/lightchain/version/</loc>
   </url>
   
 </urlset>
