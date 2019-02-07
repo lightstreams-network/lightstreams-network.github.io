@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-01-31T16:49:42 CET">
+<meta name="revised" content="2019-02-07T17:11:28 CET">
 <title>Install :: Lightstreams Documentation</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/nucleus.css" rel="stylesheet">
@@ -66,20 +66,26 @@
     <li data-nav-id="/getting-started/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/getting-started/">Getting Started</a>
+      <a href="/getting-started/">Getting started</a>
             <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-    <li data-nav-id="/getting-started/quick-start/" class="dd-item
-        ">
-      <div>
-      <a href="/getting-started/quick-start/">Quick Start</a><i class="fa fa-circle-thin read-icon"></i>
-      </div>
-    </li>
     <li data-nav-id="/getting-started/install/" class="dd-item parent active
         ">
       <div>
       <a href="/getting-started/install/">Install</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/getting-started/quick-start/" class="dd-item
+        ">
+      <div>
+      <a href="/getting-started/quick-start/">Quick start</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/getting-started/file-sharing/" class="dd-item
+        ">
+      <div>
+      <a href="/getting-started/file-sharing/">Private file sharing</a><i class="fa fa-circle-thin read-icon"></i>
       </div>
     </li>
         </ul>
@@ -335,7 +341,7 @@
 
 
 
- <a href='/'>Lightstreams documentation</a> > <a href='/getting-started/'>Getting Started</a> > Install
+ <a href='/'>Lightstreams documentation</a> > <a href='/getting-started/'>Getting started</a> > Install
 
  
 
@@ -364,9 +370,7 @@
 <li><a href="#install-with-docker">Install with Docker</a></li>
 </ul></li>
 <li><a href="#check-installation">Check installation</a></li>
-<li><a href="#run-a-lightstreams-node">Run a Lightstreams node</a></li>
-<li><a href="#create-an-account">Create an account</a></li>
-<li><a href="#request-test-tokens">Request test tokens</a></li>
+<li><a href="#next-steps">Next steps</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -400,15 +404,19 @@
 
 <pre><code>wget &quot;https://s3.amazonaws.com/lightstreams/leth-osx&quot; -O /usr/local/bin/leth
 wget &quot;https://s3.amazonaws.com/lightstreams/ipfs-osx&quot; -O /usr/local/bin/ipfs
-wget &quot;https://s3.amazonaws.com/lightstreams/geth-osx&quot; -O /usr/local/bin/geth
+wget &quot;https://s3.amazonaws.com/lightstreams/lightchain-osx&quot; -O /usr/local/bin/lightchain
+wget -qO- https://gethstore.blob.core.windows.net/builds/geth-darwin-amd64-1.8.22-7fa3509e.tar.gz | tar xvz --strip-components=1 -C /usr/local/bin/ geth-linux-amd64-1.8.21-9dc5d1a9/geth
 </code></pre>
 
 <h4 id="linux">Linux</h4>
 
 <pre><code>wget &quot;https://s3.amazonaws.com/lightstreams/leth-linux-amd64&quot; -O /usr/local/bin/leth
 wget &quot;https://s3.amazonaws.com/lightstreams/ipfs-linux-amd64&quot; -O /usr/local/bin/ipfs
-wget &quot;https://s3.amazonaws.com/lightstreams/geth-linux-amd64&quot; -O /usr/local/bin/geth
+wget &quot;https://s3.amazonaws.com/lightstreams/lightchain-linux-amd64&quot; -O /usr/local/bin/lightchain
+wget -qO- https://gethstore.blob.core.windows.net/builds/geth-linux-amd64-1.8.21-9dc5d1a9.tar.gz | tar xvz --strip-components=1 -C /usr/local/bin/ geth-linux-amd64-1.8.21-9dc5d1a9/geth
 </code></pre>
+
+<p>If you have any issues installing Geth, please follow the <a href="https://geth.ethereum.org/downloads/">official instructions</a></p>
 
 <h4 id="windows">Windows</h4>
 
@@ -419,6 +427,7 @@ wget &quot;https://s3.amazonaws.com/lightstreams/geth-linux-amd64&quot; -O /usr/
 <pre><code>chmod u+x /usr/local/bin/leth
 chmod u+x /usr/local/bin/ipfs
 chmod u+x /usr/local/bin/geth
+chmod u+x /usr/local/bin/lightchain
 </code></pre>
 
 <h3 id="install-with-docker">Install with Docker</h3>
@@ -429,44 +438,34 @@ chmod u+x /usr/local/bin/geth
 <h2 id="check-installation">Check installation</h2>
 
 <pre><code>&gt; leth version
-Version: 0.1.0-alpha
+Version: 0.7.2-alpha Meta &amp;&amp; PoA Test Ntw
 
 &gt; ipfs version
 ipfs version 0.4.9-rc2
 
+&gt; lightchain version
+Version: 0.9.1-alpha Sirius-Net
+
 &gt; geth version
 Geth
-Version: 1.8.20-stable
-Git Commit: 24d727b6d6e2c0cde222fa12155c4a6db5caaf2e
+Version: 1.8.21-stable
+Git Commit: 9dc5d1a915ac0e0bd8429d6ac41df50eec91de5f
 Architecture: amd64
 Protocol Versions: [63 62]
 Network Id: 1
-Go Version: go1.10.4
+Go Version: go1.10.3
 Operating System: linux
-GOPATH=/home/a/go
-GOROOT=/usr/lib/go-1.10
+GOPATH=/home/ggarrido/goApps
+GOROOT=/home/ggarrido/Software/go
 </code></pre>
 
-<h2 id="run-a-lightstreams-node">Run a Lightstreams node</h2>
+<h2 id="next-steps">Next steps</h2>
 
-<p>Initialize the node; you need to specify a &ndash;nodeid and a &ndash;network to connect to (sirius)</p>
-
-<pre><code>leth init --nodeid=1 --network=sirius
-</code></pre>
-
-<p>Run the node; you need to specify a &ndash;nodeid and a &ndash;network to connect to (sirius)</p>
-
-<pre><code>leth run --nodeid=1 --network=sirius
-</code></pre>
-
-<h2 id="create-an-account">Create an account</h2>
-
-<pre><code>leth user signup --nodeid=1 --network=sirius
-</code></pre>
-
-<h2 id="request-test-tokens">Request test tokens</h2>
-
-<p>To get free test tokens, please signup on our community forum and <a href="https://discuss.lightstreams.network/t/request-test-tokens/64">follow the instructions provided on this thread</a></p>
+<ul>
+<li><a href="/getting-started/quick-start/">Quick start</a></li>
+<li><a href="/getting-started/quick-start/#create-an-account">Create an account</a></li>
+<li><a href="/getting-started/quick-start/#get-free-testing-tokens">Getting free tokens</a></li>
+</ul>
 
 
 

@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lightstreams Documentation</title>
+    
+      <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="revised" content="2019-02-07T17:11:28 CET">
+<title>Private file sharing :: Lightstreams Documentation</title>
+<link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+<link href="/css/nucleus.css" rel="stylesheet">
+<link href="/css/font-awesome.min.css" rel="stylesheet">
+<link href="/css/hybrid.css" rel="stylesheet">
+<link href="/css/featherlight.min.css" rel="stylesheet">
+<link href="/css/auto-complete.css" rel="stylesheet">
+<link href="/theme-original/style.css" rel="stylesheet">
+
+  <link href="/theme-original/variant-navy.css" rel="stylesheet">
+
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<script src="/js/jquery-2.x.min.js"></script>
+<style type="text/css">
+  :root #header + #content > #left > #rlblock_left {
+    display:none !important;
+  }
+</style>
+<meta name="description" content="">
+
+
+    
+  </head>
+  <body data-url="/getting-started/file-sharing/">
+    
+      <div id="headermain"></div>
+<nav id="sidebar" class="showVisitedLinks">
+
+
+
+<div class="highlightable">
+  <div id="header-wrapper">
+    <div id="header">
+      
+	
+  
+    <a class="baselink" href="https://docs.lightstreams.network/">Lightstreams Documentation</a>
+  
+
+
+    </div>
+        <div class="searchbox">
+		    <label for="search-by"><i class="fa fa-search"></i></label>
+		    <input data-search-input id="search-by" type="text" placeholder="Search...">
+		    <span data-search-clear=""><i class="fa fa-close"></i></span>
+		</div>
+		<script type="text/javascript" src="/js/lunr.min.js"></script>
+		<script type="text/javascript" src="/js/auto-complete.js"></script>
+		<script type="text/javascript">
+        
+            var baseurl = "https:\/\/docs.lightstreams.network\/";
+        
+		</script>
+		<script type="text/javascript" src="/js/search.js"></script>
+  </div>
+
+      <ul class="topics">
+    <li data-nav-id="/getting-started/" class="dd-item parent haschildren
+        ">
+      <div>
+      <a href="/getting-started/">Getting started</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+    <li data-nav-id="/getting-started/install/" class="dd-item
+        ">
+      <div>
+      <a href="/getting-started/install/">Install</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/getting-started/quick-start/" class="dd-item
+        ">
+      <div>
+      <a href="/getting-started/quick-start/">Quick start</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/getting-started/file-sharing/" class="dd-item parent active
+        ">
+      <div>
+      <a href="/getting-started/file-sharing/">Private file sharing</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/guides/" class="dd-item
+        ">
+      <div>
+      <a href="/guides/">Guides</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/examples/" class="dd-item
+        ">
+      <div>
+      <a href="/examples/">Examples</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/cli-docs/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/cli-docs/">Command line documentation</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+    <li data-nav-id="/cli-docs/leth/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/cli-docs/leth/">leth</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+    <li data-nav-id="/cli-docs/leth/acl/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/cli-docs/leth/acl/">leth acl</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+    <li data-nav-id="/cli-docs/leth/acl/grant/" class="dd-item
+        ">
+      <div>
+      <a href="/cli-docs/leth/acl/grant/">leth acl grant</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/cli-docs/leth/auth/" class="dd-item
+        ">
+      <div>
+      <a href="/cli-docs/leth/auth/">leth auth</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/cli-docs/leth/docs/" class="dd-item
+        ">
+      <div>
+      <a href="/cli-docs/leth/docs/">leth docs</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/cli-docs/leth/init/" class="dd-item
+        ">
+      <div>
+      <a href="/cli-docs/leth/init/">leth init</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/cli-docs/leth/run/" class="dd-item
+        ">
+      <div>
+      <a href="/cli-docs/leth/run/">leth run</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/cli-docs/leth/storage/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/cli-docs/leth/storage/">leth storage</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+    <li data-nav-id="/cli-docs/leth/storage/add/" class="dd-item
+        ">
+      <div>
+      <a href="/cli-docs/leth/storage/add/">leth storage add</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/cli-docs/leth/storage/authorized/" class="dd-item
+        ">
+      <div>
+      <a href="/cli-docs/leth/storage/authorized/">leth storage authorized</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/cli-docs/leth/storage/fetch/" class="dd-item
+        ">
+      <div>
+      <a href="/cli-docs/leth/storage/fetch/">leth storage fetch</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/cli-docs/leth/storage/meta/" class="dd-item
+        ">
+      <div>
+      <a href="/cli-docs/leth/storage/meta/">leth storage meta</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/cli-docs/leth/storage/read/" class="dd-item
+        ">
+      <div>
+      <a href="/cli-docs/leth/storage/read/">leth storage read</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/cli-docs/leth/storage/upload/" class="dd-item
+        ">
+      <div>
+      <a href="/cli-docs/leth/storage/upload/">leth storage upload</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/cli-docs/leth/user/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/cli-docs/leth/user/">leth user</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+    <li data-nav-id="/cli-docs/leth/user/signin/" class="dd-item
+        ">
+      <div>
+      <a href="/cli-docs/leth/user/signin/">leth user signin</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/cli-docs/leth/user/signup/" class="dd-item
+        ">
+      <div>
+      <a href="/cli-docs/leth/user/signup/">leth user signup</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/cli-docs/leth/version/" class="dd-item
+        ">
+      <div>
+      <a href="/cli-docs/leth/version/">leth version</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/cli-docs/leth/wallet/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/cli-docs/leth/wallet/">leth wallet</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+    <li data-nav-id="/cli-docs/leth/wallet/balance/" class="dd-item
+        ">
+      <div>
+      <a href="/cli-docs/leth/wallet/balance/">leth wallet balance</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/cli-docs/leth/wallet/transfer/" class="dd-item
+        ">
+      <div>
+      <a href="/cli-docs/leth/wallet/transfer/">leth wallet transfer</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/cli-docs/lightchain/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/cli-docs/lightchain/">lightchain</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+    <li data-nav-id="/cli-docs/lightchain/docs/" class="dd-item
+        ">
+      <div>
+      <a href="/cli-docs/lightchain/docs/">lightchain docs</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/cli-docs/lightchain/init/" class="dd-item
+        ">
+      <div>
+      <a href="/cli-docs/lightchain/init/">lightchain init</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/cli-docs/lightchain/run/" class="dd-item
+        ">
+      <div>
+      <a href="/cli-docs/lightchain/run/">lightchain run</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/cli-docs/lightchain/version/" class="dd-item
+        ">
+      <div>
+      <a href="/cli-docs/lightchain/version/">lightchain version</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/http-api/" class="dd-item
+        ">
+      <div>
+      <a href="/http-api/">API</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/faqs/" class="dd-item
+        ">
+      <div>
+      <a href="/faqs/">FAQs</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+
+
+
+        <section id="shortcuts">
+                <li class="" role=""><h3>More</h3><a href="https://github.com/lightstreams-network/docs" target="_blank" rel="noopener"><i class='fa fa-github'></i> <label>Github Docs</label></a></li>
+                <li class="" role=""><a href="https://wiki.lightstreams.network/api-docs" target="_blank" rel="noopener"><i class='fa fa-bookmark'></i> <label>HTTP API Reference</label></a></li>
+        </section>
+            <a id="clear-history" class="" href="#" data-clear-history-toggle=""><i class="fa  fa-history"></i> Clear History</a>
+
+    <hr />
+    <li></li>
+    
+    </ul>
+
+ <section id="footer">
+    </section>
+  </div>
+</nav>
+
+
+
+<section id="body">
+<div id="overlay"></div>
+<div class="padding highlightable">
+
+  <div id="top-bar">
+    
+      
+      
+      
+    <div id="top-github-link">
+      <a class="github-link" href="https://github.com/lightstreams-network/docs/tree/master/content/getting-started/file-sharing/_index.md" target="blank">
+        <i class="fa fa-code-fork"></i>
+        Improve this page
+      </a>
+    </div><div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+        <span id="sidebar-toggle-span">
+          <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+            <i class="fa fa-bars"></i>
+          </a>
+        </span>
+        <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+        <span class="links">
+        
+
+
+
+
+
+
+
+ <a href='/'>Lightstreams documentation</a> > <a href='/getting-started/'>Getting started</a> > Private file sharing
+
+ 
+
+ 
+
+   
+        </span>
+    </div>
+    
+    
+    <div class="progress">
+        <div class="wrapper">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#private-file-sharing-for-dapps-content-producers">Private File Sharing for dApps, content producers</a>
+<ul>
+<li><a href="#private-file-sharing">Private file sharing</a></li>
+<li><a href="#leth-storage-file">Leth storage file</a></li>
+<li><a href="#adding-a-private-file">Adding a private file</a></li>
+<li><a href="#reading-the-private-file">Reading the private file</a></li>
+<li><a href="#granting-read-access-to-the-private-file">Granting read access to the private file</a></li>
+<li><a href="#granting-admin-access-to-the-private-file">Granting admin access to the private file</a></li>
+<li><a href="#reading-the-public-meta-file">Reading the public Meta file</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+        </div>
+    </div>
+    
+
+  </div>
+
+
+<div id="body-inner">
+  
+    <h1>Private file sharing</h1>
+  
+
+
+
+    
+    
+    
+
+
+
+<h2 id="private-file-sharing-for-dapps-content-producers">Private File Sharing for dApps, content producers</h2>
+
+<p>Once your Lightstreams node is fully synced and you own some ETH, you can access our most important feature!</p>
+
+<h3 id="private-file-sharing">Private file sharing</h3>
+
+<p>Files are protected with ACL and access is authenticated and authorized before any content seeding starts! Not just encrypted publicly in IPFS, what majority of projects do. Privacy vs Confidentiality in action.</p>
+
+<h3 id="leth-storage-file">Leth storage file</h3>
+
+<p>Each file uploaded using Leth generates 2 IPFS files.</p>
+
+<ol>
+<li>A public Meta JSON file, accessible by everyone describing the protected file</li>
+</ol>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#111">{</span>
+  <span style="color:#f92672">&#34;ext&#34;</span><span style="color:#111">:</span> <span style="color:#d88200">&#34;txt&#34;</span><span style="color:#111">,</span>
+  <span style="color:#f92672">&#34;owner&#34;</span><span style="color:#111">:</span> <span style="color:#d88200">&#34;0xa92e3705e6d70cb45782bf055e41813060e4ce07&#34;</span><span style="color:#111">,</span>
+  <span style="color:#f92672">&#34;hash&#34;</span><span style="color:#111">:</span> <span style="color:#d88200">&#34;QmZYSewpHNvdW1TTgska792QAT7Yd6yxZAoybpYFskTZSf&#34;</span><span style="color:#111">,</span> <span style="color:#960050;background-color:#1e0010">//</span> <span style="color:#960050;background-color:#1e0010">of</span> <span style="color:#960050;background-color:#1e0010">the</span> <span style="color:#960050;background-color:#1e0010">protected</span> <span style="color:#960050;background-color:#1e0010">file</span>
+  <span style="color:#f92672">&#34;acl&#34;</span><span style="color:#111">:</span> <span style="color:#d88200">&#34;0x5D780255679c55846c1fE1E738e7604425171B50&#34;</span> <span style="color:#960050;background-color:#1e0010">//</span> <span style="color:#960050;background-color:#1e0010">smart</span> <span style="color:#960050;background-color:#1e0010">contract</span> <span style="color:#960050;background-color:#1e0010">access</span> <span style="color:#960050;background-color:#1e0010">rules</span>
+<span style="color:#111">}</span></code></pre></div>
+<ol>
+<li>The protected file itself.</li>
+</ol>
+
+<h3 id="adding-a-private-file">Adding a private file</h3>
+
+<p>Given a file: &ldquo;secret_file.txt&rdquo; with content &ldquo;hello secret world&rdquo;.</p>
+
+<p>To share a private file using <code>leth</code> execute the following command:</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">leth storage add --nodeid<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> --network<span style="color:#f92672">=</span>sirius --file<span style="color:#f92672">=</span><span style="color:#111">$HOME</span>/Documents/secret_file.txt --owner<span style="color:#f92672">=</span>0xa92e3705e6d70cb45782bf055e41813060e4ce07</code></pre></div>
+<p>Output:</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Enter keystore<span style="color:#960050;background-color:#1e0010">&#39;</span>s password to unlock account:
+
+...some logs, we keep logging on DEBUG level in Alpha version <span style="color:#00a8c8">for</span> debugging early bugs
+
+<span style="color:#f92672">{</span><span style="color:#d88200">&#34;meta&#34;</span>:<span style="color:#d88200">&#34;QmZYSewpHNvdW1TTgska792QAT7Yd6yxZAoybpYFskTZSf&#34;</span>,<span style="color:#d88200">&#34;acl&#34;</span>:<span style="color:#d88200">&#34;0xc2DBC8CdAba2df432C821639B80302f0675D6f74&#34;</span><span style="color:#f92672">}</span></code></pre></div>
+<p>Note:</p>
+
+<ul>
+<li><code>--nodeid=1; --network=sirius</code> we are executing the command from Lightstreams node 1 and deploying the ACL to file on sirius network</li>
+<li><code>--file=</code> flag is an absolute path to the file you want to share</li>
+<li><code>--owner=</code> flag is file owner address who will pay for the file ACL. The account address was generated when you signed-up</li>
+<li><code>&quot;meta&quot;:&quot;QmNkbFAo5jSKm7KLCdCr8c8ue2X53ShATD5yjyQq3ynoaf&quot;</code> this is the address of a public Meta file linking to your private file in a secure IPFS storage</li>
+<li><code>&quot;acl&quot;</code> this is the file&rsquo;s ACL. A smart contract addr controlling all the access rules. You can use it <code>leth acl grant</code> cmd to grant permissions to other accounts</li>
+</ul>
+
+<p>PS: You can always run any command with <code>--help</code> flag to get explanation of all required/optional flags</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">leth acl grant --help</code></pre></div>
+<h3 id="reading-the-private-file">Reading the private file</h3>
+
+<p>Now you can tell your friend who is running a different Lightstreams node to download your private file! If you would like to test it yourself, setup another Lightstreams node on the same machine in another terminal, Lightstreams node 2 and create also another account!</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">leth init --nodeid<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span> --network<span style="color:#f92672">=</span>sirius
+leth run --nodeid<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span> --network<span style="color:#f92672">=</span>sirius
+
+...wait a few hours <span style="color:#00a8c8">for</span> a full sync...</code></pre></div>
+<p>Once your Lightstreams node is full synced, attempt to read the private file from your new Lightstreams node 2:</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">leth storage fetch --nodeid<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span> --network<span style="color:#f92672">=</span>sirius --meta<span style="color:#f92672">=</span>QmZYSewpHNvdW1TTgska792QAT7Yd6yxZAoybpYFskTZSf --account<span style="color:#f92672">=</span>0xnode2ethAddr0cb45782bf055e41813060e4ce89</code></pre></div>
+<p>Output:</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">{</span><span style="color:#d88200">&#34;error&#34;</span>: <span style="color:#f92672">{</span><span style="color:#d88200">&#34;code&#34;</span>: <span style="color:#d88200">&#34;err_cli&#34;</span>, <span style="color:#d88200">&#34;message&#34;</span>: <span style="color:#d88200">&#34;unable to download file to IPFS storage. Error: ipfs cat cmd timed out&#34;</span><span style="color:#f92672">}</span></code></pre></div>
+<p>This error is expected because the file owner never actually granted permission to Lightstreams node 2 account, 0xnode2ethAddr0cb45782bf055e41813060e4ce89.</p>
+
+<p>Let&rsquo;s grant a read permission.</p>
+
+<h3 id="granting-read-access-to-the-private-file">Granting read access to the private file</h3>
+
+<p>Execute :</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">leth acl grant --nodeid<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> --network<span style="color:#f92672">=</span>sirius --permission<span style="color:#f92672">=</span><span style="color:#111">read</span> --acl<span style="color:#f92672">=</span>0x2F15B633b4bC41BdFBBD8AAf2Be7Dae958D27C7E --owner<span style="color:#f92672">=</span>0xa92e3705e6d70cb45782bf055e41813060e4ce07 --account<span style="color:#f92672">=</span>0xnode2ethAddr0cb45782bf055e41813060e4ce89</code></pre></div>
+<p>Output:</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">{</span><span style="color:#d88200">&#34;msg&#34;</span>:<span style="color:#d88200">&#34;Granting &#39;read&#39; permission to account &#39;0xnode2ethAddr0cb45782bf055e41813060e4ce89&#39;...&#34;</span><span style="color:#f92672">}</span>
+<span style="color:#f92672">{</span><span style="color:#d88200">&#34;msg&#34;</span>:<span style="color:#d88200">&#34;Account &#39;0xnode2ethAddr0cb45782bf055e41813060e4ce89&#39; was granted &#39;read&#39; permission.&#34;</span><span style="color:#f92672">}</span>
+
+<span style="color:#f92672">{</span><span style="color:#d88200">&#34;is_granted&#34;</span>:<span style="color:#d88200">&#34;true&#34;</span><span style="color:#f92672">}</span></code></pre></div>
+<p>Let&rsquo;s try to read the <code>secret_file.txt</code> file now:</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">leth storage fetch --nodeid<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span> --network<span style="color:#f92672">=</span>sirius --meta<span style="color:#f92672">=</span>QmZYSewpHNvdW1TTgska792QAT7Yd6yxZAoybpYFskTZSf --account<span style="color:#f92672">=</span>0xnode2ethAddr0cb45782bf055e41813060e4ce89</code></pre></div>
+<p>Leth SDK will resolve the linked protected file out of the JSON Meta file and save it to a tmp directory using the hash of the protected file itself
+and the extension of the uploaded file resolved from the JSON Meta file.</p>
+
+<p>Output:</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">{</span><span style="color:#d88200">&#34;output&#34;</span>:<span style="color:#d88200">&#34;/tmp/QmProtIpfsHashdGXrvCgmQHo8Yqo8eLQTvC1sEJh6suBi.txt&#34;</span><span style="color:#f92672">}</span></code></pre></div>
+<p>Congratulation, you just shared a private file over internet in a decentralised manner.</p>
+
+<h3 id="granting-admin-access-to-the-private-file">Granting admin access to the private file</h3>
+
+<p>Going step further. You can also grant admin rights to other accounts, devices so they can further have the privileges of granting read/admin access to other users.</p>
+
+<p>Example, let&rsquo;s grant an <code>admin</code> right to the Leth Node 2 account. With such a privilege, Leth Node 2 account will be able to further grant access to other devices in the network/users.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">leth acl grant --nodeid<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> --network<span style="color:#f92672">=</span>sirius --permission<span style="color:#f92672">=</span>admin --acl<span style="color:#f92672">=</span>0x2F15B633b4bC41BdFBBD8AAf2Be7Dae958D27C7E --owner<span style="color:#f92672">=</span>0xa92e3705e6d70cb45782bf055e41813060e4ce07 --to<span style="color:#f92672">=</span>0xnode2ethAddr0cb45782bf055e41813060e4ce89</code></pre></div>
+<h3 id="reading-the-public-meta-file">Reading the public Meta file</h3>
+
+<p>In case you want to get information about the privately stored file, you can do so using the <code>leth storage meta</code> command.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">leth storage meta --nodeid<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> --network<span style="color:#f92672">=</span>sirius --meta<span style="color:#f92672">=</span>QmZYSewpHNvdW1TTgska792QAT7Yd6yxZAoybpYFskTZSf</code></pre></div>
+<p>Output:</p>
+
+<pre><code>{&quot;filename&quot;:&quot;secret_file.txt&quot;,&quot;ext&quot;:&quot;txt&quot;,&quot;owner&quot;:&quot;0xadC486F16F003897fb927e22438cb1b820f79879&quot;,&quot;hash&quot;:&quot;QmRnXxBJg3NjXzuTi91iNYcMff4oz4NwjN7fgtBXp2UbG9&quot;,&quot;acl&quot;:&quot;0x3cb99420c7F16f00ef41B5ace9e0C815F3736879&quot;}
+</code></pre>
+
+<p>Note:</p>
+
+<ul>
+<li><code>filename</code> is the original filename when file was uploaded</li>
+<li><code>ext</code> is the original file extension</li>
+<li><code>owner</code> who uploaded the file</li>
+<li><code>hash</code> the hash of the protected file stored in IPFS (not the public Meta file hash)</li>
+<li><code>acl</code> address of the contract handling file permissions</li>
+</ul>
+
+
+
+    
+    
+          <footer class=" footline" >
+	
+</footer>
+  </div>
+</div>
+
+<div id="navigation">
+</div>
+
+</section>
+<div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+  <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+</div>    
+
+<script src="/js/clipboard.min.js"></script>
+<script src="/js/featherlight.min.js"></script>
+<script src="/js/html5shiv-printshiv.min.js"></script>
+
+<script src="/js/modernizr.custom.71422.js"></script>
+<script src="/js/docdock.js"></script>
+<script src="/theme-original/script.js"></script>
+
+
+    
+
+    
+    
+
+    
+  </body>
+</html>

@@ -5,8 +5,8 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-01-31T16:49:42 CET">
-<title>Quick Start :: Lightstreams Documentation</title>
+<meta name="revised" content="2019-02-07T17:11:28 CET">
+<title>Quick start :: Lightstreams Documentation</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/nucleus.css" rel="stylesheet">
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -66,20 +66,26 @@
     <li data-nav-id="/getting-started/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/getting-started/">Getting Started</a>
+      <a href="/getting-started/">Getting started</a>
             <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-    <li data-nav-id="/cli-docs/leth/user/signin/" class="dd-item
+    <li data-nav-id="/getting-started/install/" class="dd-item
         ">
       <div>
-      <a href="/cli-docs/leth/user/signin/">leth user signin</a><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/getting-started/install/">Install</a><i class="fa fa-circle-thin read-icon"></i>
       </div>
     </li>
-    <li data-nav-id="/cli-docs/leth/user/signup/" class="dd-item
+    <li data-nav-id="/getting-started/quick-start/" class="dd-item parent active
         ">
       <div>
-      <a href="/cli-docs/leth/user/signup/">leth user signup</a><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/getting-started/quick-start/">Quick start</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/getting-started/file-sharing/" class="dd-item
+        ">
+      <div>
+      <a href="/getting-started/file-sharing/">Private file sharing</a><i class="fa fa-circle-thin read-icon"></i>
       </div>
     </li>
         </ul>
@@ -335,7 +341,7 @@
 
 
 
- <a href='/'>Lightstreams documentation</a> > <a href='/getting-started/'>Getting Started</a> > Quick Start
+ <a href='/'>Lightstreams documentation</a> > <a href='/getting-started/'>Getting started</a> > Quick start
 
  
 
@@ -352,8 +358,25 @@
 <ul>
 <li>
 <ul>
-<li><a href="#introduction">Introduction</a></li>
-<li><a href="#quick-start">Quick start</a></li>
+<li><a href="#getting-help">Getting help</a></li>
+<li><a href="#running-lightstreams-node">Running Lightstreams node</a>
+<ul>
+<li>
+<ul>
+<li><a href="#using-rinkeby-network">Using Rinkeby network</a></li>
+</ul></li>
+<li><a href="#expose-the-lighstreams-http-api">Expose the Lighstreams HTTP API</a>
+<ul>
+<li><a href="#running-over-https">Running over HTTPs</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#get-free-testing-tokens">Get FREE Testing Tokens</a>
+<ul>
+<li><a href="#obtaining-pht-for-sirius">Obtaining PHT for Sirius</a></li>
+<li><a href="#obtaining-eth-for-rinkeby">Obtaining ETH for Rinkeby</a></li>
+</ul></li>
+<li><a href="#help">Help</a></li>
+<li><a href="#need-human-help">Need human help?</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -366,7 +389,7 @@
 
 <div id="body-inner">
   
-    <h1>Quick Start</h1>
+    <h1>Quick start</h1>
   
 
 
@@ -377,26 +400,167 @@
 
 
 
-<h2 id="introduction">Introduction</h2>
+<p>The following assumes you have <code>leth</code> installed. Please follow <a href="/getting-started/install/#install">these instructions</a> to install.</p>
 
-<p>A Lightstreams node consists of the following pieces:</p>
+<h2 id="getting-help">Getting help</h2>
+
+<p>Run <code>leth help</code> command to display all commands you have in disposition in the current version.</p>
+
+<pre><code>Lightstreams CLI for interacting with a configured node.
+
+Usage:
+  leth [flags]
+  leth [command]
+
+Available Commands:
+  acl         Features LethACL's pkg capabilities over CLI such as granting ACL permissions.
+  auth        Features LethAuth's pkg capabilities over CLI such as token generation, verification...
+  docs        Generates LETH cmd usage docs based on code into the: 'docs/cmd/auto_generated'.
+  help        Help about any command
+  init        Initializes new LS local node for a chosen network.
+  run         Runs full Leth node by spawning blockchain and IPFS daemons.
+  storage     Features LethStorage's pkg capabilities over CLI such as file upload/download, access authorization...
+  version     Describes version.
+  ...
+  ...
+
+Flags:
+  -h, --help   help for leth
+
+Use &quot;leth [command] --help&quot; for more information about a command.
+</code></pre>
+
+<p>Display current version:</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">leth version
+Version: <span style="color:#ae81ff">0</span>.6.0-alpha ACL Admin</code></pre></div>
+<p>Display instructions for initializing new Lightstreams Node:</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">leth init --help
+Initializes new LS <span style="color:#111">local</span> node <span style="color:#00a8c8">for</span> a chosen network.
+
+Usage:
+  leth init <span style="color:#f92672">[</span>flags<span style="color:#f92672">]</span>
+
+Flags:
+  -h, --help             <span style="color:#111">help</span> <span style="color:#00a8c8">for</span> init
+      --network string   Possible values: <span style="color:#d88200">&#39;rinkeby|sirius&#39;</span>.
+      --nodeid int       ID of the node in order to support multiple nodes on the same machine. <span style="color:#ae81ff">0</span> by default.</code></pre></div>
+<p>Go to the <a href="/cli-docs">command line documentation</a> to learn more about leth CLI.</p>
+
+<h2 id="running-lightstreams-node">Running Lightstreams node</h2>
+
+<p>First, initialize new Leth node with ID 1 for Sirius network:</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">leth init --nodeid<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> --network<span style="color:#f92672">=</span>sirius
+
+<span style="color:#f92672">{</span><span style="color:#d88200">&#34;msg&#34;</span>:<span style="color:#d88200">&#34;Initializing Leth node...&#34;</span>,<span style="color:#d88200">&#34;nodeID&#34;</span>:1,<span style="color:#d88200">&#34;network&#34;</span>:<span style="color:#d88200">&#34;sirius&#34;</span><span style="color:#f92672">}</span>
+<span style="color:#f92672">{</span><span style="color:#d88200">&#34;msg&#34;</span>:<span style="color:#d88200">&#34;IPFS: initializing IPFS node at </span><span style="color:#111">$HOME</span><span style="color:#d88200">/.lightstreams_1/ipfs&#34;</span><span style="color:#f92672">}</span>
+<span style="color:#f92672">{</span><span style="color:#d88200">&#34;msg&#34;</span>:<span style="color:#d88200">&#34;IPFS: generating 2048-bit RSA keypair...done&#34;</span><span style="color:#f92672">}</span>
+<span style="color:#f92672">{</span><span style="color:#d88200">&#34;msg&#34;</span>:<span style="color:#d88200">&#34;IPFS: peer identity: Qma1bKbQVYqHMhWzaRHAkKU5s5FsDnhR5bMzWLbjwxUaN6&#34;</span><span style="color:#f92672">}</span>
+<span style="color:#f92672">{</span><span style="color:#d88200">&#34;msg&#34;</span>:<span style="color:#d88200">&#34;IPFS successfully initialized.&#34;</span>,<span style="color:#d88200">&#34;dataDir&#34;</span>:<span style="color:#d88200">&#34;</span><span style="color:#111">$HOME</span><span style="color:#d88200">/.lightstreams_1/ipfs&#34;</span><span style="color:#f92672">}</span>
+<span style="color:#f92672">{</span><span style="color:#d88200">&#34;msg&#34;</span>:<span style="color:#d88200">&#34;Sirius node successfully initialized.&#34;</span>,<span style="color:#d88200">&#34;dataDir&#34;</span>:<span style="color:#d88200">&#34;</span><span style="color:#111">$HOME</span><span style="color:#d88200">/.lightstreams_1/sirius&#34;</span><span style="color:#f92672">}</span>
+<span style="color:#f92672">{</span><span style="color:#d88200">&#34;msg&#34;</span>:<span style="color:#d88200">&#34;Leth node fully initialized!!!&#34;</span>,<span style="color:#d88200">&#34;nodeDir&#34;</span>:<span style="color:#d88200">&#34;</span><span style="color:#111">$HOME</span><span style="color:#d88200">/.lightstreams_1&#34;</span><span style="color:#f92672">}</span></code></pre></div>
+<p>Second, run a lightstreams node:</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">leth run --nodeid<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> --network<span style="color:#f92672">=</span>sirius
+
+<span style="color:#f92672">{</span><span style="color:#d88200">&#34;msg&#34;</span>:<span style="color:#d88200">&#34;Starting Leth node online services (blockchain, IPFS)...&#34;</span><span style="color:#f92672">}</span>
+<span style="color:#f92672">{</span><span style="color:#d88200">&#34;msg&#34;</span>:<span style="color:#d88200">&#34;GETH: INFO [09-13|11:30:40.138] Maximum peer count ETH=25 LES=0 total=25&#34;</span><span style="color:#f92672">}</span>
+<span style="color:#f92672">{</span><span style="color:#d88200">&#34;msg&#34;</span>:<span style="color:#d88200">&#34;GETH: INFO [09-13|11:30:40.148] Starting peer-to-peer node instance=Geth/v1.8.15-stable-89451f1c/darwin-amd64/go1.10.4&#34;</span><span style="color:#f92672">}</span>
+...</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">...
+<span style="color:#f92672">{</span><span style="color:#d88200">&#34;msg&#34;</span>:<span style="color:#d88200">&#34;GETH: INFO [09-13|11:31:26.189] Imported new block receipts count=906 elapsed=9.521ms   number=960 hash=413833…8d126d size=4.13kB  ignored=0&#34;</span><span style="color:#f92672">}</span>
+<span style="color:#f92672">{</span><span style="color:#d88200">&#34;msg&#34;</span>:<span style="color:#d88200">&#34;GETH: INFO [09-13|11:31:26.390] Imported new block headers count=384 elapsed=149.265ms number=1344 hash=4524ae…5d3fff ignored=0&#34;</span><span style="color:#f92672">}</span>
+<span style="color:#f92672">{</span><span style="color:#d88200">&#34;msg&#34;</span>:<span style="color:#d88200">&#34;GETH: INFO [09-13|11:31:26.406] Imported new block receipts count=384 elapsed=2.144ms   number=1344 hash=4524ae…5d3fff size=1.54kB  ignored=0&#34;</span><span style="color:#f92672">}</span></code></pre></div>
+<p>After you run the command above, the network synchronization will take several minutes.
+So grab a coffee and <a href="#get-free-testing-tokens">request some test</a> tokens while you wait :)</p>
+
+<p>To see the current state of the lightstreams test network (Sirius) and check the status of your transactions, you can go to the <a href="http://explorer.sirius.lightstreams.io">lightstreams block explorer</a></p>
+
+<h4 id="using-rinkeby-network">Using Rinkeby network</h4>
+
+<p>If you prefer to run your leth over the <code>Rinkeby</code> network, just repeat the commands a using <code>--network=rinkeby</code>.</p>
+
+<h3 id="expose-the-lighstreams-http-api">Expose the Lighstreams HTTP API</h3>
+
+<p>You need to run your <code>leth</code> server again, but this time using the <code>--https</code> flag as follow:</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">leth run --nodeid<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> --network<span style="color:#f92672">=</span>sirius --https</code></pre></div>
+<p>Even if flag used refers to https by default is exposed over http. In case you want to use a secure protocol, follow the instructions
+in the next section.</p>
+
+<h4 id="running-over-https">Running over HTTPs</h4>
+
+<p>To initialize <code>leth</code> over HTTPs protocol you need to follow the next steps. At first you need to use
+valid SSL certificates which can be generated, for instance, by running the following bash command:</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir -p /etc/ssl/leth
+<span style="color:#111">cd</span> /etc/ssl/leth
+openssl req -x509 -out localhost.crt -keyout localhost.key <span style="color:#8045ff">\
+</span><span style="color:#8045ff"></span>  -newkey rsa:2048 -nodes -sha256 <span style="color:#8045ff">\
+</span><span style="color:#8045ff"></span>  -subj <span style="color:#d88200">&#39;/CN=localhost&#39;</span> -extensions EXT -config &lt;<span style="color:#f92672">(</span> <span style="color:#8045ff">\
+</span><span style="color:#8045ff"></span>   <span style="color:#111">printf</span> <span style="color:#d88200">&#34;[dn]\nCN=localhost\n[req]\ndistinguished_name = dn\n[EXT]\nsubjectAltName=DNS:localhost\nkeyUsage=digitalSignature\nextendedKeyUsage=serverAuth&#34;</span><span style="color:#f92672">)</span>
+chmod a+r localhost.crt localhost.key</code></pre></div>
+<p>Once you have valid ssl certificates are allocated in your local machine, you have to edit
+leth node configuration file, at <code>$HOME/.lightstreams_1/config.json</code>, and include the path
+for your ssl certificates and the port where the HTTPs server is going to be exposed.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#111">{</span>
+    <span style="color:#d88200">&#34;https_server&#34;</span><span style="color:#f92672">:</span> <span style="color:#111">{</span>
+        <span style="color:#d88200">&#34;port&#34;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">8080</span><span style="color:#111">,</span>
+        <span style="color:#d88200">&#34;certificate_pem_filepath&#34;</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#34;/etc/ssl/leth/localhost.crt&#34;</span><span style="color:#111">,</span>
+        <span style="color:#d88200">&#34;certificate_pem_priv_key_filepath&#34;</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#34;/etc/ssl/leth/localhost.key&#34;</span>
+    <span style="color:#111">},</span>
+<span style="color:#111">....</span>
+</code></pre></div>
+<p>At last, you need to run your <code>leth</code> server again, but this time using the <code>--https</code> flag as follow:</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">leth run --nodeid<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> --network<span style="color:#f92672">=</span>sirius --https</code></pre></div>
+<p>Within the first debug output shown in your terminal you will see the next one:</p>
+
+<pre><code>...
+{&quot;level&quot;:&quot;debug&quot;,&quot;ts&quot;:1544091804.1871579,&quot;caller&quot;:&quot;http/server.go:28&quot;,&quot;msg&quot;:&quot;Starting Leth HTTP server listening on port: 8080.&quot;}
+...
+</code></pre>
+
+<p>Visit the following <a href="/http-api-doc">link</a> to learn how to use leth http api.</p>
+
+<h2 id="get-free-testing-tokens">Get FREE Testing Tokens</h2>
+
+<h3 id="obtaining-pht-for-sirius">Obtaining PHT for Sirius</h3>
+
+<p>To get free test tokens, please signup on our community forum and <a href="https://discuss.lightstreams.network/t/request-test-tokens/64">follow the instructions provided on this thread</a></p>
+
+<h3 id="obtaining-eth-for-rinkeby">Obtaining ETH for Rinkeby</h3>
+
+<p>Connect to the Lightstreams node via IPC:</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">geth --datadir<span style="color:#f92672">=</span><span style="color:#111">$HOME</span>/.lightstreams_1/rinkeby attach ipc:<span style="color:#111">$HOME</span>/.lightstreams_1/rinkeby/geth.ipc</code></pre></div>
+<p>Create a new Leth node account using the attached Geth JavaScript console and check the its balance:</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75af00">geth</span> <span style="color:#f92672">--</span><span style="color:#75af00">datadir</span><span style="color:#f92672">=</span><span style="color:#75af00">$HOME</span><span style="color:#960050;background-color:#1e0010">/.lightstreams_1/rinkeby attach ipc:$HOME/.lightstreams_1/rinkeby/geth.ipc</span>
+
+<span style="color:#75af00">Welcome</span> <span style="color:#75af00">to</span> <span style="color:#75af00">the</span> <span style="color:#75af00">Geth</span> <span style="color:#75af00">JavaScript</span> <span style="color:#75af00">console</span><span style="color:#f92672">!</span>
+
+<span style="color:#75af00">Instance</span><span style="color:#f92672">:</span> <span style="color:#75af00">Geth</span><span style="color:#960050;background-color:#1e0010">/v1.8.15</span>
+
+<span style="color:#f92672">&gt;</span> <span style="color:#75af00">personal</span><span style="color:#111">.</span><span style="color:#75af00">newAccount</span><span style="color:#111">()</span>
+<span style="color:#f92672">&gt;&gt;</span> <span style="color:#111">...</span><span style="color:#75af00">type</span> <span style="color:#75af00">your</span> <span style="color:#75af00">password</span><span style="color:#111">...</span>
+<span style="color:#d88200">&#34;0xa92e3705e6d70cb45782bf055e41813060e4ce07&#34;</span>
+<span style="color:#f92672">&gt;</span> <span style="color:#75af00">eth</span><span style="color:#111">.</span><span style="color:#75af00">accounts</span>
+<span style="color:#111">[</span><span style="color:#d88200">&#34;0xa92e3705e6d70cb45782bf055e41813060e4ce07&#34;</span><span style="color:#111">]</span>
+<span style="color:#f92672">&gt;</span> <span style="color:#75af00">eth</span><span style="color:#111">.</span><span style="color:#75af00">coinbase</span>
+<span style="color:#d88200">&#34;0xa92e3705e6d70cb45782bf055e41813060e4ce07&#34;</span>
+<span style="color:#f92672">&gt;</span> <span style="color:#75af00">eth</span><span style="color:#111">.</span><span style="color:#75af00">getBalance</span><span style="color:#111">(</span><span style="color:#75af00">eth</span><span style="color:#111">.</span><span style="color:#75af00">coinbase</span><span style="color:#111">)</span>
+<span style="color:#ae81ff">0</span>
+<span style="color:#f92672">&gt;</span>
+</code></pre></div>
+<p>Request FREE ETH from Rinkeby Faucet:</p>
 
 <ul>
-<li><code>leth</code> is a command line interface used to run, interact, and control the Lightstreams node</li>
-<li><code>ipfs</code> is a decentralised file system enhanced with our award winning “Permissioned Blocks” technology</li>
-<li><code>geth</code> is the the command line interface for running a full ethereum node implemented in Go</li>
+<li>Publish your Ethereum address (0xa92e3705e6d70cb45782bf055e41813060e4ce07) anywhere in a public social network</li>
+<li>E.g, post your address to my <a href="https://plus.google.com/u/0/communities/115209806315551990293">Google Plus group</a></li>
+<li>Open <a href="https://www.rinkeby.io/#faucet">https://www.rinkeby.io/#faucet</a> and paste the post url</li>
+<li>Wait few seconds, if the blockchain is fully synced, check the balance once again <code>eth.getBalance(eth.coinbase)</code> -&gt; 3000000000000000000</li>
 </ul>
 
-<p>In the next section, we will proceed to install everything required to run a complete Lightstreams node.</p>
+<h2 id="help">Help</h2>
 
-<h2 id="quick-start">Quick start</h2>
+<p>If in doubt, you can always run any command with a <code>--help</code> flag to show and explain to you all the possible flags and cmd usages.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">leth acl --help</code></pre></div>
+<h2 id="need-human-help">Need human help?</h2>
 
-<ul>
-<li><a href="/getting-started/install/#install">Install</a></li>
-<li><a href="/getting-started/install/#check-installation">Check installation</a></li>
-<li><a href="/getting-started/install/#run-a-lightstreams-node">Run a Lightstreams node</a></li>
-<li><a href="/getting-started/install/#create-an-account">Create an account</a></li>
-</ul>
+<p>We are happy to get you started! Join our <a href="https://t.me/lightstreams">telegram channel</a> or ask as many questions as you want in the <a href="http://discuss.lightstreams.network">lightstreams forum</a>!</p>
 
 
 
