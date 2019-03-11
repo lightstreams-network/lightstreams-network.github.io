@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-03-08T16:13:37 CET">
+<meta name="revised" content="2019-03-11T16:52:33 CET">
 <title>Quick start :: Lightstreams Documentation</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/nucleus.css" rel="stylesheet">
@@ -375,7 +375,10 @@
 <li><a href="#obtaining-pht-for-sirius">Obtaining PHT for Sirius</a></li>
 <li><a href="#obtaining-eth-for-rinkeby">Obtaining ETH for Rinkeby</a></li>
 </ul></li>
+<li><a href="#learn-more">Learn more</a>
+<ul>
 <li><a href="#help">Help</a></li>
+</ul></li>
 <li><a href="#need-human-help">Need human help?</a></li>
 </ul></li>
 </ul>
@@ -444,7 +447,7 @@ Flags:
   -h, --help             <span style="color:#111">help</span> <span style="color:#00a8c8">for</span> init
       --network string   Possible values: <span style="color:#d88200">&#39;rinkeby|sirius&#39;</span>.
       --nodeid int       ID of the node in order to support multiple nodes on the same machine. <span style="color:#ae81ff">0</span> by default.</code></pre></div>
-<p>Go to the <a href="/cli-docs">command line documentation</a> to learn more about leth CLI.</p>
+<p>Go to the <a href="/cli-docs/leth">command line documentation</a> to learn more about leth CLI.</p>
 
 <h2 id="running-lightstreams-node">Running Lightstreams node</h2>
 
@@ -458,7 +461,7 @@ Flags:
 <span style="color:#f92672">{</span><span style="color:#d88200">&#34;msg&#34;</span>:<span style="color:#d88200">&#34;IPFS successfully initialized.&#34;</span>,<span style="color:#d88200">&#34;dataDir&#34;</span>:<span style="color:#d88200">&#34;</span><span style="color:#111">$HOME</span><span style="color:#d88200">/.lightstreams_1/ipfs&#34;</span><span style="color:#f92672">}</span>
 <span style="color:#f92672">{</span><span style="color:#d88200">&#34;msg&#34;</span>:<span style="color:#d88200">&#34;Sirius node successfully initialized.&#34;</span>,<span style="color:#d88200">&#34;dataDir&#34;</span>:<span style="color:#d88200">&#34;</span><span style="color:#111">$HOME</span><span style="color:#d88200">/.lightstreams_1/sirius&#34;</span><span style="color:#f92672">}</span>
 <span style="color:#f92672">{</span><span style="color:#d88200">&#34;msg&#34;</span>:<span style="color:#d88200">&#34;Leth node fully initialized!!!&#34;</span>,<span style="color:#d88200">&#34;nodeDir&#34;</span>:<span style="color:#d88200">&#34;</span><span style="color:#111">$HOME</span><span style="color:#d88200">/.lightstreams_1&#34;</span><span style="color:#f92672">}</span></code></pre></div>
-<p>Second, run a lightstreams node:</p>
+<p>Secondly, run a lightstreams node:</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">leth run --nodeid<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> --network<span style="color:#f92672">=</span>sirius
 
 <span style="color:#f92672">{</span><span style="color:#d88200">&#34;msg&#34;</span>:<span style="color:#d88200">&#34;Starting Leth node online services (blockchain, IPFS)...&#34;</span><span style="color:#f92672">}</span>
@@ -554,7 +557,12 @@ for your ssl certificates and the port where the HTTPs server is going to be exp
 <li>Wait few seconds, if the blockchain is fully synced, check the balance once again <code>eth.getBalance(eth.coinbase)</code> -&gt; 3000000000000000000</li>
 </ul>
 
-<h2 id="help">Help</h2>
+<h2 id="learn-more">Learn more</h2>
+
+<p>To learn more about how you can start sharing files using <code>leth</code>, go to the next
+section, <a href="getting-started/file-sharing/">File sharing</a></p>
+
+<h3 id="help">Help</h3>
 
 <p>If in doubt, you can always run any command with a <code>--help</code> flag to show and explain to you all the possible flags and cmd usages.</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">leth acl --help</code></pre></div>
