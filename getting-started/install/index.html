@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-03-12T16:51:58 CET">
+<meta name="revised" content="2019-03-12T17:09:03 CET">
 <title>Install :: Lightstreams Documentation</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/nucleus.css" rel="stylesheet">
@@ -503,12 +503,12 @@ layer which allows users to control the access to after content is being distrib
 
 <p>== macOS ==</p>
 
-<pre><code>wget -qO- https://gethstore.blob.core.windows.net/builds/geth-darwin-amd64-1.8.22-7fa3509e.tar.gz | tar xvz --strip-components=1 -C /usr/local/bin/ geth-linux-amd64-1.8.21-9dc5d1a9/geth
+<pre><code>wget &quot;https://s3.eu-central-1.amazonaws.com/lightstreams-public/geth/geth-osx&quot; -O /usr/local/bin/geth
 </code></pre>
 
 <p>== Linux (amd64) ==</p>
 
-<pre><code>wget -qO- https://gethstore.blob.core.windows.net/builds/geth-linux-amd64-1.8.21-9dc5d1a9.tar.gz | tar xvz --strip-components=1 -C /usr/local/bin/ geth-linux-amd64-1.8.21-9dc5d1a9/geth
+<pre><code>wget &quot;https://s3.eu-central-1.amazonaws.com/lightstreams-public/geth/geth-linux-amd64&quot; -O /usr/local/bin/geth
 </code></pre>
 
 <h2 id="permissions">Permissions</h2>
@@ -525,13 +525,13 @@ chmod u+x /usr/local/bin/ipds
 <h2 id="check-installation">Check installation</h2>
 
 <pre><code>&gt; leth version
-Version: 0.12.0-alpha Gas Price
+Version: 0.9.0-alpha Sirius
 
 &gt; ipfs version
 ipfs version 0.4.16-dev
 
 &gt; lightchain version
-Version: 0.9.1-alpha Sirius-Net
+Version: 0.12.0-alpha Gas Price
 
 &gt; geth version
 Geth
