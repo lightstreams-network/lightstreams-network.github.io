@@ -3,6 +3,10 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://docs.lightstreams.network/guides/exchange-integration/</loc>
+  </url>
+  
+  <url>
     <loc>https://docs.lightstreams.network/getting-started/</loc>
   </url>
   

@@ -6,7 +6,7 @@
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="revised" content="2019-03-16T12:52:13 CET">
-<title>FAQs :: Lightstreams Documentation</title>
+<title>Exchange Integration :: Lightstreams Documentation</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/nucleus.css" rel="stylesheet">
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -29,7 +29,7 @@
 
     
   </head>
-  <body data-url="/faqs/">
+  <body data-url="/guides/exchange-integration/">
     
       <div id="headermain"></div>
 <nav id="sidebar" class="showVisitedLinks">
@@ -89,13 +89,14 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/guides/" class="dd-item haschildren
+    <li data-nav-id="/guides/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/guides/">Guides</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/guides/">Guides</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-    <li data-nav-id="/guides/exchange-integration/" class="dd-item
+    <li data-nav-id="/guides/exchange-integration/" class="dd-item parent active
         ">
       <div>
       <a href="/guides/exchange-integration/">Exchange Integration</a><i class="fa fa-circle-thin read-icon"></i>
@@ -291,7 +292,7 @@
       <a href="/http-api/">API</a><i class="fa fa-circle-thin read-icon"></i>
       </div>
     </li>
-    <li data-nav-id="/faqs/" class="dd-item parent active
+    <li data-nav-id="/faqs/" class="dd-item
         ">
       <div>
       <a href="/faqs/">FAQs</a><i class="fa fa-circle-thin read-icon"></i>
@@ -328,7 +329,7 @@
       
       
     <div id="top-github-link">
-      <a class="github-link" href="https://github.com/lightstreams-network/docs/tree/master/content/faqs/_index.md" target="blank">
+      <a class="github-link" href="https://github.com/lightstreams-network/docs/tree/master/content/guides/exchange-integration/_index.md" target="blank">
         <i class="fa fa-code-fork"></i>
         Improve this page
       </a>
@@ -345,7 +346,12 @@
 
 
 
- <a href='/'>Lightstreams documentation</a> > FAQs
+
+
+
+ <a href='/'>Lightstreams documentation</a> > <a href='/guides/'>Guides</a> > Exchange Integration
+
+ 
 
  
 
@@ -360,14 +366,23 @@
 <ul>
 <li>
 <ul>
-<li><a href="#what-is-lightstreams">What is Lightstreams?</a></li>
-<li><a href="#why-build-on-lightstreams">Why build on Lightstreams?</a></li>
-<li><a href="#why-use-dapps-built-on-lightstreams">Why use DApps built on Lightstreams?</a></li>
-<li><a href="#who-needs-lighststreams">Who needs Lighststreams?</a></li>
-<li><a href="#how-does-it-work">How does it work?</a></li>
-<li><a href="#what-does-this-enable">What does this enable?</a></li>
-<li><a href="#what-is-an-interplanetary-file-system-ipfs">What is an InterPlanetary File System (IPFS)?</a></li>
-<li><a href="#what-is-ethereum">What is Ethereum?</a></li>
+<li><a href="#installation">Installation</a>
+<ul>
+<li><a href="#pre-compiled-binaries">Pre-compiled binaries</a></li>
+<li><a href="#from-source-code">From Source code</a></li>
+</ul></li>
+<li><a href="#run-lightstreams-node">Run Lightstreams node</a>
+<ul>
+<li><a href="#node-initialization">Node initialization</a></li>
+<li><a href="#node-launching">Node launching</a>
+<ul>
+<li><a href="#help">Help</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#interact-with-lightstreams-node">Interact with Lightstreams node</a>
+<ul>
+<li><a href="#example">Example</a></li>
+</ul></li>
 </ul></li>
 </ul>
 </nav>
@@ -380,7 +395,7 @@
 
 <div id="body-inner">
   
-    <h1>FAQs</h1>
+    <h1>Exchange Integration</h1>
   
 
 
@@ -391,78 +406,140 @@
 
 
 
-<h2 id="what-is-lightstreams">What is Lightstreams?</h2>
+<p>In this section, we will explain the steps to install and synchronize
+a Lightstreams PoA blockchain node. Moreover, as part of the functionalities
+required by token exchanges, we will be proving examples of how to interact with Lightstreams blockchain in order to create accounts, transfer tokens or fetch tx receipts.</p>
 
-<p>Lightstreams brings the capability of storing assets (files) in conjunction with Blockchain technology in a efficient, low-priced and decentralized manner. The key innovation is an advanced permissioning system that lets content producers store and monetise their intellectual property (text, images, music, movies).</p>
+<h2 id="installation">Installation</h2>
 
-<p>A new generation of internet applications (known as Decentralised Applications or DApps) can also be developed using this technology.
-Lightstreams lets DApp developers store and manage access to files needed for their DApps that cannot be privately or cheaply be stored with other blockchains.</p>
+<p>Lightstreams has released its own <a href="https://github.com/lightstreams-network/lightchain">ethereum-compatible blockchain</a>
+which uses Byzantine consensus to replace the original proof-of-work (PoW) from Ethereum.</p>
 
-<p>Lightstreams is a public blockchain. This means that is 100% open for anyone to connect without restrictions. However, unlike most public blockchains, files on Lightstreams are stored securely and privately and only distributed with permission on a peer-to-peer basis. Each content producer or DApp developer is able to share protected content quickly with granular control and access tracking. This ensures transparency and auditability of when, how, and by whom data was approved and transmitted between users.  DApp developers developing smart contracts on blockchain (including but not limited to Ethereum’s public blockchain) can seamlessly reference files stored on the Lightstreams network.</p>
+<p>Using <code>lightchain</code> you can connect to Lightstreams blockchain and use every
+functionality currently existing on Ethereum. See more in the command line <a href="/cli-docs/lightchain/">documentation</a></p>
 
-<h2 id="why-build-on-lightstreams">Why build on Lightstreams?</h2>
+<h3 id="pre-compiled-binaries">Pre-compiled binaries</h3>
 
-<ol>
-<li><strong>Real-world identities</strong></li>
-<li>Use people’s verified identity to build real-world applications.</li>
-<li><strong>Distributed Secure Storage Network</strong></li>
-<li>Distributed secure storage is made available to applications to permit access to content in a decentralised environment.</li>
-<li><strong>Fast. Scalable</strong></li>
-<li>Get all the benefits from a decentralized infrastructure for distributing content without blockchain scaling issues.</li>
-<li><strong>Trustless</strong></li>
-<li>Build decentralized marketplaces with peer-to-peer exchanges.</li>
-</ol>
+<p>Lightstreams provides precompiled binaries for the most popular Unix distributions:
+and macOS.</p>
 
-<h2 id="why-use-dapps-built-on-lightstreams">Why use DApps built on Lightstreams?</h2>
+<p>== macOS ==</p>
 
-<ol>
-<li><strong>Self-sovereign identity</strong></li>
-<li>Users control their identity. They decide who can see and use it.</li>
-<li>Users control &amp; manage their own data. Applications always need to request permissions to use it.</li>
-<li>No single point of failure for data breaches that can occur in traditional highly centralised internet services.</li>
-<li><strong>Monetise content</strong></li>
-<li>Higher royalty earnings by digital content and intellectual property direct sales.</li>
-<li>Users earn income for curating discoverable content.</li>
-<li>Users can hold in tokens associated with content to benefit from appreciation in value.</li>
-<li><strong>Decentralised network</strong></li>
-<li>Participation in a network that is not controlled by any one entity.</li>
-<li>Self-governance for an open, fair and stable network</li>
-<li>Each user&rsquo;s vote determines the direction of the network.</li>
-</ol>
+<pre><code>wget &quot;https://s3.eu-central-1.amazonaws.com/lightstreams-public/lightchain/lightchain-osx&quot; -O /usr/local/bin/lightchain
+</code></pre>
 
-<h2 id="who-needs-lighststreams">Who needs Lighststreams?</h2>
+<p>== Linux (amd64) ==</p>
 
-<ul>
-<li><p>DApps that require high security for managing access to information. Data is protected through ensuring only the correct people (or businesses) can see the information (eg only your doctors or lawyer). Distributed sharing of data with authorised people eliminates any centralised point of weakness that can be breached.</p></li>
+<pre><code>wget &quot;https://s3.eu-central-1.amazonaws.com/lightstreams-public/lightchain/lightchain-linux-amd64&quot; -O /usr/local/bin/lightchain
+</code></pre>
 
-<li><p>Consumers who want to control their data privacy by allowing them to be (monetarily) rewarded for sharing select information only to the companies they trust (and no one else)</p></li>
+<p>After downloading the binary, you will need to set the right executable permissions to it, as follow:</p>
 
-<li><p>Those selling digital content (eg music/audio) with rights of ownership (and royalties for artists) automatically included.</p></li>
+<pre><code>chmod a+x /usr/local/bin/lightchain
+</code></pre>
 
-<li><p>Business that require confidential legal documents to be digitally signed directly between parties without requiring an intermediary to facilitate execution.</p></li>
-</ul>
+<h3 id="from-source-code">From Source code</h3>
 
-<h2 id="how-does-it-work">How does it work?</h2>
+<p>In case you prefer to compile your own version of <code>lightchain</code> you just need to
+follow the instructions at <a href="https://github.com/lightstreams-network/lightchain">this repository</a>.</p>
 
-<p>Lightstreams uses its own Ethereum-compatible blockchain for the transparent and auditable management of file-access permissions, and a separate enhanced IPFS protocol for encrypted file storage and peer-to-peer file distribution.  The Lightstreams blockchain is based on Ethereum but modified for shorter block times and also replaces the wasteful proof-of-work protocol with proof-of-authority.</p>
+<h2 id="run-lightstreams-node">Run Lightstreams node</h2>
 
-<h2 id="what-does-this-enable">What does this enable?</h2>
+<p>Once <code>lightchain</code> is installed we can proceed with the initialization and synchronization
+of a new lightstreams node.</p>
 
-<p>Lightstreams allows content producers to monetise their intellectual property.  Content producers will be able to share files, images, music and movies and monetise them directly without needing a third party to host the content or broker the details - the smart contracts on the Lightstreams blockchain manage the payments and permissioning.</p>
+<p>Lightstreams implements two networks: <code>mainnet</code> and a testnet called <code>sirius</code>.
+At the minute <code>lightchain</code> is connecting by default to <code>sirius</code> as our team is still working on
+the launch of the mainnet.</p>
 
-<p>DApps that use Lightstreams will allow users to access content such as audio, video or images in a <em>fast</em> and <em>responsive</em> manner - currently not possible on Ethereum’s public blockchain.  We imagine two scenarios, one being DApps built on Ethereum referencing files on Lightstreams, and the other being DApps built directly on Lightstreams.  As Lightstreams’ blockchain is compatible with Ethereum, moving a DApp from Ethereum to Lightstreams is simple.</p>
+<h3 id="node-initialization">Node initialization</h3>
 
-<h2 id="what-is-an-interplanetary-file-system-ipfs">What is an InterPlanetary File System (IPFS)?</h2>
+<p>To initialise a new blockchain you need to run lightchain init and choose
+a local path where blockchain files are going to be stored.</p>
 
-<p>The InterPlanetary File System (IPFS) protocol can be described as a standard to create a content-addressable peer-to-peer method of storing and retrieving data in a distributed file system. The content-addressing system guarantees that the data retrieved always matches the address used for finding the data. It is decentralised, meaning there is no dependency on any one computer or entity for hosting the data. Data is be replicated to multiple computers as it is shared, this add many layers of redundancy. In other words, every computer hosting a specific piece of data would need to be compromised to lose the data.</p>
+<pre><code>lightchain init --datadir=&quot;${HOME}/.lightstreams-sirius&quot; --sirius
+</code></pre>
 
-<p>The hypermedia protocol also scales on demand - the more demand there is for a file, the more copies are made and so the faster the data transfer of that file becomes by virtue of the increased number of computers sharing files/content/data at the same time.</p>
+<h3 id="node-launching">Node launching</h3>
 
-<h2 id="what-is-ethereum">What is Ethereum?</h2>
+<p>To run a lightchain node you only need to run the following command:</p>
 
-<p>Ethereum is a public, open-source blockchain-based computing platform. Its main feature is that of a Ethereum Virtual Machine (EVM) for running modules of application code called smart contracts. A user may think of Ethereum as an operating system for running apps (like a smartphone that can run multiple apps). Ethereum is decentralised. The system or network is not run by one specific entity that owns the infrastructure.</p>
+<pre><code>lightchain run --datadir=&quot;${HOME}/.lightstreams-sirius&quot;
+</code></pre>
 
-<p>Smart Contracts are used to enact business logic, essential for DApps on the Ethereum network. A smart contract is suitable for small data, they are not suitable for the storage and retrieval of media files.</p>
+<p>After the command is executed the Lightstreams node will proceed with the synchronization.
+Once the node is synchronized we should leave node running in order to interact with the blockchain.</p>
+
+<p>Lightstreams also provides a <a href="https://explorer.sirius.lightstreams.io">block explorer</a> to see which is the current state of the blockchain.</p>
+
+<h4 id="help">Help</h4>
+
+<p>To see more available options for launching a lightchain node, check the
+<a href="/cli-docs/lightchain/run/">client documentation section</a> or execute in the terminal:</p>
+
+<pre><code>lightchain run -h
+</code></pre>
+
+<h2 id="interact-with-lightstreams-node">Interact with Lightstreams node</h2>
+
+<p>As it was mentioned above, Lightstreams node is fully ethereum-compatible therefore
+ ethereum <a href="https://github.com/ethereum/wiki/wiki/JSON-RPC">JSON RPC API</a> is also available.</p>
+
+<p>To enable those RPC endpoints, we need to specify the APIs we want to enable and the endpoints. At the command line argument, when Lightstreams node is launched,  we need to
+include <code>--rpc --rpcapi eth,net,web3,personal,admin</code>. In case you want to enable the WebSocket endpoints you have to also use<code>--ws</code></p>
+
+<pre><code>lightchain run --datadir=&quot;${HOME}/.lightstreams-sirius&quot; --rpc --rpcapi eth,net,web3,personal,admin --ws
+</code></pre>
+
+<p>By default RPC API is exposed over port <em><code>:8545</code></em> and WebSocket over port <em><code>:8546</code></em>.
+In case you want to specify a different port, you may use the following flags
+<code>--rpcport ${RPC_PORT}</code> or <code>--wsport ${WS_PORT}</code> respectively.</p>
+
+<p>In addition to those, IPC Unix socket is always enabled and you can find it at
+<code>${HOME}/.lightstreams-sirius/database/geth.ipc</code> (according to the values used on above example)</p>
+
+<h3 id="example">Example</h3>
+
+<p>As it is explained above we can interact with Lightstreams node as we would have been
+interacting with an Ethereum node. For instance, we could attach a Geth to the running
+Lightstreams node and create a new account and perform a transfer.</p>
+
+<p><strong><em>Start interactive Geth console</em></strong></p>
+
+<pre><code>geth attach http://localhost:8545
+</code></pre>
+
+<p><strong><em>Create a new account</em></strong></p>
+
+<pre><code>&gt; personal.newAccount(&quot;passphrase&quot;)
+&quot;0xe7094bd66363c0442bd99ea00fccb19b0d272453&quot;
+</code></pre>
+
+<p><strong><em>Transfer tokens</em></strong></p>
+
+<pre><code>&gt; eth.sendTransaction({from:eth.accounts[0], to:&quot;0xe7094bd66363c0442bd99ea00fccb19b0d272453&quot;, value: web3.toWei(0.05, &quot;ether&quot;)})
+&quot;0x2ca8bce6a70566a0869a9fd2ac74743e05fe19e17ec118d7a4933f07714faeed&quot;
+</code></pre>
+
+<p><strong><em>Read receipt</em></strong></p>
+
+<pre><code>&gt; eth.getTransactionReceipt(&quot;0x2ca8bce6a70566a0869a9fd2ac74743e05fe19e17ec118d7a4933f07714faeed&quot;)
+{
+  blockHash: &quot;0xc96707c294c79b7d3667a59e5f097f72375d4b7f0135e0055eabc5e70ddec717&quot;,
+  blockNumber: 17793,
+  contractAddress: null,
+  cumulativeGasUsed: 21000,
+  from: &quot;0xc916cfe5c83dd4fc3c3b0bf2ec2d4e401782875e&quot;,
+  gasUsed: 21000,
+  logs: [],
+  logsBloom: &quot;0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&quot;,
+  status: &quot;0x1&quot;,
+  to: &quot;0xe7094bd66363c0442bd99ea00fccb19b0d272453&quot;,
+  transactionHash: &quot;0x2ca8bce6a70566a0869a9fd2ac74743e05fe19e17ec118d7a4933f07714faeed&quot;,
+  transactionIndex: 0
+}
+
+</code></pre>
 
 
 
