@@ -11,7 +11,7 @@
 	"title": "Getting started",
 	"tags": [],
 	"description": "",
-	"content": " Lightstreams team implemented a permissioned blockchain protocol to empower users to share their files in secure and distributed manner, always in control the access to those private files.\nHave a look at the following links to learn how to distribute your data in a in a secure manner.\nFirst steps  Installation Quick start Private file sharing  "
+	"content": " What is Lightstreams? Lightstreams is a permissioned blockchain protocol that enables users to share files \u0026amp;content in a secure and distributed manner. If you are a dapp developer, you can use the leth command line to let users store files/content and create authorization rules.\nFirst steps  Installation Quick start Private file sharing  "
 },
 {
 	"uri": "https://docs.lightstreams.network/getting-started/install/",
@@ -25,14 +25,14 @@
 	"title": "Lightstreams documentation",
 	"tags": [],
 	"description": "",
-	"content": " Welcome Hi there! Welcome to the Lightstreams documentation! We\u0026rsquo;re happy to have you here.\n Getting started Request test tokens Community forum  "
+	"content": " Welcome Hi there! Welcome to the Lightstreams documentation!\n Getting started Install Request test tokens Community forum Need help? Get in touch with us  "
 },
 {
 	"uri": "https://docs.lightstreams.network/guides/",
 	"title": "Guides",
 	"tags": [],
 	"description": "",
-	"content": " This section includes specific guidelines for the integration of Lighstreams services.\nGuides  Exchange Integration  "
+	"content": " This section includes specific guides for the integration of Lightstreams services.\nGuides  Exchange Integration  "
 },
 {
 	"uri": "https://docs.lightstreams.network/getting-started/quick-start/",
@@ -46,7 +46,7 @@
 	"title": "Examples",
 	"tags": [],
 	"description": "",
-	"content": "Below we have proposed a list of decentralized applications (DApps) where leth could become an fundamental pillar for their implementation:\n Light Drive, a decentralized file synchronization tool Light Note, a decentralized note taking application Light Bookmark, a decentralized bookmarking and website archiving tool  "
+	"content": "Below we have proposed a list of decentralized applications (DApps) where leth could be a fundamental pillar for their implementation:\n Light Drive, a decentralized file synchronization tool Light Note, a decentralized note taking application Light Bookmark, a decentralized bookmarking and website archiving tool  "
 },
 {
 	"uri": "https://docs.lightstreams.network/getting-started/file-sharing/",
