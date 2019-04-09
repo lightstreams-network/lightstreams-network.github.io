@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-04-02T11:19:31 CEST">
+<meta name="revised" content="2019-04-09T14:58:41 CEST">
 <title>Exchange Integration :: Lightstreams Documentation</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/nucleus.css" rel="stylesheet">
@@ -69,6 +69,24 @@
       <a href="/getting-started/">Getting started</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
+    <li data-nav-id="/getting-started/install/" class="dd-item
+        ">
+      <div>
+      <a href="/getting-started/install/">Install</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/getting-started/quick-start/" class="dd-item
+        ">
+      <div>
+      <a href="/getting-started/quick-start/">Quick start</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/getting-started/file-sharing/" class="dd-item
+        ">
+      <div>
+      <a href="/getting-started/file-sharing/">Private file sharing</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/guides/" class="dd-item parent haschildren
@@ -413,12 +431,12 @@ and macOS.</p>
 
 <p>== macOS ==</p>
 
-<pre><code>wget &quot;https://s3.eu-central-1.amazonaws.com/lightstreams-public/latest/lightchain/lightchain-osx&quot; -O /usr/local/bin/lightchain
+<pre><code>wget &quot;https://s3.eu-central-1.amazonaws.com/lightstreams-public/lightchain/latest/lightchain-osx&quot; -O /usr/local/bin/lightchain
 </code></pre>
 
 <p>== Linux (amd64) ==</p>
 
-<pre><code>wget &quot;https://s3.eu-central-1.amazonaws.com/lightstreams-public/latest/lightchain/lightchain-linux-amd64&quot; -O /usr/local/bin/lightchain
+<pre><code>wget &quot;https://s3.eu-central-1.amazonaws.com/lightstreams-public/lightchain/latest/lightchain/lightchain-linux-amd64&quot; -O /usr/local/bin/lightchain
 </code></pre>
 
 <p>After downloading the binary, you will need to set the right executable permissions to it, as follow:</p>
@@ -437,7 +455,7 @@ follow the instructions at <a href="https://github.com/lightstreams-network/ligh
 of a new lightstreams node.</p>
 
 <p>Lightstreams implements two networks: <code>mainnet</code> and a testnet called <code>sirius</code>.
-At the minute <code>lightchain</code> is connecting by default to <code>sirius</code> as our team is still working on
+At the minute <code>lightchain</code> is connecting by default to <code>mainnet</code> as our team is still working on
 the launch of the mainnet.</p>
 
 <h3 id="node-initialization">Node initialization</h3>
@@ -445,20 +463,20 @@ the launch of the mainnet.</p>
 <p>To initialise a new blockchain you need to run lightchain init and choose
 a local path where blockchain files are going to be stored.</p>
 
-<pre><code>lightchain init --datadir=&quot;${HOME}/.lightstreams-sirius&quot; --sirius
+<pre><code>lightchain init --datadir=&quot;${HOME}/.lightstreams-mainnet&quot; --mainnet
 </code></pre>
 
 <h3 id="node-launching">Node launching</h3>
 
 <p>To run a lightchain node you only need to run the following command:</p>
 
-<pre><code>lightchain run --datadir=&quot;${HOME}/.lightstreams-sirius&quot;
+<pre><code>lightchain run --datadir=&quot;${HOME}/.lightstreams-mainnet&quot;
 </code></pre>
 
 <p>After the command is executed the Lightstreams node will proceed with the synchronization.
 Once the node is synchronized we should leave node running in order to interact with the blockchain.</p>
 
-<p>Lightstreams also provides a <a href="https://explorer.sirius.lightstreams.io">block explorer</a> to see which is the current state of the blockchain.</p>
+<p>Lightstreams also provides a <a href="https://explorer.mainnet.lightstreams.io">block explorer</a> to see which is the current state of the blockchain.</p>
 
 <h4 id="help">Help</h4>
 
@@ -476,7 +494,7 @@ Once the node is synchronized we should leave node running in order to interact 
 <p>To enable those RPC endpoints, we need to specify the APIs we want to enable and the endpoints. At the command line argument, when Lightstreams node is launched,  we need to
 include <code>--rpc --rpcapi eth,net,web3,personal,admin</code>. In case you want to enable the WebSocket endpoints you have to also use<code>--ws</code></p>
 
-<pre><code>lightchain run --datadir=&quot;${HOME}/.lightstreams-sirius&quot; --rpc --rpcapi eth,net,web3,personal,admin --ws
+<pre><code>lightchain run --datadir=&quot;${HOME}/.lightstreams-mainnet&quot; --rpc --rpcapi eth,net,web3,personal,admin --ws
 </code></pre>
 
 <p>By default RPC API is exposed over port <em><code>:8545</code></em> and WebSocket over port <em><code>:8546</code></em>.
@@ -484,7 +502,7 @@ In case you want to specify a different port, you may use the following flags
 <code>--rpcport ${RPC_PORT}</code> or <code>--wsport ${WS_PORT}</code> respectively.</p>
 
 <p>In addition to those, IPC Unix socket is always enabled and you can find it at
-<code>${HOME}/.lightstreams-sirius/database/geth.ipc</code> (according to the values used on above example)</p>
+<code>${HOME}/.lightstreams-mainnet/database/geth.ipc</code> (according to the values used on above example)</p>
 
 <h3 id="example">Example</h3>
 
