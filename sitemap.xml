@@ -3,6 +3,10 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://docs.lightstreams.network/examples/e-commerce/</loc>
+  </url>
+  
+  <url>
     <loc>https://docs.lightstreams.network/guides/exchange-integration/</loc>
   </url>
   
@@ -20,6 +24,10 @@
   
   <url>
     <loc>https://docs.lightstreams.network/guides/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.lightstreams.network/examples/js-sdk/</loc>
   </url>
   
   <url>

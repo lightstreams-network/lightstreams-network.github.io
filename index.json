@@ -1,5 +1,12 @@
 [
 {
+	"uri": "https://docs.lightstreams.network/examples/e-commerce/",
+	"title": "DApp e-commerce demo",
+	"tags": [],
+	"description": "",
+	"content": " What is Lightstreams e-commerce demo dapp? Lightstreams e-commerce demo intends to show case a real world e-commerce application where content creators could offer their intellectual content for selling in a decentralize manner using Lightstreams Smart Vault to guarantee the security and traceability of their published content.\nNodes Lightstreams provides two separate and independent nodes of this e-commerce demo to represent the real decentralization of this DApp.\n Demo Node 1 Demo Node 2  Application On every new session an user is automatically created and credited with 2 PHT. Below you can find a short explanation of the functionalities you can find in this demo.\nLightstreams WhitePaper On the Demo home page default there is pre-uploaded content to purchase, in this case it is the Lightstreams WhitePaper for the reasonable price of 0.2 PHT.\nUpload Content From home page click, or from the application service, on Publish or from the application menu.\nAfter you agree on the term\u0026amp;conditions it will start deploying a new Smart Contract which will hold the Access Control List(ACL) of the file you are about to upload. It is required to have at least 1 PHT to perform this action.\nOnce the deployment of the smart contract is completed, you fill up the form include a title and description for the new file, a cover image and the file itself. Click on Publish. After uploading and deployment is finished it will display a content profile card with the public and private information of the published content.\nLibrary On the Library every purchased and published content is being listed.\nShare your Content To purchase the content published by other users we need to Search for it using the Public Content ID provided after uploading was completed. Pasting that ID and click on Search the public data regarding the published content is displayed along with a Purchase button to proceed with the purchasing of the content.\nPurchase Content To purchase this content you need to click on the public link, this link loads the public metadata information about the content such as Title, Description, Cover image, Owner and price. After you click in Purchase it performs a purchase tx in the blockchain which send to the content owner to total amount set at the price.\nOnce the tx is completed the private content is loaded and downloadable. Also you can see the receipt of it and clicking on it you can see from Lightstreams Explorer the actual details of the transaction.\n"
+},
+{
 	"uri": "https://docs.lightstreams.network/guides/exchange-integration/",
 	"title": "Exchange Integration",
 	"tags": [],
@@ -35,6 +42,13 @@
 	"content": " This section includes specific guides for the integration of Lightstreams services.\nGuides  Exchange Integration  "
 },
 {
+	"uri": "https://docs.lightstreams.network/examples/js-sdk/",
+	"title": "Leth JS SDK",
+	"tags": [],
+	"description": "",
+	"content": "In order to facilitate the integration and usage of Leth Lightstreams team implemented a Javascript SDK which bridges the endpoints of Leth Http api to a Node Express server\nYou can find the project repository here\n"
+},
+{
 	"uri": "https://docs.lightstreams.network/getting-started/quick-start/",
 	"title": "Quick start",
 	"tags": [],
@@ -46,7 +60,7 @@
 	"title": "Examples",
 	"tags": [],
 	"description": "",
-	"content": "Below we have proposed a list of decentralized applications (DApps) where leth could be a fundamental pillar for their implementation:\n Light Drive, a decentralized file synchronization tool Light Note, a decentralized note taking application Light Bookmark, a decentralized bookmarking and website archiving tool  "
+	"content": "Using leth we implemented the following example projects:\n e-commerce demo JS SDK  Beside that, we could use Leth as fundamental pillar for many other decentralized applications (DApps), such as:\n Light Drive, a decentralized file synchronization tool Light Note, a decentralized note taking application Light Bookmark, a decentralized bookmarking and website archiving tool  "
 },
 {
 	"uri": "https://docs.lightstreams.network/getting-started/file-sharing/",

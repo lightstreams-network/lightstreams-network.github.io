@@ -6,7 +6,7 @@
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="revised" content="2019-05-01T12:28:46 CEST">
-<title>Tags :: Lightstreams Documentation</title>
+<title>DApp e-commerce demo :: Lightstreams Documentation</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/nucleus.css" rel="stylesheet">
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -29,7 +29,7 @@
 
     
   </head>
-  <body data-url="/tags/">
+  <body data-url="/examples/e-commerce/">
     
       <div id="headermain"></div>
 <nav id="sidebar" class="showVisitedLinks">
@@ -103,13 +103,14 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/examples/" class="dd-item haschildren
+    <li data-nav-id="/examples/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/examples/">Examples</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/examples/">Examples</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-    <li data-nav-id="/examples/e-commerce/" class="dd-item
+    <li data-nav-id="/examples/e-commerce/" class="dd-item parent active
         ">
       <div>
       <a href="/examples/e-commerce/">DApp e-commerce demo</a><i class="fa fa-circle-thin read-icon"></i>
@@ -343,7 +344,16 @@
 <div class="padding highlightable">
 
   <div id="top-bar">
-    <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+    
+      
+      
+      
+    <div id="top-github-link">
+      <a class="github-link" href="https://github.com/lightstreams-network/docs/tree/master/content/examples/e-commerce/_index.md" target="blank">
+        <i class="fa fa-code-fork"></i>
+        Improve this page
+      </a>
+    </div><div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
         <span id="sidebar-toggle-span">
           <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
             <i class="fa fa-bars"></i>
@@ -353,7 +363,17 @@
         <span class="links">
         
 
- Tags
+
+
+
+
+
+
+ <a href='/'>Lightstreams documentation</a> > <a href='/examples/'>Examples</a> > DApp e-commerce demo
+
+ 
+
+ 
 
    
         </span>
@@ -362,7 +382,26 @@
     
     <div class="progress">
         <div class="wrapper">
-    
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#what-is-lightstreams-e-commerce-demo-dapp">What is Lightstreams e-commerce demo dapp?</a></li>
+<li><a href="#nodes">Nodes</a></li>
+<li><a href="#application">Application</a>
+<ul>
+<li>
+<ul>
+<li><a href="#lightstreams-whitepaper">Lightstreams WhitePaper</a></li>
+<li><a href="#upload-content">Upload Content</a></li>
+<li><a href="#library">Library</a></li>
+<li><a href="#share-your-content">Share your Content</a></li>
+<li><a href="#purchase-content">Purchase Content</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
         </div>
     </div>
     
@@ -372,7 +411,7 @@
 
 <div id="body-inner">
   
-    <h1>Tags</h1>
+    <h1>DApp e-commerce demo</h1>
   
 
 
@@ -383,25 +422,63 @@
 
 
 
-<div class="extra-pagination inner">
-<nav class="pagination" role="navigation">
-	
-	<span class="page-number">Page 1 of 0</span>
-	
-</nav>
+<h2 id="what-is-lightstreams-e-commerce-demo-dapp">What is Lightstreams e-commerce demo dapp?</h2>
 
-</div>
+<p>Lightstreams e-commerce demo intends to show case a real world e-commerce application where content creators
+could offer their intellectual content for selling in a decentralize manner using Lightstreams Smart Vault
+ to guarantee the security and traceability of their published content.</p>
 
+<h2 id="nodes">Nodes</h2>
 
+<p>Lightstreams provides two separate and independent nodes of this e-commerce demo to represent the real decentralization
+of this DApp.</p>
 
-<div style="margin-bottom:2rem"></div>
+<ul>
+<li><a href="demo.node1.lightstreams.io">Demo Node 1</a></li>
+<li><a href="demo.node2.lightstreams.io">Demo Node 2</a></li>
+</ul>
 
-<nav class="pagination" role="navigation">
-	
-	<span class="page-number">Page 1 of 0</span>
-	
-</nav>
+<h2 id="application">Application</h2>
 
+<p>On every new session an user is automatically created and credited with 2 PHT. Below you can find a short
+explanation of the functionalities you can find in this demo.</p>
+
+<h4 id="lightstreams-whitepaper">Lightstreams WhitePaper</h4>
+
+<p>On the Demo home page default there is pre-uploaded content to purchase,
+ in this case it is the Lightstreams WhitePaper for the reasonable price of 0.2 PHT.</p>
+
+<h4 id="upload-content">Upload Content</h4>
+
+<p>From home page click, or from the application service, on <strong>Publish</strong> or from the application menu.</p>
+
+<p>After you agree on the term&amp;conditions it will start deploying a new Smart Contract which will hold the
+Access Control List(ACL) of the file you are about to upload. It is required to have at least 1 PHT to perform
+this action.</p>
+
+<p>Once the deployment of the smart contract is completed, you fill up the form include a title and description for the
+new file, a cover image and the file itself. Click on <em>Publish</em>. After uploading and deployment is finished
+it will display a content profile card with the public and private information of the published content.</p>
+
+<h4 id="library">Library</h4>
+
+<p>On the <em>Library</em> every purchased and published content is being listed.</p>
+
+<h4 id="share-your-content">Share your Content</h4>
+
+<p>To purchase the content published by other users we need to <em>Search</em> for it using the Public Content ID
+provided after uploading was completed. Pasting that ID and click on <em>Search</em> the public data regarding the published
+content is displayed along with a <em>Purchase</em> button to proceed with the purchasing of the content.</p>
+
+<h4 id="purchase-content">Purchase Content</h4>
+
+<p>To purchase this content you need to click on the public link, this link loads
+ the public metadata information about the content such as Title, Description, Cover image, Owner and  price.
+ After you click in <code>Purchase</code> it performs a purchase tx in the blockchain which send
+ to the content owner to total amount set at the price.</p>
+
+<p>Once the tx is completed the private content is loaded and downloadable. Also you can see the
+ receipt of it and clicking on it you can see from Lightstreams Explorer the actual details of the transaction.</p>
 
 
 
