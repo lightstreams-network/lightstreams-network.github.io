@@ -6,7 +6,7 @@
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="revised" content="2019-05-07T16:35:05 CEST">
-<title>leth docs :: Lightstreams Documentation</title>
+<title>leth shop create :: Lightstreams Documentation</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/nucleus.css" rel="stylesheet">
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -29,7 +29,7 @@
 
     
   </head>
-  <body data-url="/cli-docs/leth/docs/">
+  <body data-url="/cli-docs/leth/shop/create/">
     
       <div id="headermain"></div>
 <nav id="sidebar" class="showVisitedLinks">
@@ -157,7 +157,7 @@
       <a href="/cli-docs/leth/auth/">leth auth</a><i class="fa fa-circle-thin read-icon"></i>
       </div>
     </li>
-    <li data-nav-id="/cli-docs/leth/docs/" class="dd-item parent active
+    <li data-nav-id="/cli-docs/leth/docs/" class="dd-item
         ">
       <div>
       <a href="/cli-docs/leth/docs/">leth docs</a><i class="fa fa-circle-thin read-icon"></i>
@@ -175,10 +175,11 @@
       <a href="/cli-docs/leth/run/">leth run</a><i class="fa fa-circle-thin read-icon"></i>
       </div>
     </li>
-    <li data-nav-id="/cli-docs/leth/shop/" class="dd-item haschildren
+    <li data-nav-id="/cli-docs/leth/shop/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/cli-docs/leth/shop/">leth shop</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/cli-docs/leth/shop/">leth shop</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
     <li data-nav-id="/cli-docs/leth/shop/buy/" class="dd-item
@@ -187,7 +188,7 @@
       <a href="/cli-docs/leth/shop/buy/">leth shop buy</a><i class="fa fa-circle-thin read-icon"></i>
       </div>
     </li>
-    <li data-nav-id="/cli-docs/leth/shop/create/" class="dd-item
+    <li data-nav-id="/cli-docs/leth/shop/create/" class="dd-item parent active
         ">
       <div>
       <a href="/cli-docs/leth/shop/create/">leth shop create</a><i class="fa fa-circle-thin read-icon"></i>
@@ -382,7 +383,7 @@
       
       
     <div id="top-github-link">
-      <a class="github-link" href="https://github.com/lightstreams-network/docs/tree/master/content/cli-docs/leth/docs/_index.md" target="blank">
+      <a class="github-link" href="https://github.com/lightstreams-network/docs/tree/master/content/cli-docs/leth/shop/create/_index.md" target="blank">
         <i class="fa fa-code-fork"></i>
         Improve this page
       </a>
@@ -405,7 +406,12 @@
 
 
 
- <a href='/'>Lightstreams documentation</a> > <a href='/cli-docs/'>Command line documentation</a> > <a href='/cli-docs/leth/'>leth</a> > leth docs
+
+
+
+ <a href='/'>Lightstreams documentation</a> > <a href='/cli-docs/'>Command line documentation</a> > <a href='/cli-docs/leth/'>leth</a> > <a href='/cli-docs/leth/shop/'>leth shop</a> > leth shop create
+
+ 
 
  
 
@@ -424,7 +430,7 @@
 <ul>
 <li>
 <ul>
-<li><a href="#leth-docs">leth docs</a>
+<li><a href="#leth-shop-create">leth shop create</a>
 <ul>
 <li><a href="#synopsis">Synopsis</a></li>
 <li><a href="#options">Options</a></li>
@@ -451,7 +457,7 @@
 
 <div id="body-inner">
   
-    <h1>leth docs</h1>
+    <h1>leth shop create</h1>
   
 
 
@@ -462,26 +468,38 @@
 
 
 
-<h2 id="leth-docs">leth docs</h2>
+<h2 id="leth-shop-create">leth shop create</h2>
 
-<p>Generates LETH / usage docs based on code into the: &lsquo;docs/cmd/auto/generated&rsquo;.</p>
+<p>Creates an online shop, smart contract, for selling/buying digital content.</p>
 
 <h3 id="synopsis">Synopsis</h3>
 
-<p>Generates LETH / usage docs based on code into the: &lsquo;docs/cmd/auto/generated&rsquo;.</p>
+<p>Usage:</p>
 
-<pre><code>leth docs [flags]
+<pre><code>leth shop create --nodeid=1 --network=rinkeby --from=0xadC486F16F003897fb927e22438cb1b820f79879
+</code></pre>
+
+<p>Possible Outputs:</p>
+
+<pre><code>{&quot;shop&quot;:&quot;0xshopIDF16F003897fb927e22438cb1b820f79879&quot;}
+{&quot;error&quot;: {&quot;code&quot;: &quot;SOME/INTERNAL/ERROR/CODE&quot;, &quot;message&quot;: &quot;explanatory error message&quot;}}
+</code></pre>
+
+<pre><code>leth shop create [flags]
 </code></pre>
 
 <h3 id="options">Options</h3>
 
-<pre><code>  -h, --help   help for docs
+<pre><code>      --from string      The owner of the shop.
+  -h, --help             help for create
+      --network string   Possible values: 'rinkeby, ganache, sirius'.
+      --nodeid int       ID of the node in order to support multiple nodes on the same machine. 0 by default.
 </code></pre>
 
 <h3 id="see-also">SEE ALSO</h3>
 
 <ul>
-<li><a href="/cli-docs/leth/">leth</a>    - Lightstreams CLI for interacting with a configured node.</li>
+<li><a href="/cli-docs/leth/shop/">leth shop</a>  - Features LethShop&rsquo;s pkg capabilities over CLI such as selling/buying digital content.</li>
 </ul>
 
 <h6 id="auto-generated-by-spf13-cobra-on-7-may-2019">Auto generated by spf13/cobra on 7-May-2019</h6>
