@@ -47,6 +47,10 @@
   </url>
   
   <url>
+    <loc>https://docs.lightstreams.network/getting-started/peer-to-peer-ecommerce/</loc>
+  </url>
+  
+  <url>
     <loc>https://docs.lightstreams.network/http-api/</loc>
   </url>
   
@@ -94,22 +98,6 @@
   
   <url>
     <loc>https://docs.lightstreams.network/cli-docs/leth/run/</loc>
-  </url>
-  
-  <url>
-    <loc>https://docs.lightstreams.network/cli-docs/leth/shop/</loc>
-  </url>
-  
-  <url>
-    <loc>https://docs.lightstreams.network/cli-docs/leth/shop/buy/</loc>
-  </url>
-  
-  <url>
-    <loc>https://docs.lightstreams.network/cli-docs/leth/shop/create/</loc>
-  </url>
-  
-  <url>
-    <loc>https://docs.lightstreams.network/cli-docs/leth/shop/sell/</loc>
   </url>
   
   <url>
@@ -182,10 +170,6 @@
   
   <url>
     <loc>https://docs.lightstreams.network/cli-docs/lightchain/run/</loc>
-  </url>
-  
-  <url>
-    <loc>https://docs.lightstreams.network/cli-docs/lightchain/simulate/</loc>
   </url>
   
   <url>
