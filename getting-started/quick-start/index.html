@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-05-08T14:54:41 CEST">
+<meta name="revised" content="2019-05-16T15:39:36 CEST">
 <title>Quick start :: Lightstreams Documentation</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/nucleus.css" rel="stylesheet">
@@ -180,6 +180,32 @@
       <a href="/cli-docs/leth/run/">leth run</a><i class="fa fa-circle-thin read-icon"></i>
       </div>
     </li>
+    <li data-nav-id="/cli-docs/leth/shop/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/cli-docs/leth/shop/">leth shop</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+    <li data-nav-id="/cli-docs/leth/shop/buy/" class="dd-item
+        ">
+      <div>
+      <a href="/cli-docs/leth/shop/buy/">leth shop buy</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/cli-docs/leth/shop/create/" class="dd-item
+        ">
+      <div>
+      <a href="/cli-docs/leth/shop/create/">leth shop create</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/cli-docs/leth/shop/sell/" class="dd-item
+        ">
+      <div>
+      <a href="/cli-docs/leth/shop/sell/">leth shop sell</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+        </ul>
+    </li>
     <li data-nav-id="/cli-docs/leth/storage/" class="dd-item haschildren
         ">
       <div>
@@ -294,6 +320,12 @@
         ">
       <div>
       <a href="/cli-docs/lightchain/run/">lightchain run</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/cli-docs/lightchain/simulate/" class="dd-item
+        ">
+      <div>
+      <a href="/cli-docs/lightchain/simulate/">lightchain simulate</a><i class="fa fa-circle-thin read-icon"></i>
       </div>
     </li>
     <li data-nav-id="/cli-docs/lightchain/version/" class="dd-item
@@ -565,11 +597,11 @@ for your ssl certificates and the port where the HTTPs server is going to be exp
 <p>Connect to the Lightstreams node via IPC:</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">geth --datadir<span style="color:#f92672">=</span><span style="color:#111">$HOME</span>/.lightstreams_1/rinkeby attach ipc:<span style="color:#111">$HOME</span>/.lightstreams_1/rinkeby/geth.ipc</code></pre></div>
 <p>Create a new Leth node account using the attached Geth JavaScript console and check the its balance:</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75af00">geth</span> <span style="color:#f92672">--</span><span style="color:#75af00">datadir</span><span style="color:#f92672">=</span><span style="color:#75af00">$HOME</span><span style="color:#f92672">/</span><span style="color:#111">.</span><span style="color:#75af00">lightstreams_1</span><span style="color:#f92672">/</span><span style="color:#75af00">rinkeby</span> <span style="color:#75af00">attach</span> <span style="color:#75af00">ipc</span><span style="color:#f92672">:</span><span style="color:#75af00">$HOME</span><span style="color:#f92672">/</span><span style="color:#111">.</span><span style="color:#75af00">lightstreams_1</span><span style="color:#f92672">/</span><span style="color:#75af00">rinkeby</span><span style="color:#f92672">/</span><span style="color:#75af00">geth</span><span style="color:#111">.</span><span style="color:#75af00">ipc</span>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75af00">geth</span> <span style="color:#f92672">--</span><span style="color:#75af00">datadir</span><span style="color:#f92672">=</span><span style="color:#75af00">$HOME</span><span style="color:#960050;background-color:#1e0010">/.lightstreams_1/rinkeby attach ipc:$HOME/.lightstreams_1/rinkeby/geth.ipc</span>
 
 <span style="color:#75af00">Welcome</span> <span style="color:#75af00">to</span> <span style="color:#75af00">the</span> <span style="color:#75af00">Geth</span> <span style="color:#75af00">JavaScript</span> <span style="color:#75af00">console</span><span style="color:#f92672">!</span>
 
-<span style="color:#75af00">Instance</span><span style="color:#f92672">:</span> <span style="color:#75af00">Geth</span><span style="color:#f92672">/</span><span style="color:#75af00">v1</span><span style="color:#ae81ff">.8.15</span>
+<span style="color:#75af00">Instance</span><span style="color:#f92672">:</span> <span style="color:#75af00">Geth</span><span style="color:#960050;background-color:#1e0010">/v1.8.15</span>
 
 <span style="color:#f92672">&gt;</span> <span style="color:#75af00">personal</span><span style="color:#111">.</span><span style="color:#75af00">newAccount</span><span style="color:#111">()</span>
 <span style="color:#f92672">&gt;&gt;</span> <span style="color:#111">...</span><span style="color:#75af00">type</span> <span style="color:#75af00">your</span> <span style="color:#75af00">password</span><span style="color:#111">...</span>
@@ -594,7 +626,7 @@ for your ssl certificates and the port where the HTTPs server is going to be exp
 <h2 id="learn-more">Learn more</h2>
 
 <p>To learn more about how you can start sharing files using <code>leth</code>, go to the next
-section, <a href="getting-started/file-sharing/">File sharing</a></p>
+section, <a href="/getting-started/file-sharing/">File sharing</a></p>
 
 <h3 id="help">Help</h3>
 
