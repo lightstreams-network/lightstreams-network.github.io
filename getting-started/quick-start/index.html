@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-05-21T11:00:34 CEST">
+<meta name="revised" content="2019-05-21T15:06:37 CEST">
 <title>Quick start :: Lightstreams Documentation</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/nucleus.css" rel="stylesheet">
@@ -125,7 +125,13 @@
     <li data-nav-id="/examples/intellectual-property/" class="dd-item
         ">
       <div>
-      <a href="/examples/intellectual-property/">Example DApp document authorizer demo</a><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/examples/intellectual-property/">Example DApp Document Authorizer Demo</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/examples/eshop/" class="dd-item
+        ">
+      <div>
+      <a href="/examples/eshop/">Example eShop</a><i class="fa fa-circle-thin read-icon"></i>
       </div>
     </li>
     <li data-nav-id="/examples/js-sdk/" class="dd-item
@@ -310,6 +316,36 @@
       <a href="/cli-docs/lightchain/">lightchain</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
+    <li data-nav-id="/cli-docs/lightchain/docs/" class="dd-item
+        ">
+      <div>
+      <a href="/cli-docs/lightchain/docs/">lightchain docs</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/cli-docs/lightchain/init/" class="dd-item
+        ">
+      <div>
+      <a href="/cli-docs/lightchain/init/">lightchain init</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/cli-docs/lightchain/run/" class="dd-item
+        ">
+      <div>
+      <a href="/cli-docs/lightchain/run/">lightchain run</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/cli-docs/lightchain/simulate/" class="dd-item
+        ">
+      <div>
+      <a href="/cli-docs/lightchain/simulate/">lightchain simulate</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/cli-docs/lightchain/version/" class="dd-item
+        ">
+      <div>
+      <a href="/cli-docs/lightchain/version/">lightchain version</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
         </ul>
     </li>
         </ul>
@@ -573,11 +609,11 @@ for your ssl certificates and the port where the HTTPs server is going to be exp
 <p>Connect to the Lightstreams node via IPC:</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">geth --datadir<span style="color:#f92672">=</span><span style="color:#111">$HOME</span>/.lightstreams_1/rinkeby attach ipc:<span style="color:#111">$HOME</span>/.lightstreams_1/rinkeby/geth.ipc</code></pre></div>
 <p>Create a new Leth node account using the attached Geth JavaScript console and check the its balance:</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75af00">geth</span> <span style="color:#f92672">--</span><span style="color:#75af00">datadir</span><span style="color:#f92672">=</span><span style="color:#75af00">$HOME</span><span style="color:#960050;background-color:#1e0010">/.lightstreams_1/rinkeby attach ipc:$HOME/.lightstreams_1/rinkeby/geth.ipc</span>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75af00">geth</span> <span style="color:#f92672">--</span><span style="color:#75af00">datadir</span><span style="color:#f92672">=</span><span style="color:#75af00">$HOME</span><span style="color:#f92672">/</span><span style="color:#111">.</span><span style="color:#75af00">lightstreams_1</span><span style="color:#f92672">/</span><span style="color:#75af00">rinkeby</span> <span style="color:#75af00">attach</span> <span style="color:#75af00">ipc</span><span style="color:#f92672">:</span><span style="color:#75af00">$HOME</span><span style="color:#f92672">/</span><span style="color:#111">.</span><span style="color:#75af00">lightstreams_1</span><span style="color:#f92672">/</span><span style="color:#75af00">rinkeby</span><span style="color:#f92672">/</span><span style="color:#75af00">geth</span><span style="color:#111">.</span><span style="color:#75af00">ipc</span>
 
 <span style="color:#75af00">Welcome</span> <span style="color:#75af00">to</span> <span style="color:#75af00">the</span> <span style="color:#75af00">Geth</span> <span style="color:#75af00">JavaScript</span> <span style="color:#75af00">console</span><span style="color:#f92672">!</span>
 
-<span style="color:#75af00">Instance</span><span style="color:#f92672">:</span> <span style="color:#75af00">Geth</span><span style="color:#960050;background-color:#1e0010">/v1.8.15</span>
+<span style="color:#75af00">Instance</span><span style="color:#f92672">:</span> <span style="color:#75af00">Geth</span><span style="color:#f92672">/</span><span style="color:#75af00">v1</span><span style="color:#ae81ff">.8.15</span>
 
 <span style="color:#f92672">&gt;</span> <span style="color:#75af00">personal</span><span style="color:#111">.</span><span style="color:#75af00">newAccount</span><span style="color:#111">()</span>
 <span style="color:#f92672">&gt;&gt;</span> <span style="color:#111">...</span><span style="color:#75af00">type</span> <span style="color:#75af00">your</span> <span style="color:#75af00">password</span><span style="color:#111">...</span>
