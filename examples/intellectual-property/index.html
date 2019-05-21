@@ -6,7 +6,7 @@
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="revised" content="2019-05-21T11:00:34 CEST">
-<title>Install :: Lightstreams Documentation</title>
+<title>Example DApp document authorizer demo :: Lightstreams Documentation</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/nucleus.css" rel="stylesheet">
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -29,7 +29,7 @@
 
     
   </head>
-  <body data-url="/getting-started/install/">
+  <body data-url="/examples/intellectual-property/">
     
       <div id="headermain"></div>
 <nav id="sidebar" class="showVisitedLinks">
@@ -63,14 +63,13 @@
   </div>
 
       <ul class="topics">
-    <li data-nav-id="/getting-started/" class="dd-item parent haschildren
+    <li data-nav-id="/getting-started/" class="dd-item haschildren
         ">
       <div>
-      <a href="/getting-started/">Getting started</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/getting-started/">Getting started</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-    <li data-nav-id="/getting-started/install/" class="dd-item parent active
+    <li data-nav-id="/getting-started/install/" class="dd-item
         ">
       <div>
       <a href="/getting-started/install/">Install</a><i class="fa fa-circle-thin read-icon"></i>
@@ -110,10 +109,11 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/examples/" class="dd-item haschildren
+    <li data-nav-id="/examples/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/examples/">Examples</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/examples/">Examples</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
     <li data-nav-id="/examples/browser/" class="dd-item
@@ -122,7 +122,7 @@
       <a href="/examples/browser/">Example Browser Demo</a><i class="fa fa-circle-thin read-icon"></i>
       </div>
     </li>
-    <li data-nav-id="/examples/intellectual-property/" class="dd-item
+    <li data-nav-id="/examples/intellectual-property/" class="dd-item parent active
         ">
       <div>
       <a href="/examples/intellectual-property/">Example DApp document authorizer demo</a><i class="fa fa-circle-thin read-icon"></i>
@@ -393,7 +393,7 @@
       
       
     <div id="top-github-link">
-      <a class="github-link" href="https://github.com/lightstreams-network/docs/tree/master/content/getting-started/install/_index.md" target="blank">
+      <a class="github-link" href="https://github.com/lightstreams-network/docs/tree/master/content/examples/intellectual-property/_index.md" target="blank">
         <i class="fa fa-code-fork"></i>
         Improve this page
       </a>
@@ -413,7 +413,7 @@
 
 
 
- <a href='/'>Lightstreams documentation</a> > <a href='/getting-started/'>Getting started</a> > Install
+ <a href='/'>Lightstreams documentation</a> > <a href='/examples/'>Examples</a> > Example DApp document authorizer demo
 
  
 
@@ -430,25 +430,19 @@
 <ul>
 <li>
 <ul>
-<li><a href="#installation">Installation</a>
+<li><a href="#what-is-the-intellectual-property-demo-dapp">What is the Intellectual Property demo dapp?</a></li>
+<li><a href="#nodes">Nodes</a></li>
+<li><a href="#application">Application</a>
 <ul>
-<li><a href="#leth">Leth</a>
+<li>
 <ul>
-<li><a href="#how-to-install">How to install</a></li>
+<li><a href="#lightstreams-whitepaper">Lightstreams WhitePaper</a></li>
+<li><a href="#upload-content">Upload Content</a></li>
+<li><a href="#library">Library</a></li>
+<li><a href="#share-your-content">Share your Content</a></li>
+<li><a href="#purchase-content">Purchase Content</a></li>
 </ul></li>
-<li><a href="#lightchain">Lightchain</a>
-<ul>
-<li><a href="#how-to-install-1">How to install</a></li>
 </ul></li>
-<li><a href="#ipfs-lightstreams-version">IPFS (lightstreams version)</a>
-<ul>
-<li><a href="#how-to-install-2">How to install</a></li>
-</ul></li>
-<li><a href="#geth">Geth</a></li>
-</ul></li>
-<li><a href="#permissions">Permissions</a></li>
-<li><a href="#check-installation">Check installation</a></li>
-<li><a href="#next-steps">Next steps</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -461,7 +455,7 @@
 
 <div id="body-inner">
   
-    <h1>Install</h1>
+    <h1>Example DApp document authorizer demo</h1>
   
 
 
@@ -472,154 +466,61 @@
 
 
 
-<table>
-<thead>
-<tr>
-<th>Version</th>
-<th>Release Date</th>
-</tr>
-</thead>
+<h2 id="what-is-the-intellectual-property-demo-dapp">What is the Intellectual Property demo dapp?</h2>
 
-<tbody>
-<tr>
-<td>0.12.1-alpha Shop</td>
-<td>08.05.2019</td>
-</tr>
-</tbody>
-</table>
+<p>Lightstreams document authorizer demo intends to show case a real world document authorizer application where content creators could offer their intellectual property for selling in a decentralized manner using Lightstreams Smart Vault to guarantee the security and traceability of their published content.</p>
 
-<h2 id="installation">Installation</h2>
+<h2 id="nodes">Nodes</h2>
 
-<p>A Lightstreams node consists of the following pieces:</p>
+<p>Lightstreams provides two separate and independent nodes of this document authorizer demo to represent the real decentralization
+of this DApp.</p>
 
 <ul>
-<li><a href="#leth"><code>leth</code></a> is a command line interface used to run, interact, and control the Lightstreams node</li>
-<li><a href="#ipfs"><code>ipfs</code></a> is a decentralised file system enhanced with our award winning “Permissioned Blocks” technology</li>
-<li><a href="#lightchain"><code>lightchain</code></a> is a command line interface to connect to lightstreams ethereum compatible blockchain</li>
-<li><a href="#geth"><code>geth</code></a> is the the command line interface for running a full ethereum node implemented in Go</li>
+<li><a href="https://demo.node1.lightstreams.io">Demo Node 1</a></li>
+<li><a href="https://demo.node2.lightstreams.io">Demo Node 2</a></li>
 </ul>
 
-<h3 id="leth">Leth</h3>
+<h2 id="application">Application</h2>
 
-<p>Leth connects to permissioned blockchain protocol (Ethereum Smart Vault) to empower
-content creators to monetise their intellectual property data. It can be used a CLI or HTTP server.</p>
+<p>On every new session an user is automatically created and credited with 2 PHT. Below you can find a short
+explanation of the functionalities you can find in this demo.</p>
 
-<h4 id="how-to-install">How to install</h4>
+<h4 id="lightstreams-whitepaper">Lightstreams WhitePaper</h4>
 
-<p><strong><em>Pre-compiled binaries</em></strong></p>
+<p>On the Demo home page default there is pre-uploaded content to purchase,
+ in this case it is the Lightstreams WhitePaper for the reasonable price of 0.2 PHT.</p>
 
-<p>== macOS ==</p>
+<h4 id="upload-content">Upload Content</h4>
 
-<pre><code>wget &quot;https://s3.eu-central-1.amazonaws.com/lightstreams-public/leth/latest/leth-osx&quot; -O /usr/local/bin/leth
-</code></pre>
+<p>From home page click, or from the application service, on <strong>Publish</strong> or from the application menu.</p>
 
-<p>== Linux (amd64) ==</p>
+<p>After you agree on the term&amp;conditions it will start deploying a new Smart Contract which will hold the
+Access Control List(ACL) of the file you are about to upload. It is required to have at least 1 PHT to perform
+this action.</p>
 
-<pre><code>wget &quot;https://s3.eu-central-1.amazonaws.com/lightstreams-public/leth/latest/leth-linux-amd64&quot; -O /usr/local/bin/leth
-</code></pre>
+<p>Once the deployment of the smart contract is completed, you fill up the form include a title and description for the
+new file, a cover image and the file itself. Click on <em>Publish</em>. After uploading and deployment is finished
+it will display a content profile card with the public and private information of the published content.</p>
 
-<h3 id="lightchain">Lightchain</h3>
+<h4 id="library">Library</h4>
 
-<p>Lighstreams has released its own <a href="https://github.com/lightstreams-network/lightchain">ethereum-compatible blockchain</a>
-which uses byzantine consensus to replace the original proof-of-work (PoW) from Ethereum.</p>
+<p>On the <em>Library</em> every purchased and published content is being listed.</p>
 
-<p>Using <code>lightchain</code> you can connect to Lightreams blockchain and use every
-functionality currently existing on Ethereum. See more in the command line <a href="/cli-docs/lightchain/">documentation</a></p>
+<h4 id="share-your-content">Share your Content</h4>
 
-<h4 id="how-to-install-1">How to install</h4>
+<p>To purchase the content published by other users we need to <em>Search</em> for it using the Public Content ID
+provided after uploading was completed. Pasting that ID and click on <em>Search</em> the public data regarding the published
+content is displayed along with a <em>Purchase</em> button to proceed with the purchasing of the content.</p>
 
-<p><strong><em>Source code</em></strong></p>
+<h4 id="purchase-content">Purchase Content</h4>
 
-<p>Follow the instructions at <a href="https://github.com/lightstreams-network/lightchain">this repository</a>.</p>
+<p>To purchase this content you need to click on the public link, this link loads
+ the public metadata information about the content such as Title, Description, Cover image, Owner and  price.
+ After you click in <code>Purchase</code> it performs a purchase tx in the blockchain which send
+ to the content owner to total amount set at the price.</p>
 
-<p><strong><em>Pre-compiled binaries</em></strong></p>
-
-<p>== macOS ==</p>
-
-<pre><code>wget &quot;https://s3.eu-central-1.amazonaws.com/lightstreams-public/lightchain/latest/lightchain-osx&quot; -O /usr/local/bin/lightchain
-</code></pre>
-
-<p>== Linux (amd64) ==</p>
-
-<pre><code>wget &quot;https://s3.eu-central-1.amazonaws.com/lightstreams-public/lightchain/latest/lightchain-linux-amd64&quot; -O /usr/local/bin/lightchain
-</code></pre>
-
-<h3 id="ipfs-lightstreams-version">IPFS (lightstreams version)</h3>
-
-<p>IPFS is a peer-to-peer distributed file system that seeks to connect all computing devices with the same system of files.</p>
-
-<p>Lightstreams has enhanced original implementation of IPFS to bring a to permissioned
-layer which allows users to control the access to after content is being distributed.</p>
-
-<h4 id="how-to-install-2">How to install</h4>
-
-<p><strong><em>Pre-compiled binaries</em></strong></p>
-
-<p>== macOS ==</p>
-
-<pre><code>wget &quot;https://s3.eu-central-1.amazonaws.com/lightstreams-public/ipfs/latest/ipfs-osx&quot; -O /usr/local/bin/ipfs
-</code></pre>
-
-<p>== Linux (amd64) ==</p>
-
-<pre><code>wget &quot;https://s3.eu-central-1.amazonaws.com/lightstreams-public/ipfs/latest/ipfs-linux-amd64&quot; -O /usr/local/bin/ipfs
-</code></pre>
-
-<h3 id="geth">Geth</h3>
-
-<p><strong><em>Source code</em></strong></p>
-
-<p>Follow the <a href="https://geth.ethereum.org/downloads/">official instructions</a></p>
-
-<p><strong><em>Pre-compiled binaries</em></strong></p>
-
-<p>== macOS ==</p>
-
-<pre><code>wget &quot;https://s3.eu-central-1.amazonaws.com/lightstreams-public/geth/latest/geth-osx&quot; -O /usr/local/bin/geth
-</code></pre>
-
-<p>== Linux (amd64) ==</p>
-
-<pre><code>wget &quot;https://s3.eu-central-1.amazonaws.com/lightstreams-public/geth/latest/geth-linux-amd64&quot; -O /usr/local/bin/geth
-</code></pre>
-
-<h2 id="permissions">Permissions</h2>
-
-<p>In case you decide to install pre-compiled versions, it will be required
-another step in order to set the right executable permissions to those binaries, as follow:</p>
-
-<pre><code>chmod u+x /usr/local/bin/leth
-chmod u+x /usr/local/bin/geth
-chmod u+x /usr/local/bin/lightchain
-chmod u+x /usr/local/bin/ipfs
-</code></pre>
-
-<h2 id="check-installation">Check installation</h2>
-
-<pre><code>&gt; leth version
-Version: 0.12.1-alpha Shop
-
-&gt; ipfs version
-ipfs version 0.4.16-dev
-
-&gt; lightchain version
-Version: 1.0.0-beta MainNet
-
-&gt; geth version
-Geth
-Version: 1.8.23-stable
-Git Commit: c942700427557e3ff6de3aaf6b916e2f056c1ec2
-Architecture: amd64
-Protocol Versions: [63 62]
-</code></pre>
-
-<h2 id="next-steps">Next steps</h2>
-
-<ul>
-<li><a href="/getting-started/quick-start/">Quick start</a></li>
-<li><a href="/getting-started/quick-start/#create-an-account">Create an account</a></li>
-<li><a href="/getting-started/quick-start/#get-free-testing-tokens">Getting free tokens</a></li>
-</ul>
+<p>Once the tx is completed the private content is loaded and downloadable. Also you can see the
+ receipt of it and clicking on it you can see from Lightstreams Explorer the actual details of the transaction.</p>
 
 
 

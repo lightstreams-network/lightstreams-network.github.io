@@ -6,7 +6,7 @@
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="revised" content="2019-05-21T11:00:34 CEST">
-<title>Install :: Lightstreams Documentation</title>
+<title>Example Browser Demo :: Lightstreams Documentation</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/nucleus.css" rel="stylesheet">
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -29,7 +29,7 @@
 
     
   </head>
-  <body data-url="/getting-started/install/">
+  <body data-url="/examples/browser/">
     
       <div id="headermain"></div>
 <nav id="sidebar" class="showVisitedLinks">
@@ -63,14 +63,13 @@
   </div>
 
       <ul class="topics">
-    <li data-nav-id="/getting-started/" class="dd-item parent haschildren
+    <li data-nav-id="/getting-started/" class="dd-item haschildren
         ">
       <div>
-      <a href="/getting-started/">Getting started</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/getting-started/">Getting started</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-    <li data-nav-id="/getting-started/install/" class="dd-item parent active
+    <li data-nav-id="/getting-started/install/" class="dd-item
         ">
       <div>
       <a href="/getting-started/install/">Install</a><i class="fa fa-circle-thin read-icon"></i>
@@ -110,13 +109,14 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/examples/" class="dd-item haschildren
+    <li data-nav-id="/examples/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/examples/">Examples</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/examples/">Examples</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-    <li data-nav-id="/examples/browser/" class="dd-item
+    <li data-nav-id="/examples/browser/" class="dd-item parent active
         ">
       <div>
       <a href="/examples/browser/">Example Browser Demo</a><i class="fa fa-circle-thin read-icon"></i>
@@ -393,7 +393,7 @@
       
       
     <div id="top-github-link">
-      <a class="github-link" href="https://github.com/lightstreams-network/docs/tree/master/content/getting-started/install/_index.md" target="blank">
+      <a class="github-link" href="https://github.com/lightstreams-network/docs/tree/master/content/examples/browser/_index.md" target="blank">
         <i class="fa fa-code-fork"></i>
         Improve this page
       </a>
@@ -413,7 +413,7 @@
 
 
 
- <a href='/'>Lightstreams documentation</a> > <a href='/getting-started/'>Getting started</a> > Install
+ <a href='/'>Lightstreams documentation</a> > <a href='/examples/'>Examples</a> > Example Browser Demo
 
  
 
@@ -430,25 +430,13 @@
 <ul>
 <li>
 <ul>
-<li><a href="#installation">Installation</a>
-<ul>
-<li><a href="#leth">Leth</a>
-<ul>
-<li><a href="#how-to-install">How to install</a></li>
-</ul></li>
-<li><a href="#lightchain">Lightchain</a>
-<ul>
-<li><a href="#how-to-install-1">How to install</a></li>
-</ul></li>
-<li><a href="#ipfs-lightstreams-version">IPFS (lightstreams version)</a>
-<ul>
-<li><a href="#how-to-install-2">How to install</a></li>
-</ul></li>
-<li><a href="#geth">Geth</a></li>
-</ul></li>
-<li><a href="#permissions">Permissions</a></li>
-<li><a href="#check-installation">Check installation</a></li>
-<li><a href="#next-steps">Next steps</a></li>
+<li><a href="#source-code">Source code</a></li>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#browser-appplication">Browser Appplication</a></li>
+<li><a href="#js-ipfs">js-ipfs</a></li>
+<li><a href="#getting-started">Getting started</a></li>
+<li><a href="#grant-access-to-share-content-with-another-peer">Grant access to/share content with another peer</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -461,7 +449,7 @@
 
 <div id="body-inner">
   
-    <h1>Install</h1>
+    <h1>Example Browser Demo</h1>
   
 
 
@@ -472,154 +460,51 @@
 
 
 
-<table>
-<thead>
-<tr>
-<th>Version</th>
-<th>Release Date</th>
-</tr>
-</thead>
+<h2 id="source-code">Source code</h2>
 
-<tbody>
-<tr>
-<td>0.12.1-alpha Shop</td>
-<td>08.05.2019</td>
-</tr>
-</tbody>
-</table>
+<p><a href="https://github.com/lightstreams-network/example-browser">Example Pure Browser Application using Lightstreams</a></p>
 
-<h2 id="installation">Installation</h2>
+<h2 id="introduction">Introduction</h2>
 
-<p>A Lightstreams node consists of the following pieces:</p>
+<p>This example decentralized application (DApp) demonstrates how two or more peers can connect together and securely share private content together without the need for a central server. You can point the application to your local Lightstreams Node (localhost:9000). By default it connects to our public gateway on the sirius testnet, <a href="https://gateway.sirius.lightstreams.io">https://gateway.sirius.lightstreams.io</a>.</p>
 
-<ul>
-<li><a href="#leth"><code>leth</code></a> is a command line interface used to run, interact, and control the Lightstreams node</li>
-<li><a href="#ipfs"><code>ipfs</code></a> is a decentralised file system enhanced with our award winning “Permissioned Blocks” technology</li>
-<li><a href="#lightchain"><code>lightchain</code></a> is a command line interface to connect to lightstreams ethereum compatible blockchain</li>
-<li><a href="#geth"><code>geth</code></a> is the the command line interface for running a full ethereum node implemented in Go</li>
-</ul>
+<h2 id="browser-appplication">Browser Appplication</h2>
 
-<h3 id="leth">Leth</h3>
+<p>The example is only made of static js/css/html and uses react, redux, and styled-components under the hood. The files that you upload are stored on the Lightstreams Node and the files&rsquo; metadata  are stored on browser&rsquo;s localStorage. If you delete your localStorage, you will no longer see what files have been uploaded to your node.</p>
 
-<p>Leth connects to permissioned blockchain protocol (Ethereum Smart Vault) to empower
-content creators to monetise their intellectual property data. It can be used a CLI or HTTP server.</p>
+<h2 id="js-ipfs">js-ipfs</h2>
 
-<h4 id="how-to-install">How to install</h4>
+<p>In order to discover other peers with whom to share content, the example application uses the the js-ipfs implementation of IPFS for peer-discovery. This is a bit overkill for now, but could allow for information or file-exchange before the actual sharing of private content.</p>
 
-<p><strong><em>Pre-compiled binaries</em></strong></p>
+<h2 id="getting-started">Getting started</h2>
 
-<p>== macOS ==</p>
+<ol>
+<li>Follow the steps in the <a href="https://github.com/lightstreams-network/example-browser/blob/master/README.md">README</a> to install &amp; run the application (the application should be running on <a href="http://localhost:8080">http://localhost:8080</a> (we&rsquo;ll call this running app, node1)</li>
+<li>Create an account with a password. This will generate a public key that you should write down somewhere, it can be used to login (with your password) and unlock your wallet on the Lightstreams Node.</li>
+<li>Request Lightstreams free test tokens to the newly created address (<a href="https://discuss.lightstreams.network/t/request-test-tokens/64">https://discuss.lightstreams.network/t/request-test-tokens/64</a>)</li>
+<li>Upload some content</li>
+<li>Copy the File Meta Hash (under the &ldquo;Files&rdquo; sections)</li>
+<li>Paste the File Meta Hash in the &ldquo;Download File&rdquo; section</li>
+<li>Click on the Link to download the file</li>
+</ol>
 
-<pre><code>wget &quot;https://s3.eu-central-1.amazonaws.com/lightstreams-public/leth/latest/leth-osx&quot; -O /usr/local/bin/leth
-</code></pre>
+<h2 id="grant-access-to-share-content-with-another-peer">Grant access to/share content with another peer</h2>
 
-<p>== Linux (amd64) ==</p>
+<p>Once you&rsquo;ve uploaded some content, you&rsquo;ll probably want to grant access to someone else and share it with them.</p>
 
-<pre><code>wget &quot;https://s3.eu-central-1.amazonaws.com/lightstreams-public/leth/latest/leth-linux-amd64&quot; -O /usr/local/bin/leth
-</code></pre>
+<ol>
+<li>In a new browser (if you use Chrome, launch Firefox or Safari), we&rsquo;ll launch another app (which we&rsquo;ll call node2). Open the same URL: <a href="http://localhost:8080">http://localhost:8080</a></li>
+<li>Create an account with password</li>
+<li>In node1, go to your uploaded files and copy paste the account address from node2 into the input next to the &ldquo;Grant to&rdquo; button</li>
+<li>In node2, copy the File Meta Hash into the &ldquo;Download File&rdquo; section</li>
+<li>Click on the link to download the file.</li>
+<li>Tada! You are allowed to download the file.</li>
+<li>Try again, upload a file on node1, but this time skip Step3 (don&rsquo;t grant access to node2). You should not be able to download the file!</li>
+</ol>
 
-<h3 id="lightchain">Lightchain</h3>
+<h2 id="conclusion">Conclusion</h2>
 
-<p>Lighstreams has released its own <a href="https://github.com/lightstreams-network/lightchain">ethereum-compatible blockchain</a>
-which uses byzantine consensus to replace the original proof-of-work (PoW) from Ethereum.</p>
-
-<p>Using <code>lightchain</code> you can connect to Lightreams blockchain and use every
-functionality currently existing on Ethereum. See more in the command line <a href="/cli-docs/lightchain/">documentation</a></p>
-
-<h4 id="how-to-install-1">How to install</h4>
-
-<p><strong><em>Source code</em></strong></p>
-
-<p>Follow the instructions at <a href="https://github.com/lightstreams-network/lightchain">this repository</a>.</p>
-
-<p><strong><em>Pre-compiled binaries</em></strong></p>
-
-<p>== macOS ==</p>
-
-<pre><code>wget &quot;https://s3.eu-central-1.amazonaws.com/lightstreams-public/lightchain/latest/lightchain-osx&quot; -O /usr/local/bin/lightchain
-</code></pre>
-
-<p>== Linux (amd64) ==</p>
-
-<pre><code>wget &quot;https://s3.eu-central-1.amazonaws.com/lightstreams-public/lightchain/latest/lightchain-linux-amd64&quot; -O /usr/local/bin/lightchain
-</code></pre>
-
-<h3 id="ipfs-lightstreams-version">IPFS (lightstreams version)</h3>
-
-<p>IPFS is a peer-to-peer distributed file system that seeks to connect all computing devices with the same system of files.</p>
-
-<p>Lightstreams has enhanced original implementation of IPFS to bring a to permissioned
-layer which allows users to control the access to after content is being distributed.</p>
-
-<h4 id="how-to-install-2">How to install</h4>
-
-<p><strong><em>Pre-compiled binaries</em></strong></p>
-
-<p>== macOS ==</p>
-
-<pre><code>wget &quot;https://s3.eu-central-1.amazonaws.com/lightstreams-public/ipfs/latest/ipfs-osx&quot; -O /usr/local/bin/ipfs
-</code></pre>
-
-<p>== Linux (amd64) ==</p>
-
-<pre><code>wget &quot;https://s3.eu-central-1.amazonaws.com/lightstreams-public/ipfs/latest/ipfs-linux-amd64&quot; -O /usr/local/bin/ipfs
-</code></pre>
-
-<h3 id="geth">Geth</h3>
-
-<p><strong><em>Source code</em></strong></p>
-
-<p>Follow the <a href="https://geth.ethereum.org/downloads/">official instructions</a></p>
-
-<p><strong><em>Pre-compiled binaries</em></strong></p>
-
-<p>== macOS ==</p>
-
-<pre><code>wget &quot;https://s3.eu-central-1.amazonaws.com/lightstreams-public/geth/latest/geth-osx&quot; -O /usr/local/bin/geth
-</code></pre>
-
-<p>== Linux (amd64) ==</p>
-
-<pre><code>wget &quot;https://s3.eu-central-1.amazonaws.com/lightstreams-public/geth/latest/geth-linux-amd64&quot; -O /usr/local/bin/geth
-</code></pre>
-
-<h2 id="permissions">Permissions</h2>
-
-<p>In case you decide to install pre-compiled versions, it will be required
-another step in order to set the right executable permissions to those binaries, as follow:</p>
-
-<pre><code>chmod u+x /usr/local/bin/leth
-chmod u+x /usr/local/bin/geth
-chmod u+x /usr/local/bin/lightchain
-chmod u+x /usr/local/bin/ipfs
-</code></pre>
-
-<h2 id="check-installation">Check installation</h2>
-
-<pre><code>&gt; leth version
-Version: 0.12.1-alpha Shop
-
-&gt; ipfs version
-ipfs version 0.4.16-dev
-
-&gt; lightchain version
-Version: 1.0.0-beta MainNet
-
-&gt; geth version
-Geth
-Version: 1.8.23-stable
-Git Commit: c942700427557e3ff6de3aaf6b916e2f056c1ec2
-Architecture: amd64
-Protocol Versions: [63 62]
-</code></pre>
-
-<h2 id="next-steps">Next steps</h2>
-
-<ul>
-<li><a href="/getting-started/quick-start/">Quick start</a></li>
-<li><a href="/getting-started/quick-start/#create-an-account">Create an account</a></li>
-<li><a href="/getting-started/quick-start/#get-free-testing-tokens">Getting free tokens</a></li>
-</ul>
+<p>This Lightstreams browser application shows how two or more peers can securely share private content between one another without the need for a central server and using blockchain smart contracts to grant access/permissions to the files.</p>
 
 
 

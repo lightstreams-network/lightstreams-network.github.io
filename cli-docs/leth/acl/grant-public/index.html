@@ -6,7 +6,7 @@
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="revised" content="2019-05-21T11:00:34 CEST">
-<title>Install :: Lightstreams Documentation</title>
+<title>leth acl grant-public :: Lightstreams Documentation</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/nucleus.css" rel="stylesheet">
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -29,7 +29,7 @@
 
     
   </head>
-  <body data-url="/getting-started/install/">
+  <body data-url="/cli-docs/leth/acl/grant-public/">
     
       <div id="headermain"></div>
 <nav id="sidebar" class="showVisitedLinks">
@@ -63,14 +63,13 @@
   </div>
 
       <ul class="topics">
-    <li data-nav-id="/getting-started/" class="dd-item parent haschildren
+    <li data-nav-id="/getting-started/" class="dd-item haschildren
         ">
       <div>
-      <a href="/getting-started/">Getting started</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/getting-started/">Getting started</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-    <li data-nav-id="/getting-started/install/" class="dd-item parent active
+    <li data-nav-id="/getting-started/install/" class="dd-item
         ">
       <div>
       <a href="/getting-started/install/">Install</a><i class="fa fa-circle-thin read-icon"></i>
@@ -136,22 +135,25 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli-docs/" class="dd-item haschildren
+    <li data-nav-id="/cli-docs/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/cli-docs/">Command line documentation</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/cli-docs/">Command line documentation</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-    <li data-nav-id="/cli-docs/leth/" class="dd-item haschildren
+    <li data-nav-id="/cli-docs/leth/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/cli-docs/leth/">leth</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/cli-docs/leth/">leth</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-    <li data-nav-id="/cli-docs/leth/acl/" class="dd-item haschildren
+    <li data-nav-id="/cli-docs/leth/acl/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/cli-docs/leth/acl/">leth acl</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/cli-docs/leth/acl/">leth acl</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
     <li data-nav-id="/cli-docs/leth/acl/grant/" class="dd-item
@@ -160,7 +162,7 @@
       <a href="/cli-docs/leth/acl/grant/">leth acl grant</a><i class="fa fa-circle-thin read-icon"></i>
       </div>
     </li>
-    <li data-nav-id="/cli-docs/leth/acl/grant-public/" class="dd-item
+    <li data-nav-id="/cli-docs/leth/acl/grant-public/" class="dd-item parent active
         ">
       <div>
       <a href="/cli-docs/leth/acl/grant-public/">leth acl grant-public</a><i class="fa fa-circle-thin read-icon"></i>
@@ -393,7 +395,7 @@
       
       
     <div id="top-github-link">
-      <a class="github-link" href="https://github.com/lightstreams-network/docs/tree/master/content/getting-started/install/_index.md" target="blank">
+      <a class="github-link" href="https://github.com/lightstreams-network/docs/tree/master/content/cli-docs/leth/acl/grant-public/_index.md" target="blank">
         <i class="fa fa-code-fork"></i>
         Improve this page
       </a>
@@ -413,7 +415,17 @@
 
 
 
- <a href='/'>Lightstreams documentation</a> > <a href='/getting-started/'>Getting started</a> > Install
+
+
+
+
+
+
+ <a href='/'>Lightstreams documentation</a> > <a href='/cli-docs/'>Command line documentation</a> > <a href='/cli-docs/leth/'>leth</a> > <a href='/cli-docs/leth/acl/'>leth acl</a> > leth acl grant-public
+
+ 
+
+ 
 
  
 
@@ -430,25 +442,21 @@
 <ul>
 <li>
 <ul>
-<li><a href="#installation">Installation</a>
+<li><a href="#leth-acl-grant-public">leth acl grant-public</a>
 <ul>
-<li><a href="#leth">Leth</a>
+<li><a href="#synopsis">Synopsis</a></li>
+<li><a href="#options">Options</a></li>
+<li><a href="#see-also">SEE ALSO</a>
 <ul>
-<li><a href="#how-to-install">How to install</a></li>
-</ul></li>
-<li><a href="#lightchain">Lightchain</a>
+<li>
 <ul>
-<li><a href="#how-to-install-1">How to install</a></li>
-</ul></li>
-<li><a href="#ipfs-lightstreams-version">IPFS (lightstreams version)</a>
+<li>
 <ul>
-<li><a href="#how-to-install-2">How to install</a></li>
+<li><a href="#auto-generated-by-spf13-cobra-on-21-may-2019">Auto generated by spf13/cobra on 21-May-2019</a></li>
 </ul></li>
-<li><a href="#geth">Geth</a></li>
 </ul></li>
-<li><a href="#permissions">Permissions</a></li>
-<li><a href="#check-installation">Check installation</a></li>
-<li><a href="#next-steps">Next steps</a></li>
+</ul></li>
+</ul></li>
 </ul></li>
 </ul>
 </nav>
@@ -461,7 +469,7 @@
 
 <div id="body-inner">
   
-    <h1>Install</h1>
+    <h1>leth acl grant-public</h1>
   
 
 
@@ -472,154 +480,42 @@
 
 
 
-<table>
-<thead>
-<tr>
-<th>Version</th>
-<th>Release Date</th>
-</tr>
-</thead>
+<h2 id="leth-acl-grant-public">leth acl grant-public</h2>
 
-<tbody>
-<tr>
-<td>0.12.1-alpha Shop</td>
-<td>08.05.2019</td>
-</tr>
-</tbody>
-</table>
+<p>Grant a read access to everybody.</p>
 
-<h2 id="installation">Installation</h2>
+<h3 id="synopsis">Synopsis</h3>
 
-<p>A Lightstreams node consists of the following pieces:</p>
+<p>Usage:</p>
+
+<pre><code>leth acl grant-public --nodeid=1 --network=rinkeby --acl=0xd966aa573f8AcBfEb3724B661B420c258ceA5D38 --owner=0xadC486F16F003897fb927e22438cb1b820f79879
+</code></pre>
+
+<p>Possible Outputs:</p>
+
+<pre><code>{&quot;is/granted&quot;:&quot;true&quot;}
+{&quot;error&quot;: {&quot;code&quot;: &quot;SOME/INTERNAL/ERROR/CODE&quot;, &quot;message&quot;: &quot;explanatory error message&quot;}}
+</code></pre>
+
+<pre><code>leth acl grant-public [flags]
+</code></pre>
+
+<h3 id="options">Options</h3>
+
+<pre><code>      --acl string       ACL ID (Deployed Smart Contract Hex Addr) associated with the stored file.
+  -h, --help             help for grant-public
+      --network string   Possible values: 'rinkeby, ganache, sirius'.
+      --nodeid int       ID of the node in order to support multiple nodes on the same machine. 0 by default.
+      --owner string     The account with rights to grant the ACL permission.
+</code></pre>
+
+<h3 id="see-also">SEE ALSO</h3>
 
 <ul>
-<li><a href="#leth"><code>leth</code></a> is a command line interface used to run, interact, and control the Lightstreams node</li>
-<li><a href="#ipfs"><code>ipfs</code></a> is a decentralised file system enhanced with our award winning “Permissioned Blocks” technology</li>
-<li><a href="#lightchain"><code>lightchain</code></a> is a command line interface to connect to lightstreams ethereum compatible blockchain</li>
-<li><a href="#geth"><code>geth</code></a> is the the command line interface for running a full ethereum node implemented in Go</li>
+<li><a href="/cli-docs/leth/acl/">leth acl</a>    - Features LethACL&rsquo;s pkg capabilities over CLI such as granting ACL permissions.</li>
 </ul>
 
-<h3 id="leth">Leth</h3>
-
-<p>Leth connects to permissioned blockchain protocol (Ethereum Smart Vault) to empower
-content creators to monetise their intellectual property data. It can be used a CLI or HTTP server.</p>
-
-<h4 id="how-to-install">How to install</h4>
-
-<p><strong><em>Pre-compiled binaries</em></strong></p>
-
-<p>== macOS ==</p>
-
-<pre><code>wget &quot;https://s3.eu-central-1.amazonaws.com/lightstreams-public/leth/latest/leth-osx&quot; -O /usr/local/bin/leth
-</code></pre>
-
-<p>== Linux (amd64) ==</p>
-
-<pre><code>wget &quot;https://s3.eu-central-1.amazonaws.com/lightstreams-public/leth/latest/leth-linux-amd64&quot; -O /usr/local/bin/leth
-</code></pre>
-
-<h3 id="lightchain">Lightchain</h3>
-
-<p>Lighstreams has released its own <a href="https://github.com/lightstreams-network/lightchain">ethereum-compatible blockchain</a>
-which uses byzantine consensus to replace the original proof-of-work (PoW) from Ethereum.</p>
-
-<p>Using <code>lightchain</code> you can connect to Lightreams blockchain and use every
-functionality currently existing on Ethereum. See more in the command line <a href="/cli-docs/lightchain/">documentation</a></p>
-
-<h4 id="how-to-install-1">How to install</h4>
-
-<p><strong><em>Source code</em></strong></p>
-
-<p>Follow the instructions at <a href="https://github.com/lightstreams-network/lightchain">this repository</a>.</p>
-
-<p><strong><em>Pre-compiled binaries</em></strong></p>
-
-<p>== macOS ==</p>
-
-<pre><code>wget &quot;https://s3.eu-central-1.amazonaws.com/lightstreams-public/lightchain/latest/lightchain-osx&quot; -O /usr/local/bin/lightchain
-</code></pre>
-
-<p>== Linux (amd64) ==</p>
-
-<pre><code>wget &quot;https://s3.eu-central-1.amazonaws.com/lightstreams-public/lightchain/latest/lightchain-linux-amd64&quot; -O /usr/local/bin/lightchain
-</code></pre>
-
-<h3 id="ipfs-lightstreams-version">IPFS (lightstreams version)</h3>
-
-<p>IPFS is a peer-to-peer distributed file system that seeks to connect all computing devices with the same system of files.</p>
-
-<p>Lightstreams has enhanced original implementation of IPFS to bring a to permissioned
-layer which allows users to control the access to after content is being distributed.</p>
-
-<h4 id="how-to-install-2">How to install</h4>
-
-<p><strong><em>Pre-compiled binaries</em></strong></p>
-
-<p>== macOS ==</p>
-
-<pre><code>wget &quot;https://s3.eu-central-1.amazonaws.com/lightstreams-public/ipfs/latest/ipfs-osx&quot; -O /usr/local/bin/ipfs
-</code></pre>
-
-<p>== Linux (amd64) ==</p>
-
-<pre><code>wget &quot;https://s3.eu-central-1.amazonaws.com/lightstreams-public/ipfs/latest/ipfs-linux-amd64&quot; -O /usr/local/bin/ipfs
-</code></pre>
-
-<h3 id="geth">Geth</h3>
-
-<p><strong><em>Source code</em></strong></p>
-
-<p>Follow the <a href="https://geth.ethereum.org/downloads/">official instructions</a></p>
-
-<p><strong><em>Pre-compiled binaries</em></strong></p>
-
-<p>== macOS ==</p>
-
-<pre><code>wget &quot;https://s3.eu-central-1.amazonaws.com/lightstreams-public/geth/latest/geth-osx&quot; -O /usr/local/bin/geth
-</code></pre>
-
-<p>== Linux (amd64) ==</p>
-
-<pre><code>wget &quot;https://s3.eu-central-1.amazonaws.com/lightstreams-public/geth/latest/geth-linux-amd64&quot; -O /usr/local/bin/geth
-</code></pre>
-
-<h2 id="permissions">Permissions</h2>
-
-<p>In case you decide to install pre-compiled versions, it will be required
-another step in order to set the right executable permissions to those binaries, as follow:</p>
-
-<pre><code>chmod u+x /usr/local/bin/leth
-chmod u+x /usr/local/bin/geth
-chmod u+x /usr/local/bin/lightchain
-chmod u+x /usr/local/bin/ipfs
-</code></pre>
-
-<h2 id="check-installation">Check installation</h2>
-
-<pre><code>&gt; leth version
-Version: 0.12.1-alpha Shop
-
-&gt; ipfs version
-ipfs version 0.4.16-dev
-
-&gt; lightchain version
-Version: 1.0.0-beta MainNet
-
-&gt; geth version
-Geth
-Version: 1.8.23-stable
-Git Commit: c942700427557e3ff6de3aaf6b916e2f056c1ec2
-Architecture: amd64
-Protocol Versions: [63 62]
-</code></pre>
-
-<h2 id="next-steps">Next steps</h2>
-
-<ul>
-<li><a href="/getting-started/quick-start/">Quick start</a></li>
-<li><a href="/getting-started/quick-start/#create-an-account">Create an account</a></li>
-<li><a href="/getting-started/quick-start/#get-free-testing-tokens">Getting free tokens</a></li>
-</ul>
+<h6 id="auto-generated-by-spf13-cobra-on-21-may-2019">Auto generated by spf13/cobra on 21-May-2019</h6>
 
 
 
