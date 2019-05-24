@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-05-24T19:49:13 CEST">
+<meta name="revised" content="2019-05-24T23:06:14 CEST">
 <title>Example NodeJS Smart Vault Dashboard :: Lightstreams Documentation</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/nucleus.css" rel="stylesheet">
@@ -218,6 +218,30 @@
       <a href="/cli-docs/leth/storage/">leth storage</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
+    <li data-nav-id="/cli-docs/leth/storage/add/" class="dd-item
+        ">
+      <div>
+      <a href="/cli-docs/leth/storage/add/">leth storage add</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/cli-docs/leth/storage/authorized/" class="dd-item
+        ">
+      <div>
+      <a href="/cli-docs/leth/storage/authorized/">leth storage authorized</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/cli-docs/leth/storage/fetch/" class="dd-item
+        ">
+      <div>
+      <a href="/cli-docs/leth/storage/fetch/">leth storage fetch</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/cli-docs/leth/storage/meta/" class="dd-item
+        ">
+      <div>
+      <a href="/cli-docs/leth/storage/meta/">leth storage meta</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/cli-docs/leth/user/" class="dd-item haschildren
@@ -405,7 +429,7 @@
 <li><a href="#my-files">My files</a></li>
 <li><a href="#grant-access-to-file">Grant access to file</a></li>
 <li><a href="#request-access-to-other-user-file">Request access to other user file</a></li>
-<li><a href="#request-access-to-other-user-file-1">Request access to other user file</a></li>
+<li><a href="#manage-pending-access-requests">Manage pending access requests</a></li>
 </ul></li>
 <li><a href="#freemium-model">Freemium Model</a></li>
 </ul></li>
@@ -466,28 +490,32 @@ other users.</p>
 
 <h3 id="my-files">My files</h3>
 
-<p><img src="/img/nodejs/my_files.png?raw=true" alt="My Files" />
-You can see the list of files you uploaded and which users have access to them. By clicking
+<p>You can see the list of files you uploaded and which users have access to them. By clicking
 on one of the little icon you can revoke the access to the users at anytime.</p>
+
+<p><img src="/img/nodejs/my_files.png?raw=true" alt="My Files" /></p>
 
 <p>Also you can download the content of the files you uploaded.</p>
 
 <h3 id="grant-access-to-file">Grant access to file</h3>
 
-<p><img src="/img/nodejs/grant_access.png?raw=true" alt="Grant access to file" />
-Grant access to other users to your content without waiting for a access request.</p>
+<p>Grant access to other users to your content without waiting for a access request.</p>
+
+<p><img src="/img/nodejs/grant_access.png?raw=true" alt="Grant access to file" /></p>
 
 <h3 id="request-access-to-other-user-file">Request access to other user file</h3>
 
-<p><img src="/img/nodejs/pending_requests.png?raw=true" alt="Pending request" />
-Insert the username of other user and load the list of available items of this user.
+<p>Insert the username of other user and load the list of available items of this user.
 By clicking on the locker icon you will send a access request to the file owner. In case
 you already got access to the file it will display the download action.</p>
 
-<h3 id="request-access-to-other-user-file-1">Request access to other user file</h3>
+<p><img src="/img/nodejs/pending_requests.png?raw=true" alt="Pending request" /></p>
 
-<p><img src="/img/nodejs/request_file_access.png?raw=true" alt="Request file access" />
-On this section it will listed the pending access requests from other users to your files.</p>
+<h3 id="manage-pending-access-requests">Manage pending access requests</h3>
+
+<p>On this section it will listed the pending access requests from other users to your files.</p>
+
+<p><img src="/img/nodejs/request_file_access.png?raw=true" alt="Request file access" /></p>
 
 <h2 id="freemium-model">Freemium Model</h2>
 
