@@ -6,7 +6,7 @@
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="revised" content="2019-05-24T17:16:47 CEST">
-<title>lightchain run :: Lightstreams Documentation</title>
+<title>Example NodeJS Smart Vault Dashboard :: Lightstreams Documentation</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/nucleus.css" rel="stylesheet">
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -29,7 +29,7 @@
 
     
   </head>
-  <body data-url="/cli-docs/lightchain/run/">
+  <body data-url="/examples/nodejs-dashboard/">
     
       <div id="headermain"></div>
 <nav id="sidebar" class="showVisitedLinks">
@@ -69,30 +69,6 @@
       <a href="/getting-started/">Getting started</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-    <li data-nav-id="/getting-started/install/" class="dd-item
-        ">
-      <div>
-      <a href="/getting-started/install/">Install</a><i class="fa fa-circle-thin read-icon"></i>
-      </div>
-    </li>
-    <li data-nav-id="/getting-started/quick-start/" class="dd-item
-        ">
-      <div>
-      <a href="/getting-started/quick-start/">Quick start</a><i class="fa fa-circle-thin read-icon"></i>
-      </div>
-    </li>
-    <li data-nav-id="/getting-started/file-sharing/" class="dd-item
-        ">
-      <div>
-      <a href="/getting-started/file-sharing/">Private file sharing</a><i class="fa fa-circle-thin read-icon"></i>
-      </div>
-    </li>
-    <li data-nav-id="/getting-started/peer-to-peer-ecommerce/" class="dd-item
-        ">
-      <div>
-      <a href="/getting-started/peer-to-peer-ecommerce/">Ecommerce</a><i class="fa fa-circle-thin read-icon"></i>
-      </div>
-    </li>
         </ul>
     </li>
     <li data-nav-id="/guides/" class="dd-item haschildren
@@ -109,10 +85,11 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/examples/" class="dd-item haschildren
+    <li data-nav-id="/examples/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/examples/">Examples</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/examples/">Examples</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
     <li data-nav-id="/examples/browser/" class="dd-item
@@ -121,7 +98,7 @@
       <a href="/examples/browser/">Example Browser Demo</a><i class="fa fa-circle-thin read-icon"></i>
       </div>
     </li>
-    <li data-nav-id="/examples/nodejs-dashboard/" class="dd-item
+    <li data-nav-id="/examples/nodejs-dashboard/" class="dd-item parent active
         ">
       <div>
       <a href="/examples/nodejs-dashboard/">Example NodeJS Smart Vault Dashboard</a><i class="fa fa-circle-thin read-icon"></i>
@@ -147,11 +124,10 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli-docs/" class="dd-item parent haschildren
+    <li data-nav-id="/cli-docs/" class="dd-item haschildren
         ">
       <div>
-      <a href="/cli-docs/">Command line documentation</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/cli-docs/">Command line documentation</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
     <li data-nav-id="/cli-docs/leth/" class="dd-item haschildren
@@ -316,11 +292,10 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli-docs/lightchain/" class="dd-item parent haschildren
+    <li data-nav-id="/cli-docs/lightchain/" class="dd-item haschildren
         ">
       <div>
-      <a href="/cli-docs/lightchain/">lightchain</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/cli-docs/lightchain/">lightchain</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
     <li data-nav-id="/cli-docs/lightchain/docs/" class="dd-item
@@ -335,7 +310,7 @@
       <a href="/cli-docs/lightchain/init/">lightchain init</a><i class="fa fa-circle-thin read-icon"></i>
       </div>
     </li>
-    <li data-nav-id="/cli-docs/lightchain/run/" class="dd-item parent active
+    <li data-nav-id="/cli-docs/lightchain/run/" class="dd-item
         ">
       <div>
       <a href="/cli-docs/lightchain/run/">lightchain run</a><i class="fa fa-circle-thin read-icon"></i>
@@ -406,7 +381,7 @@
       
       
     <div id="top-github-link">
-      <a class="github-link" href="https://github.com/lightstreams-network/docs/tree/master/content/cli-docs/lightchain/run/_index.md" target="blank">
+      <a class="github-link" href="https://github.com/lightstreams-network/docs/tree/master/content/examples/nodejs-dashboard/_index.md" target="blank">
         <i class="fa fa-code-fork"></i>
         Improve this page
       </a>
@@ -426,12 +401,7 @@
 
 
 
-
-
-
- <a href='/'>Lightstreams documentation</a> > <a href='/cli-docs/'>Command line documentation</a> > <a href='/cli-docs/lightchain/'>lightchain</a> > lightchain run
-
- 
+ <a href='/'>Lightstreams documentation</a> > <a href='/examples/'>Examples</a> > Example NodeJS Smart Vault Dashboard
 
  
 
@@ -448,21 +418,22 @@
 <ul>
 <li>
 <ul>
-<li><a href="#lightchain-run">lightchain run</a>
+<li><a href="#source-code">Source code</a></li>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#features">Features</a>
 <ul>
-<li><a href="#synopsis">Synopsis</a></li>
-<li><a href="#options">Options</a></li>
-<li><a href="#see-also">SEE ALSO</a>
+<li><a href="#create-an-account">Create an account</a></li>
+<li><a href="#login">Login</a></li>
+<li><a href="#your-user-wallet">Your user wallet</a>
 <ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#auto-generated-by-spf13-cobra-on-27-feb-2019">Auto generated by spf13/cobra on 27-Feb-2019</a></li>
+<li><a href="#upload-file">Upload file</a></li>
+<li><a href="#my-files">My files</a></li>
 </ul></li>
+<li><a href="#grant-access-to-file">Grant access to file</a></li>
+<li><a href="#request-access-to-other-user-file">Request access to other user file</a></li>
+<li><a href="#request-access-to-other-user-file-1">Request access to other user file</a></li>
 </ul></li>
-</ul></li>
-</ul></li>
+<li><a href="#freemium-model">Freemium Model</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -475,7 +446,7 @@
 
 <div id="body-inner">
   
-    <h1>lightchain run</h1>
+    <h1>Example NodeJS Smart Vault Dashboard</h1>
   
 
 
@@ -486,45 +457,79 @@
 
 
 
-<h2 id="lightchain-run">lightchain run</h2>
+<h2 id="source-code">Source code</h2>
 
-<p>Launches lightchain node and all of its online services including blockchain (Geth) and the consensus (Tendermint).</p>
+<p><a href="https://github.com/lightstreams-network/example-nodejs">Code</a></p>
 
-<h3 id="synopsis">Synopsis</h3>
+<h2 id="introduction">Introduction</h2>
 
-<p>Launches lightchain node and all of its online services including blockchain (Geth) and the consensus (Tendermint).</p>
+<p>Lightstreams Smart Vault Dashboard app showcase an example of a decentralize app (Dapp)
+using <a href="https://docs.lightstreams.network/getting-started/quick-start/">Lightstreams Smart Vault SDK</a>
+in a NodeJS.</p>
 
-<pre><code>lightchain run [flags]
-</code></pre>
+<p>Using this DApp you will be able to upload your files uploaded into a Lightstreams Smart Vault
+node and manage the its distribution and acceptability. In addition you will be able
+to also request access to other users files and manage the pending request to your own content made by
+other users.</p>
 
-<h3 id="options">Options</h3>
+<h2 id="features">Features</h2>
 
-<pre><code>      --abci/protocol string   socket | grpc (default &quot;socket&quot;)
-      --datadir string         Data directory for the databases and keystore (default &quot;/Users/enchanterio/.lightchain&quot;)
-  -h, --help                   help for run
-      --lvl string             Level of logging (default &quot;info&quot;)
-      --prometheus             Enable prometheus metrics exporter
-      --rpc                    Enable the HTTP-RPC server
-      --rpcaddr string         HTTP-RPC server listening interface (default &quot;localhost&quot;)
-      --rpcapi string          API's offered over the HTTP-RPC interface
-      --rpcport int            HTTP-RPC server listening port (default 8545)
-      --tmt/p2p/port uint      Tendermint port used to achieve exchange messages across nodes (default 26656)
-      --tmt/proxy/port uint    Lightchain RPC port used to receive incoming messages from Tendermint (default 26658)
-      --tmt/rpc/port uint      Tendermint RPC port used to receive incoming messages from Lightchain (default 26657)
-      --trace                  Whenever to be asserting and reporting blockchain state in real-time (testing, debugging purposes)
-      --tracelog string        The filepath to a log file where all tracing output will be persisted (default &quot;/var/folders/f9/11wh9x9j31d75nxgwv2qsj3r0000gn/T/tracer.log&quot;)
-      --ws                     Enable the WS-RPC server
-      --wsaddr string          WS-RPC server listening interface (default &quot;localhost&quot;)
-      --wsport int             WS-RPC server listening port (default 8546)
-</code></pre>
+<h3 id="create-an-account">Create an account</h3>
 
-<h3 id="see-also">SEE ALSO</h3>
+<p><img src="/img/nodejs/signup.png?raw=true" alt="Signup" /></p>
 
-<ul>
-<li><a href="/cli-docs/lightchain/">lightchain</a>    - Lightstreams PoA blockchain node.</li>
-</ul>
+<h3 id="login">Login</h3>
 
-<h6 id="auto-generated-by-spf13-cobra-on-27-feb-2019">Auto generated by spf13/cobra on 27-Feb-2019</h6>
+<p><img src="/img/nodejs/login.png?raw=true" alt="Login" /></p>
+
+<h3 id="your-user-wallet">Your user wallet</h3>
+
+<p><img src="/img/nodejs/wallet.png?raw=true" alt="Signup" /></p>
+
+<h4 id="upload-file">Upload file</h4>
+
+<p><img src="/img/nodejs/upload_file.png?raw=true" alt="Upload file" /></p>
+
+<h4 id="my-files">My files</h4>
+
+<p><img src="/img/nodejs/my_files.png?raw=true" alt="My Files" />
+You can see the list of files you uploaded and which users have access to them. By clicking
+on one of the little icon you can revoke the access to the users at anytime.</p>
+
+<p>Also you can download the content of the files you uploaded.</p>
+
+<h3 id="grant-access-to-file">Grant access to file</h3>
+
+<p><img src="/img/nodejs/grant_access.png?raw=true" alt="Grant access to file" />
+Grant access to other users to your content without waiting for a access request.</p>
+
+<h3 id="request-access-to-other-user-file">Request access to other user file</h3>
+
+<p><img src="/img/nodejs/pending_requests.png?raw=true" alt="Pending request" />
+Insert the username of other user and load the list of available items of this user.
+By clicking on the locker icon you will send a access request to the file owner. In case
+you already got access to the file it will display the download action.</p>
+
+<h3 id="request-access-to-other-user-file-1">Request access to other user file</h3>
+
+<p><img src="/img/nodejs/request_file_access.png?raw=true" alt="Request file access" />
+On this section it will listed the pending access requests from other users to your files.</p>
+
+<h2 id="freemium-model">Freemium Model</h2>
+
+<p>This project implements a simple freemium model to fund users activity within the
+platform. The source for this funding come from two different sources.</p>
+
+<p>The first of them is what it was called stake holder account. This account
+ is linked to every instance of the server application and it is funding the creation
+ of new users through its own endpoints.</p>
+
+<p>The second funding source is an Faucet smart contract <a href="https://explorer.sirius.lightstreams.io/addr/0xdf81615e44b34c7015bf148de30526a4863c0dcd">0xdf81615E44b34C7015bF148De30526A4863c0DcD</a> which will fund
+ the activity of users up to 10 PHTs. This smart contract can be top up by every entity
+ interested in the growth of the project.</p>
+
+<p>Once users exceeds the initial 10 PHTs they can request more tokens for their accounts contacting Lightstreams Dev Team
+either <a href="https://t.me/LightstreamsDevelopers">Telegram</a> or on the <a href="https://discuss.lightstreams.network/c/dev">Discuss forum</a></p>
 
 
 
