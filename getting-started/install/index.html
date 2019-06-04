@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-05-31T16:14:54 CEST">
+<meta name="revised" content="2019-06-04T20:15:15 CEST">
 <title>Install :: Lightstreams Documentation</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/nucleus.css" rel="stylesheet">
@@ -456,7 +456,7 @@
 <ul>
 <li><a href="#how-to-install-2">How to install</a></li>
 </ul></li>
-<li><a href="#geth">Geth</a></li>
+<li><a href="#geth-optional">Geth (Optional)</a></li>
 </ul></li>
 <li><a href="#permissions">Permissions</a></li>
 <li><a href="#check-installation">Check installation</a></li>
@@ -508,7 +508,7 @@
 <li><a href="#leth"><code>leth</code></a> is a command line interface used to run, interact, and control the Lightstreams node</li>
 <li><a href="#ipfs"><code>ipfs</code></a> is a decentralised file system enhanced with our award winning “Permissioned Blocks” technology</li>
 <li><a href="#lightchain"><code>lightchain</code></a> is a command line interface to connect to lightstreams ethereum compatible blockchain</li>
-<li><a href="#geth"><code>geth</code></a> is the the command line interface for running a full ethereum node implemented in Go</li>
+<li><a href="#geth"><code>geth</code></a>(Optional) is the the command line interface for running a full ethereum node implemented in Go</li>
 </ul>
 
 <h3 id="leth">Leth</h3>
@@ -577,7 +577,9 @@ layer which allows users to control the access to after content is being distrib
 <pre><code>wget &quot;https://s3.eu-central-1.amazonaws.com/lightstreams-public/ipfs/latest/ipfs-linux-amd64&quot; -O /usr/local/bin/ipfs
 </code></pre>
 
-<h3 id="geth">Geth</h3>
+<h3 id="geth-optional">Geth (Optional)</h3>
+
+<p>Only in case of using <code>Rinkeby</code> network.</p>
 
 <p><strong><em>Source code</em></strong></p>
 
@@ -609,13 +611,13 @@ chmod u+x /usr/local/bin/ipfs
 <h2 id="check-installation">Check installation</h2>
 
 <pre><code>&gt; leth version
-Version: 0.15.0-alpha
+Version: 0.15.0-alpha API CORS
 
 &gt; ipfs version
 ipfs version 0.4.16-dev
 
 &gt; lightchain version
-Version: 1.0.0-beta MainNet
+Version: 1.2.0 Rock &amp;&amp; Roll
 
 &gt; geth version
 Geth

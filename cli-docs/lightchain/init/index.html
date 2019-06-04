@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-05-31T16:14:55 CEST">
+<meta name="revised" content="2019-06-04T20:15:15 CEST">
 <title>lightchain init :: Lightstreams Documentation</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/nucleus.css" rel="stylesheet">
@@ -499,13 +499,15 @@
 
 <h3 id="options">Options</h3>
 
-<pre><code>      --datadir string    Data directory for the databases and keystore (default &quot;/Users/enchanterio/.lightchain&quot;)
-  -h, --help              help for init
-      --lvl string        Level of logging (default &quot;info&quot;)
-      --sirius            Initialize a node connected to Sirius network
-      --standalone        Data directory for the databases and keystore
-      --trace             Whenever to be asserting and reporting blockchain state in real-time (testing, debugging purposes)
-      --tracelog string   The filepath to a log file where all tracing output will be persisted (default &quot;/var/folders/f9/11wh9x9j31d75nxgwv2qsj3r0000gn/T/tracer.log&quot;)
+<pre><code>      --datadir string   Data directory for the databases and keystore (default &quot;/home/ggarrido/.lightchain&quot;)
+      --force            Forces the init by removing the data dir if already exists
+  -h, --help             help for init
+      --lvl string       Level of logging (default &quot;info&quot;)
+      --mainnet          Initialize a node connected to production, MainNet
+      --sirius           Initialize a node connected to Sirius network
+      --standalone       Data directory for the databases and keystore
+      --trace            Whenever to be asserting and reporting blockchain state in real-time (testing, debugging purposes)
+
 </code></pre>
 
 <h3 id="see-also">SEE ALSO</h3>
