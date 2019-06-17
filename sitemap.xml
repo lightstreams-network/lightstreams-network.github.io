@@ -11,10 +11,6 @@
   </url>
   
   <url>
-    <loc>https://docs.lightstreams.network/guides/exchange-integration/</loc>
-  </url>
-  
-  <url>
     <loc>https://docs.lightstreams.network/getting-started/</loc>
   </url>
   
@@ -24,6 +20,14 @@
   
   <url>
     <loc>https://docs.lightstreams.network/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.lightstreams.network/guides/file-sharing/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.lightstreams.network/guides/peer-to-peer-ecommerce/</loc>
   </url>
   
   <url>
@@ -51,7 +55,7 @@
   </url>
   
   <url>
-    <loc>https://docs.lightstreams.network/getting-started/file-sharing/</loc>
+    <loc>https://docs.lightstreams.network/guides/mainnet-node-setup/</loc>
   </url>
   
   <url>
@@ -59,7 +63,7 @@
   </url>
   
   <url>
-    <loc>https://docs.lightstreams.network/getting-started/peer-to-peer-ecommerce/</loc>
+    <loc>https://docs.lightstreams.network/guides/metamask-integration/</loc>
   </url>
   
   <url>
