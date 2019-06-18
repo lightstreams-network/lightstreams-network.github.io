@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-06-17T14:05:27 CEST">
+<meta name="revised" content="2019-06-18T11:35:29 CEST">
 <title>Private file sharing :: Lightstreams Documentation</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/nucleus.css" rel="stylesheet">
@@ -451,11 +451,23 @@
 <li><a href="#private-file-sharing-for-dapps-content-producers">Private File Sharing for dApps, content producers</a>
 <ul>
 <li><a href="#storage-files">Storage files</a></li>
-<li><a href="#adding-a-private-file">Adding a private file</a></li>
-<li><a href="#reading-the-private-file">Reading the private file</a></li>
-<li><a href="#granting-read-access-to-the-private-file">Granting read access to the private file</a></li>
-<li><a href="#granting-admin-access-to-the-private-file">Granting admin access to the private file</a></li>
-<li><a href="#reading-the-public-meta-file">Reading the public Meta file</a></li>
+<li><a href="#adding-a-private-file"># Adding a private file</a>
+<ul>
+<li><a href="#using-curl-alternately">Using Curl (Alternately)</a></li>
+</ul></li>
+<li><a href="#reading-the-private-file"># Reading the private file</a>
+<ul>
+<li><a href="#using-curl-alternately-1">Using Curl (Alternately)</a></li>
+</ul></li>
+<li><a href="#granting-read-access-to-the-private-file"># Granting read access to the private file</a>
+<ul>
+<li><a href="#using-curl-alternately-2">Using Curl (Alternately)</a></li>
+</ul></li>
+<li><a href="#granting-admin-access-to-the-private-file"># Granting admin access to the private file</a>
+<ul>
+<li><a href="#using-curl-alternately-3">Using Curl (Alternately)</a></li>
+</ul></li>
+<li><a href="#reading-the-public-meta-file"># Reading the public Meta file</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -481,8 +493,8 @@
 
 
 <p>Once your Lightstreams node is fully synced and you own some PHT(or ETH),
-you can start distributing files! If you still don&rsquo;t have a lightstream node
-running locally and fully synchronize, follow <a href="getting-started/quick-start/">the instructions here</a></p>
+you can start distributing files! If you still don&rsquo;t have a Lightstreams node
+running locally and fully synchronize, follow <a href="/getting-started/quick-start/">the instructions here</a></p>
 
 <h2 id="private-file-sharing-for-dapps-content-producers">Private File Sharing for dApps, content producers</h2>
 
@@ -499,7 +511,7 @@ what majority of projects do. Privacy vs Confidentiality in action.</p>
 <li>A public metadata document(<code>meta</code>, in json format, describing the protected file</li>
 </ol>
 
-<h3 id="adding-a-private-file">Adding a private file</h3>
+<h3 id="adding-a-private-file"># Adding a private file</h3>
 
 <p>Given a file such as &ldquo;/tmp/secret_file.txt&rdquo;, with content <code>Hello secret world</code>.</p>
 
@@ -527,13 +539,27 @@ File successfully uploaded to IPFS storage.	<span style="color:#f92672">{</span>
 <li><code>&quot;acl&quot;</code> this is the file&rsquo;s ACL. A smart contract addr controlling all the access rules. You can use it <a href="#granting-read-access-to-the-private-file"><code>leth acl grant</code></a> cmd to grant permissions to other accounts</li>
 </ul>
 
-<h3 id="reading-the-private-file">Reading the private file</h3>
+<h4 id="using-curl-alternately">Using Curl (Alternately)</h4>
+
+<p>Alternative you could also do a HTTP API call:</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$&gt;  curl -X POST <span style="color:#8045ff">\
+</span><span style="color:#8045ff"></span>  http://localhost:9091/storage/add <span style="color:#8045ff">\
+</span><span style="color:#8045ff"></span>  -H <span style="color:#d88200">&#39;Content-Type: multipart/form-data&#39;</span> <span style="color:#8045ff">\
+</span><span style="color:#8045ff"></span>  -F <span style="color:#111">owner</span><span style="color:#f92672">=</span>0xa92e3705e6d70cb45782bf055e41813060e4ce07 <span style="color:#8045ff">\
+</span><span style="color:#8045ff"></span>  -F <span style="color:#111">password</span><span style="color:#f92672">=</span>password <span style="color:#8045ff">\
+</span><span style="color:#8045ff"></span>  -F <span style="color:#111">file</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;@/tmp/secret_file.txt&#34;</span>
+
+<span style="color:#f92672">{</span><span style="color:#d88200">&#34;meta&#34;</span>:<span style="color:#d88200">&#34;QmZYSewpHNvdW1TTgska792QAT7Yd6yxZAoybpYFskTZSf&#34;</span>,<span style="color:#d88200">&#34;acl&#34;</span>:<span style="color:#d88200">&#34;0xc2DBC8CdAba2df432C821639B80302f0675D6f74&#34;</span><span style="color:#f92672">}</span></code></pre></div>
+<p>To do that you should have run your local Lightstreams node using <code>--https</code>
+to enable the HTTP API.</p>
+
+<h3 id="reading-the-private-file"># Reading the private file</h3>
 
 <p>Now you can tell your friend who is running another Lightstreams node on his computer to download your private file!</p>
 
 <p>For testing proposed you may setup another Lightstreams node locally, using a different <code>nodeid</code> and on the same network, as follow:</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">leth init --nodeid<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span> --network<span style="color:#f92672">=</span>sirius
-leth run --nodeid<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span> --network<span style="color:#f92672">=</span>sirius
+leth run --nodeid<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span> --network<span style="color:#f92672">=</span>sirius <span style="color:#f92672">[</span>--https<span style="color:#f92672">]</span>
 
 ...wait a few minutes <span style="color:#00a8c8">for</span> a full sync...</code></pre></div>
 <p>Once your Lightstreams node is full synced, attempt to read the private file from your new Lightstreams node 2:</p>
@@ -545,7 +571,22 @@ leth run --nodeid<span style="color:#f92672">=</span><span style="color:#ae81ff"
 
 <p>Let&rsquo;s grant a read permission.</p>
 
-<h3 id="granting-read-access-to-the-private-file">Granting read access to the private file</h3>
+<h4 id="using-curl-alternately-1">Using Curl (Alternately)</h4>
+
+<p>In order to read documents using the HTTP API you first need to request a token as follow:</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$&gt; curl -X POST <span style="color:#8045ff">\
+</span><span style="color:#8045ff"></span>  http://localhost:9092/user/signin <span style="color:#8045ff">\
+</span><span style="color:#8045ff"></span>  -H <span style="color:#d88200">&#39;Content-Type: application/json&#39;</span> <span style="color:#8045ff">\
+</span><span style="color:#8045ff"></span>  -d <span style="color:#d88200">&#39;{&#34;account&#34;:&#34;0xnode2ethAddr0cb45782bf055e41813060e4ce89&#34;,&#34;password&#34;:&#34;password&#34;}&#39;</span>
+
+<span style="color:#f92672">{</span> token: <span style="color:#d88200">&#34;eyJibG9ja2NoYWluIjoiRVRIIiwiZX...&#34;</span> <span style="color:#f92672">}</span></code></pre></div>
+<p>Then we use the token to request the file access</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$&gt; curl -X GET <span style="color:#8045ff">\
+</span><span style="color:#8045ff"></span>  <span style="color:#d88200">&#39;http://localhost:9092/storage/fetch?meta=QmZYSewpHNvdW1TTgska792QAT7Yd6yxZAoybpYFskTZSf&amp;token=eyJibG9ja2NoYWluIjoiRVRIIiwiZX...&#39;</span> <span style="color:#8045ff">\
+</span><span style="color:#8045ff"></span>  --output /tmp/secret_file_copy.txt
+  
+<span style="color:#f92672">{</span><span style="color:#d88200">&#34;error&#34;</span>: <span style="color:#f92672">{</span><span style="color:#d88200">&#34;code&#34;</span>: <span style="color:#d88200">&#34;err_cli&#34;</span>, <span style="color:#d88200">&#34;message&#34;</span>: <span style="color:#d88200">&#34;unable to download file to IPFS storage. Error: ipfs cat cmd timed out&#34;</span><span style="color:#f92672">}</span></code></pre></div>
+<h3 id="granting-read-access-to-the-private-file"># Granting read access to the private file</h3>
 
 <p>Only the owner of the file can grant access to its files. In this case we go back to the original terminal
 where owner account was set and execute the following command:</p>
@@ -575,13 +616,36 @@ and the extension of the uploaded file resolved from the JSON Meta file.</p>
 
 <p>PS: You can always run any command with <code>--help</code> flag to get explanation of all required/optional flags</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">leth acl grant --help</code></pre></div>
-<h3 id="granting-admin-access-to-the-private-file">Granting admin access to the private file</h3>
+<h4 id="using-curl-alternately-2">Using Curl (Alternately)</h4>
+
+<p>As it is explained above using the CLI, we could do the same using curl to grant
+read access to the user <em>0xnode2ethAddr0cb45782bf055e41813060e4ce89</em>:</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$&gt; curl -X POST <span style="color:#8045ff">\
+</span><span style="color:#8045ff"></span>  http://localhost:9091/acl/grant <span style="color:#8045ff">\
+</span><span style="color:#8045ff"></span>  -H <span style="color:#d88200">&#39;Content-Type: application/json&#39;</span> <span style="color:#8045ff">\
+</span><span style="color:#8045ff"></span>  -d <span style="color:#d88200">&#39;{&#34;acl&#34;:&#34;0x2F15B633b4bC41BdFBBD8AAf2Be7Dae958D27C7E&#34;, &#34;owner&#34;:&#34;0xa92e3705e6d70cb45782bf055e41813060e4ce07&#34;, &#34;password&#34;:&#34;password&#34;, &#34;to&#34;:&#34;0xnode2ethAddr0cb45782bf055e41813060e4ce89&#34;, &#34;permission&#34;: &#34;read&#34;}&#39;</span>
+
+<span style="color:#f92672">{</span><span style="color:#d88200">&#34;is_granted&#34;</span>:<span style="color:#d88200">&#34;true&#34;</span><span style="color:#f92672">}</span></code></pre></div>
+<p>Then we try again to fetch the file using same token obtained above:</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$&gt;  curl -X GET <span style="color:#8045ff">\
+</span><span style="color:#8045ff"></span>  <span style="color:#d88200">&#39;http://localhost:9092/storage/fetch?meta=QmZYSewpHNvdW1TTgska792QAT7Yd6yxZAoybpYFskTZSf&amp;token=eyJibG9ja2NoYWluIjoiRVRIIiwiZX...&#39;</span> <span style="color:#8045ff">\
+</span><span style="color:#8045ff"></span>  --output /tmp/secret_file_copy.txt</code></pre></div>
+<p>this time no error output is returned and file content is stored at <code>/tmp/secret_file_copy.txt</code>.</p>
+
+<h3 id="granting-admin-access-to-the-private-file"># Granting admin access to the private file</h3>
 
 <p>Going step further. You can also grant `<code>admin</code> rights to other accounts, devices so they can further have the privileges of granting read/admin access to other users.</p>
 
 <p>Example, let&rsquo;s grant an <code>admin</code> right to the Leth Node 2 account. With such a privilege, Leth Node 2 account will be able to further grant access to other devices in the network/users.</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">leth acl grant --nodeid<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> --network<span style="color:#f92672">=</span>sirius --permission<span style="color:#f92672">=</span>admin --acl<span style="color:#f92672">=</span>0x2F15B633b4bC41BdFBBD8AAf2Be7Dae958D27C7E --owner<span style="color:#f92672">=</span>0xa92e3705e6d70cb45782bf055e41813060e4ce07 --to<span style="color:#f92672">=</span>0xnode2ethAddr0cb45782bf055e41813060e4ce89</code></pre></div>
-<h3 id="reading-the-public-meta-file">Reading the public Meta file</h3>
+<h4 id="using-curl-alternately-3">Using Curl (Alternately)</h4>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$&gt; curl -X POST <span style="color:#8045ff">\
+</span><span style="color:#8045ff"></span>  http://localhost:9091/acl/grant <span style="color:#8045ff">\
+</span><span style="color:#8045ff"></span>  -H <span style="color:#d88200">&#39;Content-Type: application/json&#39;</span> <span style="color:#8045ff">\
+</span><span style="color:#8045ff"></span>  -d <span style="color:#d88200">&#39;{&#34;acl&#34;:&#34;0x2F15B633b4bC41BdFBBD8AAf2Be7Dae958D27C7E&#34;, &#34;owner&#34;:&#34;0xa92e3705e6d70cb45782bf055e41813060e4ce07&#34;, &#34;password&#34;:&#34;password&#34;, &#34;to&#34;:&#34;0xnode2ethAddr0cb45782bf055e41813060e4ce89&#34;, &#34;permission&#34;: &#34;admin&#34;}&#39;</span>
+
+<span style="color:#f92672">{</span><span style="color:#d88200">&#34;is_granted&#34;</span>:<span style="color:#d88200">&#34;true&#34;</span><span style="color:#f92672">}</span></code></pre></div>
+<h3 id="reading-the-public-meta-file"># Reading the public Meta file</h3>
 
 <p>In case you want to get information about the privately stored file, you can do so using the <code>leth storage meta</code> command.</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">leth storage meta --nodeid<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> --network<span style="color:#f92672">=</span>sirius --meta<span style="color:#f92672">=</span>QmZYSewpHNvdW1TTgska792QAT7Yd6yxZAoybpYFskTZSf</code></pre></div>

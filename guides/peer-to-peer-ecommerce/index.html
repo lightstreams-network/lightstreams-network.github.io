@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-06-17T14:05:27 CEST">
+<meta name="revised" content="2019-06-18T11:35:29 CEST">
 <title>Ecommerce :: Lightstreams Documentation</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/nucleus.css" rel="stylesheet">
@@ -448,8 +448,37 @@
 <ul>
 <li>
 <ul>
-<li><a href="#selling-digital-content">Selling digital content</a></li>
-<li><a href="#buying-digital-content">Buying digital content</a></li>
+<li>
+<ul>
+<li><a href="#initialization">Initialization</a></li>
+</ul></li>
+<li><a href="#selling-digital-content">Selling digital content</a>
+<ul>
+<li><a href="#step-1-upload-commercial-content">Step 1: Upload commercial content</a>
+<ul>
+<li><a href="#using-curl-alternately">Using Curl (Alternately)</a></li>
+</ul></li>
+<li><a href="#step-2-create-your-eshop">Step 2: Create your eShop</a>
+<ul>
+<li><a href="#using-curl-alternately-1">Using Curl (Alternately)</a></li>
+</ul></li>
+<li><a href="#step-3-adding-your-content-for-the-sale">Step 3: Adding your content for the sale</a>
+<ul>
+<li><a href="#using-curl-alternately-2">Using Curl (Alternately)</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#buying-digital-content">Buying digital content</a>
+<ul>
+<li><a href="#step-1-buy-the-content">Step 1: Buy the content</a>
+<ul>
+<li><a href="#using-curl-alternately-3">Using Curl (Alternately)</a></li>
+</ul></li>
+<li><a href="#step-2-download-purchased-content">Step 2: Download purchased content</a>
+<ul>
+<li><a href="#using-curl-alternately-4">Using Curl (Alternately)</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#let-s-open-it">Let&rsquo;s open it:</a></li>
 <li><a href="#shop-sale-earnings">Shop sale earnings</a></li>
 </ul></li>
 </ul>
@@ -478,15 +507,21 @@
 
 <p>In this tutorial you will learn how to sell your digital content and how other users can buy it without any intermediary!</p>
 
-<h2 id="selling-digital-content">Selling digital content</h2>
+<h3 id="initialization">Initialization</h3>
 
 <p>The decentralized shopping support was added to <code>Leth</code> in version <code>0.12.1</code>. Make sure you have the latest version by running:</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">~ <span style="color:#111">$leth</span> version
 Version: <span style="color:#ae81ff">0</span>.12.1-alpha LethShop</code></pre></div>
-<p>Boot your local node connected to a <code>Sirius</code> test network. In this tutorial we will use <code>NodeID 101</code> representing the Seller&rsquo;s node.</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">leth run --nodeid<span style="color:#f92672">=</span><span style="color:#ae81ff">101</span> --network<span style="color:#f92672">=</span>sirius</code></pre></div>
+<p>Boot your local node connected to a <code>Sirius</code> test network. In this tutorial we will use <code>NodeID 1</code> representing the Seller&rsquo;s node.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">leth run --nodeid<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> --network<span style="color:#f92672">=</span>sirius <span style="color:#f92672">[</span>--https<span style="color:#f92672">]</span></code></pre></div>
+<p>Boot another local node connected to a <code>Sirius</code> test network. We use <code>NodeID 2</code> representing the Buyer&rsquo;s node.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">leth run --nodeid<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> --network<span style="color:#f92672">=</span>sirius <span style="color:#f92672">[</span>--https<span style="color:#f92672">]</span></code></pre></div>
+<h2 id="selling-digital-content">Selling digital content</h2>
+
+<h3 id="step-1-upload-commercial-content">Step 1: Upload commercial content</h3>
+
 <p>Add the commercial content, you wish to sell later, to your node&rsquo;s storage. We will be selling a &ldquo;rare&rdquo; image from the <strong>It Crowd</strong> series.</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">leth storage add --nodeid<span style="color:#f92672">=</span><span style="color:#ae81ff">101</span> --network<span style="color:#f92672">=</span>sirius --owner<span style="color:#f92672">=</span>0xd119b8b038d3a67d34ca1d46e1898881626a082b --file<span style="color:#f92672">=</span>/Users/enchanterio/Downloads/it-crowd.jpg</code></pre></div>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">leth storage add --nodeid<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> --network<span style="color:#f92672">=</span>sirius --owner<span style="color:#f92672">=</span>0xd119b8b038d3a67d34ca1d46e1898881626a082b --file<span style="color:#f92672">=</span>/tmp/it-crowd.jpg</code></pre></div>
 <p>Authorize the ACL creation protecting your commercial file:</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Enter password to decrypt the account PK and store it in memory:
 &lt;<span style="color:#111">type</span> your keystore password&gt;</code></pre></div>
@@ -494,53 +529,116 @@ Version: <span style="color:#ae81ff">0</span>.12.1-alpha LethShop</code></pre></
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#111">{</span><span style="color:#f92672">&#34;acl&#34;</span><span style="color:#111">:</span><span style="color:#d88200">&#34;0xEB9D37F30F406e2642E211C19Ed6F7A5FC6d8Ec4&#34;</span><span style="color:#111">,</span><span style="color:#f92672">&#34;meta&#34;</span><span style="color:#111">:</span><span style="color:#d88200">&#34;QmNnUze4f1QfnSQJFFco2hdPWZb2iXUjcB2onAzxLQQj5f&#34;</span><span style="color:#111">}</span></code></pre></div>
 <p><em>Note: This file is at this exact moment still private.</em></p>
 
+<h4 id="using-curl-alternately">Using Curl (Alternately)</h4>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$&gt; curl -X POST <span style="color:#8045ff">\
+</span><span style="color:#8045ff"></span>  http://localhost:9091/storage/add <span style="color:#8045ff">\
+</span><span style="color:#8045ff"></span>  -H <span style="color:#d88200">&#39;Content-Type: multipart/form-data&#39;</span> <span style="color:#8045ff">\
+</span><span style="color:#8045ff"></span>  -F <span style="color:#111">owner</span><span style="color:#f92672">=</span>0xd119b8b038d3a67d34ca1d46e1898881626a082b <span style="color:#8045ff">\
+</span><span style="color:#8045ff"></span>  -F <span style="color:#111">password</span><span style="color:#f92672">=</span>password <span style="color:#8045ff">\
+</span><span style="color:#8045ff"></span>  -F <span style="color:#111">file</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;@/tmp/it-crowd.jpg&#34;</span>
+  
+<span style="color:#f92672">{</span><span style="color:#d88200">&#34;acl&#34;</span>:<span style="color:#d88200">&#34;0xEB9D37F30F406e2642E211C19Ed6F7A5FC6d8Ec4&#34;</span>,<span style="color:#d88200">&#34;meta&#34;</span>:<span style="color:#d88200">&#34;QmNnUze4f1QfnSQJFFco2hdPWZb2iXUjcB2onAzxLQQj5f&#34;</span><span style="color:#f92672">}</span></code></pre></div>
+<p><em>Note: Remember that you need to use <code>--https</code> to enable the HTTP API.</em></p>
+
+<h3 id="step-2-create-your-eshop">Step 2: Create your eShop</h3>
+
 <p>Create your online <strong>Shop</strong>:</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">leth shop create --nodeid<span style="color:#f92672">=</span><span style="color:#ae81ff">101</span> --network<span style="color:#f92672">=</span>sirius --from<span style="color:#f92672">=</span>0xd119b8b038d3a67d34ca1d46e1898881626a082b</code></pre></div>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">leth shop create --nodeid<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> --network<span style="color:#f92672">=</span>sirius --from<span style="color:#f92672">=</span>0xd119b8b038d3a67d34ca1d46e1898881626a082b</code></pre></div>
 <p>Output:</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#111">{</span><span style="color:#f92672">&#34;shop&#34;</span><span style="color:#111">:</span><span style="color:#d88200">&#34;0xffeF98e9de5524Eaf82A8DE88B031160f694a90A&#34;</span><span style="color:#111">}</span></code></pre></div>
+<h4 id="using-curl-alternately-1">Using Curl (Alternately)</h4>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$&gt; curl -X POST <span style="color:#8045ff">\
+</span><span style="color:#8045ff"></span>  http://localhost:9091/shop/create <span style="color:#8045ff">\
+</span><span style="color:#8045ff"></span>  -H <span style="color:#d88200">&#39;Content-Type: multipart/form-data&#39;</span> <span style="color:#8045ff">\
+</span><span style="color:#8045ff"></span>  -F <span style="color:#111">from</span><span style="color:#f92672">=</span>0xd119b8b038d3a67d34ca1d46e1898881626a082b <span style="color:#8045ff">\
+</span><span style="color:#8045ff"></span>  -F <span style="color:#111">password</span><span style="color:#f92672">=</span>password
+ 
+<span style="color:#f92672">{</span><span style="color:#d88200">&#34;shop&#34;</span>:<span style="color:#d88200">&#34;0xffeF98e9de5524Eaf82A8DE88B031160f694a90A&#34;</span><span style="color:#f92672">}</span></code></pre></div>
 <p>Check the <strong>Shop Balance</strong> using Sirius Blockchain Explorer: <a href="https://explorer.sirius.lightstreams.io/addr/0xffef98e9de5524eaf82a8de88b031160f694a90a">https://explorer.sirius.lightstreams.io/addr/0xffef98e9de5524eaf82a8de88b031160f694a90a</a></p>
 
 <p><img src="/img/0-shop-balance.png" alt="0 Shop Balance" /></p>
 
-<p><strong>Sell the access</strong> to your file, let&rsquo;s say for 1 PHT, at your newly created online, decentralized shop:</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">leth shop sell --nodeid<span style="color:#f92672">=</span><span style="color:#ae81ff">101</span> --network<span style="color:#f92672">=</span>sirius --shop<span style="color:#f92672">=</span>0xffeF98e9de5524Eaf82A8DE88B031160f694a90A --acl<span style="color:#f92672">=</span>0xEB9D37F30F406e2642E211C19Ed6F7A5FC6d8Ec4 --price_wei<span style="color:#f92672">=</span><span style="color:#ae81ff">1000000000000000000</span> --from<span style="color:#f92672">=</span>0xd119b8b038d3a67d34ca1d46e1898881626a082b</code></pre></div>
+<h3 id="step-3-adding-your-content-for-the-sale">Step 3: Adding your content for the sale</h3>
+
+<p><strong>Sell the access</strong> to your file, let&rsquo;s say for <em>1 PHT</em>, at your newly created online, decentralized shop:</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">leth shop sell --nodeid<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> --network<span style="color:#f92672">=</span>sirius --shop<span style="color:#f92672">=</span>0xffeF98e9de5524Eaf82A8DE88B031160f694a90A --acl<span style="color:#f92672">=</span>0xEB9D37F30F406e2642E211C19Ed6F7A5FC6d8Ec4 --price_wei<span style="color:#f92672">=</span><span style="color:#ae81ff">1000000000000000000</span> --from<span style="color:#f92672">=</span>0xd119b8b038d3a67d34ca1d46e1898881626a082b</code></pre></div>
 <p>Result:</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#111">{</span><span style="color:#f92672">&#34;success&#34;</span><span style="color:#111">:</span><span style="color:#d88200">&#34;true&#34;</span><span style="color:#111">}</span></code></pre></div>
+<h4 id="using-curl-alternately-2">Using Curl (Alternately)</h4>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$&gt; curl -X POST <span style="color:#8045ff">\
+</span><span style="color:#8045ff"></span>  http://localhost:9091/shop/sell <span style="color:#8045ff">\
+</span><span style="color:#8045ff"></span>  -H <span style="color:#d88200">&#39;Content-Type: multipart/form-data&#39;</span> <span style="color:#8045ff">\
+</span><span style="color:#8045ff"></span>  -F <span style="color:#111">shop</span><span style="color:#f92672">=</span>0xffeF98e9de5524Eaf82A8DE88B031160f694a90A <span style="color:#8045ff">\
+</span><span style="color:#8045ff"></span>  -F <span style="color:#111">acl</span><span style="color:#f92672">=</span>0xEB9D37F30F406e2642E211C19Ed6F7A5FC6d8Ec4 <span style="color:#8045ff">\
+</span><span style="color:#8045ff"></span>  -F <span style="color:#111">price_wei</span><span style="color:#f92672">=</span><span style="color:#ae81ff">1000000000000000000</span> <span style="color:#8045ff">\
+</span><span style="color:#8045ff"></span>  -F <span style="color:#111">from</span><span style="color:#f92672">=</span>0xd119b8b038d3a67d34ca1d46e1898881626a082b <span style="color:#8045ff">\
+</span><span style="color:#8045ff"></span>  -F <span style="color:#111">password</span><span style="color:#f92672">=</span>password
+ 
+<span style="color:#f92672">{</span><span style="color:#d88200">&#34;success&#34;</span>:<span style="color:#d88200">&#34;true&#34;</span><span style="color:#f92672">}</span></code></pre></div>
 <p><strong>From this moment, anyone can get read access to your commercial content by simply purchasing the permission to access it.</strong></p>
 
-<p>You can announce in social media that the Read ACL Permission <code>0xEB9D37F30F406e2642E211C19Ed6F7A5FC6d8Ec4</code> to your file <code>QmNnUze4f1QfnSQJFFco2hdPWZb2iXUjcB2onAzxLQQj5f</code> is available to be purchased for <code>1 PHT</code> at your online digital shop: <code>0xffeF98e9de5524Eaf82A8DE88B031160f694a90A</code>.</p>
+<p>You can announce in social media that the Read ACL Permission <code>0xEB9D37F30F406e2642E211C19Ed6F7A5FC6d8Ec4</code> to your file <code>QmNnUze4f1QfnSQJFFco2hdPWZb2iXUjcB2onAzxLQQj5f</code>
+is available to be purchased for <em>1 PHT</em> at your online digital shop: <code>0xffeF98e9de5524Eaf82A8DE88B031160f694a90A</code>.</p>
 
 <h2 id="buying-digital-content">Buying digital content</h2>
 
-<p>All the steps below will be executed on a separate Node with ID 102.</p>
+<p>All the steps below will be executed on a separate Node with ID 2.</p>
 
 <p>If a malicious buyer would try to by-pass the purchasing process and download the file directly, he would run into an error:</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">leth storage fetch --nodeid<span style="color:#f92672">=</span><span style="color:#ae81ff">102</span> --network<span style="color:#f92672">=</span>sirius --account<span style="color:#f92672">=</span>0xf3eedaed3440614b6d9ac1ef0d910494c6bc73a8 --meta<span style="color:#f92672">=</span>QmNnUze4f1QfnSQJFFco2hdPWZb2iXUjcB2onAzxLQQj5f</code></pre></div>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">leth storage fetch --nodeid<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span> --network<span style="color:#f92672">=</span>sirius --account<span style="color:#f92672">=</span>0xf3eedaed3440614b6d9ac1ef0d910494c6bc73a8 --meta<span style="color:#f92672">=</span>QmNnUze4f1QfnSQJFFco2hdPWZb2iXUjcB2onAzxLQQj5f</code></pre></div>
 <p>Error output:</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#111">{</span><span style="color:#f92672">&#34;error&#34;</span><span style="color:#111">:{</span><span style="color:#f92672">&#34;message&#34;</span><span style="color:#111">:</span><span style="color:#d88200">&#34;unable to fetch the file from IPFS storage. Error: ipfs cat cmd timed out&#34;</span><span style="color:#111">,</span><span style="color:#f92672">&#34;code&#34;</span><span style="color:#111">:</span><span style="color:#d88200">&#34;ERROR_UNKNOWN&#34;</span><span style="color:#111">}}</span></code></pre></div>
 <p><em>Note: The timeout means there is no public copy of this file. Either the file doesn&rsquo;t exist or all copies are protected by ACL.</em></p>
 
+<h3 id="step-1-buy-the-content">Step 1: Buy the content</h3>
+
 <p>Buying the ACL Read Permission:</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">leth shop buy --nodeid<span style="color:#f92672">=</span><span style="color:#ae81ff">102</span> --network<span style="color:#f92672">=</span>sirius --shop<span style="color:#f92672">=</span>0xffeF98e9de5524Eaf82A8DE88B031160f694a90A --acl<span style="color:#f92672">=</span>0xEB9D37F30F406e2642E211C19Ed6F7A5FC6d8Ec4 --from<span style="color:#f92672">=</span>0xf3eedaed3440614b6d9ac1ef0d910494c6bc73a8</code></pre></div>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">leth shop buy --nodeid<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span> --network<span style="color:#f92672">=</span>sirius --shop<span style="color:#f92672">=</span>0xffeF98e9de5524Eaf82A8DE88B031160f694a90A --acl<span style="color:#f92672">=</span>0xEB9D37F30F406e2642E211C19Ed6F7A5FC6d8Ec4 --from<span style="color:#f92672">=</span>0xf3eedaed3440614b6d9ac1ef0d910494c6bc73a8</code></pre></div>
 <p>You will be prompted to authorize the purchase:</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Enter password to decrypt the account PK and store it in memory:
 &lt;<span style="color:#111">type</span> your keystore password&gt;</code></pre></div>
 <p>Output:</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#111">{</span><span style="color:#f92672">&#34;success&#34;</span><span style="color:#111">:</span><span style="color:#d88200">&#34;true&#34;</span><span style="color:#111">}</span></code></pre></div>
+<h4 id="using-curl-alternately-3">Using Curl (Alternately)</h4>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$&gt; curl -X POST <span style="color:#8045ff">\
+</span><span style="color:#8045ff"></span>  http://localhost:9091/shop/buy <span style="color:#8045ff">\
+</span><span style="color:#8045ff"></span>  -H <span style="color:#d88200">&#39;Content-Type: multipart/form-data&#39;</span> <span style="color:#8045ff">\
+</span><span style="color:#8045ff"></span>  -F <span style="color:#111">shop</span><span style="color:#f92672">=</span>0xffeF98e9de5524Eaf82A8DE88B031160f694a90A <span style="color:#8045ff">\
+</span><span style="color:#8045ff"></span>  -F <span style="color:#111">acl</span><span style="color:#f92672">=</span>0xEB9D37F30F406e2642E211C19Ed6F7A5FC6d8Ec4 <span style="color:#8045ff">\
+</span><span style="color:#8045ff"></span>  -F <span style="color:#111">from</span><span style="color:#f92672">=</span>0xd119b8b038d3a67d34ca1d46e1898881626a082b <span style="color:#8045ff">\
+</span><span style="color:#8045ff"></span>  -F <span style="color:#111">password</span><span style="color:#f92672">=</span>password
+ 
+<span style="color:#f92672">{</span><span style="color:#d88200">&#34;success&#34;</span>:<span style="color:#d88200">&#34;true&#34;</span><span style="color:#f92672">}</span></code></pre></div>
+<h3 id="step-2-download-purchased-content">Step 2: Download purchased content</h3>
+
 <p>The buyer can now access the purchased file:</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">leth storage fetch --nodeid<span style="color:#f92672">=</span><span style="color:#ae81ff">102</span> --network<span style="color:#f92672">=</span>sirius --account<span style="color:#f92672">=</span>0xf3eedaed3440614b6d9ac1ef0d910494c6bc73a8 --meta<span style="color:#f92672">=</span>QmNnUze4f1QfnSQJFFco2hdPWZb2iXUjcB2onAzxLQQj5f</code></pre></div>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">leth storage fetch --nodeid<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span> --network<span style="color:#f92672">=</span>sirius --account<span style="color:#f92672">=</span>0xf3eedaed3440614b6d9ac1ef0d910494c6bc73a8 --meta<span style="color:#f92672">=</span>QmNnUze4f1QfnSQJFFco2hdPWZb2iXUjcB2onAzxLQQj5f</code></pre></div>
 <p>Output:</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#111">{</span><span style="color:#f92672">&#34;output&#34;</span><span style="color:#111">:</span><span style="color:#d88200">&#34;/var/folders/f9/11wh9x9j31d75nxgwv2qsj3r0000gn/T/it-crowd.jpg&#34;</span><span style="color:#111">}</span></code></pre></div>
-<p>Let&rsquo;s open it:</p>
+<h4 id="using-curl-alternately-4">Using Curl (Alternately)</h4>
+
+<p>In order to read documents using the HTTP API you first need to request a token as follow:</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$&gt; curl -X POST <span style="color:#8045ff">\
+</span><span style="color:#8045ff"></span>  http://localhost:9092/user/signin <span style="color:#8045ff">\
+</span><span style="color:#8045ff"></span>  -H <span style="color:#d88200">&#39;Content-Type: application/json&#39;</span> <span style="color:#8045ff">\
+</span><span style="color:#8045ff"></span>  -d <span style="color:#d88200">&#39;{&#34;account&#34;:&#34;0xf3eedaed3440614b6d9ac1ef0d910494c6bc73a8&#34;,&#34;password&#34;:&#34;password&#34;}&#39;</span>
+
+<span style="color:#f92672">{</span> token: <span style="color:#d88200">&#34;eyJibG9ja2NoYWluIjoiRVRIIiwiZX...&#34;</span> <span style="color:#f92672">}</span></code></pre></div>
+<p>Using obtained token we fetch the content as follow:</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$&gt; curl -X GET <span style="color:#8045ff">\
+</span><span style="color:#8045ff"></span>  <span style="color:#d88200">&#39;http://localhost:9092/storage/fetch?meta=QmNnUze4f1QfnSQJFFco2hdPWZb2iXUjcB2onAzxLQQj5f&amp;token=eyJibG9ja2NoYWluIjoiRVRIIiwiZX...&#39;</span> <span style="color:#8045ff">\
+</span><span style="color:#8045ff"></span>  --output /var/folders/f9/11wh9x9j31d75nxgwv2qsj3r0000gn/T/it-crowd.jpg</code></pre></div>
+<h2 id="let-s-open-it">Let&rsquo;s open it:</h2>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">open /var/folders/f9/11wh9x9j31d75nxgwv2qsj3r0000gn/T/it-crowd.jpg</code></pre></div>
 <p><img src="/img/shop_bought_file.jpg" alt="Purchased File" /></p>
 
 <h2 id="shop-sale-earnings">Shop sale earnings</h2>
 
+<p>As result from the previous purchase the eShop balance has increased to 1 PHT:</p>
+
 <p><a href="https://explorer.sirius.lightstreams.io/addr/0xffef98e9de5524eaf82a8de88b031160f694a90a">https://explorer.sirius.lightstreams.io/addr/0xffef98e9de5524eaf82a8de88b031160f694a90a</a></p>
 
-<p>Shop balance increased to 1 PHT:
-<img src="/img/1-shop-balance.png" alt="Shop balance after purchase" /></p>
+<p><img src="/img/1-shop-balance.png" alt="Shop balance after purchase" /></p>
 
 
 
