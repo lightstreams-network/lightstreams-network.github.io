@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-06-18T11:35:29 CEST">
+<meta name="revised" content="2019-06-18T11:37:31 CEST">
 <title>Private file sharing :: Lightstreams Documentation</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/nucleus.css" rel="stylesheet">
@@ -453,19 +453,19 @@
 <li><a href="#storage-files">Storage files</a></li>
 <li><a href="#adding-a-private-file"># Adding a private file</a>
 <ul>
-<li><a href="#using-curl-alternately">Using Curl (Alternately)</a></li>
+<li><a href="#using-curl">Using Curl</a></li>
 </ul></li>
 <li><a href="#reading-the-private-file"># Reading the private file</a>
 <ul>
-<li><a href="#using-curl-alternately-1">Using Curl (Alternately)</a></li>
+<li><a href="#using-curl-1">Using Curl</a></li>
 </ul></li>
 <li><a href="#granting-read-access-to-the-private-file"># Granting read access to the private file</a>
 <ul>
-<li><a href="#using-curl-alternately-2">Using Curl (Alternately)</a></li>
+<li><a href="#using-curl-2">Using Curl</a></li>
 </ul></li>
 <li><a href="#granting-admin-access-to-the-private-file"># Granting admin access to the private file</a>
 <ul>
-<li><a href="#using-curl-alternately-3">Using Curl (Alternately)</a></li>
+<li><a href="#using-curl-3">Using Curl</a></li>
 </ul></li>
 <li><a href="#reading-the-public-meta-file"># Reading the public Meta file</a></li>
 </ul></li>
@@ -539,7 +539,7 @@ File successfully uploaded to IPFS storage.	<span style="color:#f92672">{</span>
 <li><code>&quot;acl&quot;</code> this is the file&rsquo;s ACL. A smart contract addr controlling all the access rules. You can use it <a href="#granting-read-access-to-the-private-file"><code>leth acl grant</code></a> cmd to grant permissions to other accounts</li>
 </ul>
 
-<h4 id="using-curl-alternately">Using Curl (Alternately)</h4>
+<h4 id="using-curl">Using Curl</h4>
 
 <p>Alternative you could also do a HTTP API call:</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$&gt;  curl -X POST <span style="color:#8045ff">\
@@ -571,7 +571,7 @@ leth run --nodeid<span style="color:#f92672">=</span><span style="color:#ae81ff"
 
 <p>Let&rsquo;s grant a read permission.</p>
 
-<h4 id="using-curl-alternately-1">Using Curl (Alternately)</h4>
+<h4 id="using-curl-1">Using Curl</h4>
 
 <p>In order to read documents using the HTTP API you first need to request a token as follow:</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$&gt; curl -X POST <span style="color:#8045ff">\
@@ -616,7 +616,7 @@ and the extension of the uploaded file resolved from the JSON Meta file.</p>
 
 <p>PS: You can always run any command with <code>--help</code> flag to get explanation of all required/optional flags</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">leth acl grant --help</code></pre></div>
-<h4 id="using-curl-alternately-2">Using Curl (Alternately)</h4>
+<h4 id="using-curl-2">Using Curl</h4>
 
 <p>As it is explained above using the CLI, we could do the same using curl to grant
 read access to the user <em>0xnode2ethAddr0cb45782bf055e41813060e4ce89</em>:</p>
@@ -638,7 +638,7 @@ read access to the user <em>0xnode2ethAddr0cb45782bf055e41813060e4ce89</em>:</p>
 
 <p>Example, let&rsquo;s grant an <code>admin</code> right to the Leth Node 2 account. With such a privilege, Leth Node 2 account will be able to further grant access to other devices in the network/users.</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">leth acl grant --nodeid<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> --network<span style="color:#f92672">=</span>sirius --permission<span style="color:#f92672">=</span>admin --acl<span style="color:#f92672">=</span>0x2F15B633b4bC41BdFBBD8AAf2Be7Dae958D27C7E --owner<span style="color:#f92672">=</span>0xa92e3705e6d70cb45782bf055e41813060e4ce07 --to<span style="color:#f92672">=</span>0xnode2ethAddr0cb45782bf055e41813060e4ce89</code></pre></div>
-<h4 id="using-curl-alternately-3">Using Curl (Alternately)</h4>
+<h4 id="using-curl-3">Using Curl</h4>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$&gt; curl -X POST <span style="color:#8045ff">\
 </span><span style="color:#8045ff"></span>  http://localhost:9091/acl/grant <span style="color:#8045ff">\
 </span><span style="color:#8045ff"></span>  -H <span style="color:#d88200">&#39;Content-Type: application/json&#39;</span> <span style="color:#8045ff">\

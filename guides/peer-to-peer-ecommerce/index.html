@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-06-18T11:35:29 CEST">
+<meta name="revised" content="2019-06-18T11:37:31 CEST">
 <title>Ecommerce :: Lightstreams Documentation</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/nucleus.css" rel="stylesheet">
@@ -456,26 +456,26 @@
 <ul>
 <li><a href="#step-1-upload-commercial-content">Step 1: Upload commercial content</a>
 <ul>
-<li><a href="#using-curl-alternately">Using Curl (Alternately)</a></li>
+<li><a href="#using-curl">Using Curl</a></li>
 </ul></li>
 <li><a href="#step-2-create-your-eshop">Step 2: Create your eShop</a>
 <ul>
-<li><a href="#using-curl-alternately-1">Using Curl (Alternately)</a></li>
+<li><a href="#using-curl-1">Using Curl</a></li>
 </ul></li>
 <li><a href="#step-3-adding-your-content-for-the-sale">Step 3: Adding your content for the sale</a>
 <ul>
-<li><a href="#using-curl-alternately-2">Using Curl (Alternately)</a></li>
+<li><a href="#using-curl-2">Using Curl</a></li>
 </ul></li>
 </ul></li>
 <li><a href="#buying-digital-content">Buying digital content</a>
 <ul>
 <li><a href="#step-1-buy-the-content">Step 1: Buy the content</a>
 <ul>
-<li><a href="#using-curl-alternately-3">Using Curl (Alternately)</a></li>
+<li><a href="#using-curl-3">Using Curl</a></li>
 </ul></li>
 <li><a href="#step-2-download-purchased-content">Step 2: Download purchased content</a>
 <ul>
-<li><a href="#using-curl-alternately-4">Using Curl (Alternately)</a></li>
+<li><a href="#using-curl-4">Using Curl</a></li>
 </ul></li>
 </ul></li>
 <li><a href="#let-s-open-it">Let&rsquo;s open it:</a></li>
@@ -529,7 +529,7 @@ Version: <span style="color:#ae81ff">0</span>.12.1-alpha LethShop</code></pre></
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#111">{</span><span style="color:#f92672">&#34;acl&#34;</span><span style="color:#111">:</span><span style="color:#d88200">&#34;0xEB9D37F30F406e2642E211C19Ed6F7A5FC6d8Ec4&#34;</span><span style="color:#111">,</span><span style="color:#f92672">&#34;meta&#34;</span><span style="color:#111">:</span><span style="color:#d88200">&#34;QmNnUze4f1QfnSQJFFco2hdPWZb2iXUjcB2onAzxLQQj5f&#34;</span><span style="color:#111">}</span></code></pre></div>
 <p><em>Note: This file is at this exact moment still private.</em></p>
 
-<h4 id="using-curl-alternately">Using Curl (Alternately)</h4>
+<h4 id="using-curl">Using Curl</h4>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$&gt; curl -X POST <span style="color:#8045ff">\
 </span><span style="color:#8045ff"></span>  http://localhost:9091/storage/add <span style="color:#8045ff">\
 </span><span style="color:#8045ff"></span>  -H <span style="color:#d88200">&#39;Content-Type: multipart/form-data&#39;</span> <span style="color:#8045ff">\
@@ -546,7 +546,7 @@ Version: <span style="color:#ae81ff">0</span>.12.1-alpha LethShop</code></pre></
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">leth shop create --nodeid<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> --network<span style="color:#f92672">=</span>sirius --from<span style="color:#f92672">=</span>0xd119b8b038d3a67d34ca1d46e1898881626a082b</code></pre></div>
 <p>Output:</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#111">{</span><span style="color:#f92672">&#34;shop&#34;</span><span style="color:#111">:</span><span style="color:#d88200">&#34;0xffeF98e9de5524Eaf82A8DE88B031160f694a90A&#34;</span><span style="color:#111">}</span></code></pre></div>
-<h4 id="using-curl-alternately-1">Using Curl (Alternately)</h4>
+<h4 id="using-curl-1">Using Curl</h4>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$&gt; curl -X POST <span style="color:#8045ff">\
 </span><span style="color:#8045ff"></span>  http://localhost:9091/shop/create <span style="color:#8045ff">\
 </span><span style="color:#8045ff"></span>  -H <span style="color:#d88200">&#39;Content-Type: multipart/form-data&#39;</span> <span style="color:#8045ff">\
@@ -564,7 +564,7 @@ Version: <span style="color:#ae81ff">0</span>.12.1-alpha LethShop</code></pre></
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">leth shop sell --nodeid<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> --network<span style="color:#f92672">=</span>sirius --shop<span style="color:#f92672">=</span>0xffeF98e9de5524Eaf82A8DE88B031160f694a90A --acl<span style="color:#f92672">=</span>0xEB9D37F30F406e2642E211C19Ed6F7A5FC6d8Ec4 --price_wei<span style="color:#f92672">=</span><span style="color:#ae81ff">1000000000000000000</span> --from<span style="color:#f92672">=</span>0xd119b8b038d3a67d34ca1d46e1898881626a082b</code></pre></div>
 <p>Result:</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#111">{</span><span style="color:#f92672">&#34;success&#34;</span><span style="color:#111">:</span><span style="color:#d88200">&#34;true&#34;</span><span style="color:#111">}</span></code></pre></div>
-<h4 id="using-curl-alternately-2">Using Curl (Alternately)</h4>
+<h4 id="using-curl-2">Using Curl</h4>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$&gt; curl -X POST <span style="color:#8045ff">\
 </span><span style="color:#8045ff"></span>  http://localhost:9091/shop/sell <span style="color:#8045ff">\
 </span><span style="color:#8045ff"></span>  -H <span style="color:#d88200">&#39;Content-Type: multipart/form-data&#39;</span> <span style="color:#8045ff">\
@@ -599,7 +599,7 @@ is available to be purchased for <em>1 PHT</em> at your online digital shop: <co
 &lt;<span style="color:#111">type</span> your keystore password&gt;</code></pre></div>
 <p>Output:</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#111">{</span><span style="color:#f92672">&#34;success&#34;</span><span style="color:#111">:</span><span style="color:#d88200">&#34;true&#34;</span><span style="color:#111">}</span></code></pre></div>
-<h4 id="using-curl-alternately-3">Using Curl (Alternately)</h4>
+<h4 id="using-curl-3">Using Curl</h4>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$&gt; curl -X POST <span style="color:#8045ff">\
 </span><span style="color:#8045ff"></span>  http://localhost:9091/shop/buy <span style="color:#8045ff">\
 </span><span style="color:#8045ff"></span>  -H <span style="color:#d88200">&#39;Content-Type: multipart/form-data&#39;</span> <span style="color:#8045ff">\
@@ -615,7 +615,7 @@ is available to be purchased for <em>1 PHT</em> at your online digital shop: <co
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">leth storage fetch --nodeid<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span> --network<span style="color:#f92672">=</span>sirius --account<span style="color:#f92672">=</span>0xf3eedaed3440614b6d9ac1ef0d910494c6bc73a8 --meta<span style="color:#f92672">=</span>QmNnUze4f1QfnSQJFFco2hdPWZb2iXUjcB2onAzxLQQj5f</code></pre></div>
 <p>Output:</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#111">{</span><span style="color:#f92672">&#34;output&#34;</span><span style="color:#111">:</span><span style="color:#d88200">&#34;/var/folders/f9/11wh9x9j31d75nxgwv2qsj3r0000gn/T/it-crowd.jpg&#34;</span><span style="color:#111">}</span></code></pre></div>
-<h4 id="using-curl-alternately-4">Using Curl (Alternately)</h4>
+<h4 id="using-curl-4">Using Curl</h4>
 
 <p>In order to read documents using the HTTP API you first need to request a token as follow:</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$&gt; curl -X POST <span style="color:#8045ff">\
