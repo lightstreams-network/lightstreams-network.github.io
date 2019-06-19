@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lightstreams Documentation</title>
+    
+      <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="revised" content="2019-06-19T11:05:00 CEST">
+<title>How to deploy SmartContract :: Lightstreams Documentation</title>
+<link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+<link href="/css/nucleus.css" rel="stylesheet">
+<link href="/css/font-awesome.min.css" rel="stylesheet">
+<link href="/css/hybrid.css" rel="stylesheet">
+<link href="/css/featherlight.min.css" rel="stylesheet">
+<link href="/css/auto-complete.css" rel="stylesheet">
+<link href="/theme-original/style.css" rel="stylesheet">
+
+  <link href="/theme-original/variant-navy.css" rel="stylesheet">
+
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<script src="/js/jquery-2.x.min.js"></script>
+<style type="text/css">
+  :root #header + #content > #left > #rlblock_left {
+    display:none !important;
+  }
+</style>
+<meta name="description" content="">
+
+
+    
+  </head>
+  <body data-url="/guides/deploy-smart-contracts/">
+    
+      <div id="headermain"></div>
+<nav id="sidebar" class="showVisitedLinks">
+
+
+
+<div class="highlightable">
+  <div id="header-wrapper">
+    <div id="header">
+      
+	
+  
+    <a class="baselink" href="https://docs.lightstreams.network/">Lightstreams Documentation</a>
+  
+
+
+    </div>
+        <div class="searchbox">
+		    <label for="search-by"><i class="fa fa-search"></i></label>
+		    <input data-search-input id="search-by" type="text" placeholder="Search...">
+		    <span data-search-clear=""><i class="fa fa-close"></i></span>
+		</div>
+		<script type="text/javascript" src="/js/lunr.min.js"></script>
+		<script type="text/javascript" src="/js/auto-complete.js"></script>
+		<script type="text/javascript">
+        
+            var baseurl = "https:\/\/docs.lightstreams.network\/";
+        
+		</script>
+		<script type="text/javascript" src="/js/search.js"></script>
+  </div>
+
+      <ul class="topics">
+    <li data-nav-id="/getting-started/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/getting-started/">Getting started</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+    <li data-nav-id="/getting-started/install/" class="dd-item
+        ">
+      <div>
+      <a href="/getting-started/install/">Install</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/getting-started/quick-start/" class="dd-item
+        ">
+      <div>
+      <a href="/getting-started/quick-start/">Quick start</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/guides/" class="dd-item parent haschildren
+        ">
+      <div>
+      <a href="/guides/">Guides</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+    <li data-nav-id="/guides/lightchain-node-setup/" class="dd-item
+        ">
+      <div>
+      <a href="/guides/lightchain-node-setup/">Lightchain Node Setup</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/guides/file-sharing/" class="dd-item
+        ">
+      <div>
+      <a href="/guides/file-sharing/">Private file sharing</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/guides/peer-to-peer-ecommerce/" class="dd-item
+        ">
+      <div>
+      <a href="/guides/peer-to-peer-ecommerce/">Ecommerce</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/guides/metamask-integration/" class="dd-item
+        ">
+      <div>
+      <a href="/guides/metamask-integration/">Metamask Integration</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/guides/deploy-smart-contracts/" class="dd-item parent active
+        ">
+      <div>
+      <a href="/guides/deploy-smart-contracts/">How to deploy SmartContract</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/examples/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/examples/">Examples</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+    <li data-nav-id="/examples/browser/" class="dd-item
+        ">
+      <div>
+      <a href="/examples/browser/">Example Browser Demo</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/examples/nodejs-dashboard/" class="dd-item
+        ">
+      <div>
+      <a href="/examples/nodejs-dashboard/">Example NodeJS Smart Vault Dashboard</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/examples/intellectual-property/" class="dd-item
+        ">
+      <div>
+      <a href="/examples/intellectual-property/">Example DApp Document Authorizer Demo</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/examples/eshop/" class="dd-item
+        ">
+      <div>
+      <a href="/examples/eshop/">Example eShop</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/examples/js-sdk/" class="dd-item
+        ">
+      <div>
+      <a href="/examples/js-sdk/">Leth JS SDK</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/cli-docs/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/cli-docs/">Command line documentation</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+        </ul>
+    </li>
+    <li data-nav-id="/http-api/" class="dd-item
+        ">
+      <div>
+      <a href="/http-api/">API</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/faqs/" class="dd-item
+        ">
+      <div>
+      <a href="/faqs/">FAQs</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/support/" class="dd-item
+        ">
+      <div>
+      <a href="/support/">Support</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+
+
+
+        <section id="shortcuts">
+                <li class="" role=""><h3>More</h3><a href="https://github.com/lightstreams-network/docs" target="_blank" rel="noopener"><i class='fa fa-github'></i> <label>Github Docs</label></a></li>
+                <li class="" role=""><a href="https://wiki.lightstreams.network/api-docs" target="_blank" rel="noopener"><i class='fa fa-bookmark'></i> <label>HTTP API Reference</label></a></li>
+        </section>
+            <a id="clear-history" class="" href="#" data-clear-history-toggle=""><i class="fa  fa-history"></i> Clear History</a>
+
+    <hr />
+    <li></li>
+    
+    </ul>
+
+ <section id="footer">
+    </section>
+  </div>
+</nav>
+
+
+
+<section id="body">
+<div id="overlay"></div>
+<div class="padding highlightable">
+
+  <div id="top-bar">
+    
+      
+      
+      
+    <div id="top-github-link">
+      <a class="github-link" href="https://github.com/lightstreams-network/docs/tree/master/content/guides/deploy-smart-contracts/_index.md" target="blank">
+        <i class="fa fa-code-fork"></i>
+        Improve this page
+      </a>
+    </div><div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+        <span id="sidebar-toggle-span">
+          <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+            <i class="fa fa-bars"></i>
+          </a>
+        </span>
+        <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+        <span class="links">
+        
+
+
+
+
+
+
+
+ <a href='/'>Lightstreams documentation</a> > <a href='/guides/'>Guides</a> > How to deploy SmartContract
+
+ 
+
+ 
+
+   
+        </span>
+    </div>
+    
+    
+    <div class="progress">
+        <div class="wrapper">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#introduction">Introduction</a>
+<ul>
+<li><a href="#background">Background</a></li>
+<li><a href="#node-initialization">Node Initialization</a></li>
+</ul></li>
+<li><a href="#solidity">Solidity</a></li>
+<li><a href="#compilation">Compilation</a>
+<ul>
+<li><a href="#option-1-solidity-compiler">Option 1: Solidity Compiler</a></li>
+<li><a href="#option-2-remix">Option 2: Remix</a></li>
+<li><a href="#option-3-nodejs-truffle">Option 3: NodeJS &amp; Truffle</a></li>
+</ul></li>
+<li><a href="#deploy">Deploy</a>
+<ul>
+<li><a href="#option-1-console-geth">Option 1: Console (<code>Geth</code>)</a></li>
+<li><a href="#option-2-remix-1">Option 2: Remix</a></li>
+<li><a href="#option-3-truffle">Option 3: Truffle</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+        </div>
+    </div>
+    
+
+  </div>
+
+
+<div id="body-inner">
+  
+    <h1>How to deploy SmartContract</h1>
+  
+
+
+
+    
+    
+    
+
+
+
+<h2 id="introduction">Introduction</h2>
+
+<p>We&rsquo;re going to deploy an Ethereum-compatible Smart Contract on Sirius (the Lightstreams test network).</p>
+
+<h3 id="background">Background</h3>
+
+<p>Lightstreams network is a fully Ethereum-compatible network. Every tool, manual, or resource that works on Ethereum should also work on the Ligthstreams network. If something doesn&rsquo;t work or if you are blocked, <a href="https://lightstreams.network">please let us know on via our support chat on the website</a>!</p>
+
+<p>In this section we are going to use our experience to write some simple instructions to deploy your first smart contract into Lightstreams blockchain.</p>
+
+<h3 id="node-initialization">Node Initialization</h3>
+
+<p>First, in order to deploy a smart contract we need to have a fully-synchronized node running locally. In case you didn&rsquo;t do it yet, see <a href="/guides/lightchain-node-setup/">the lightchain node setup guide</a>.</p>
+
+<p>Alternatively, you could also connect to our open via the HTTP-RPC endpoints (see the <a href="https://docs.lightstreams.network/api-docs">HTTP API</a>:</p>
+
+<ul>
+<li>Mainnet: <code>https://node.mainnet.lightstreams.io</code></li>
+<li>Testnet: <code>https://node.sirius.lightstreams.io</code></li>
+</ul>
+
+<p>We recommend having a local node to get a better development experience.</p>
+
+<h2 id="solidity">Solidity</h2>
+
+<p><strong>Solidity</strong> is an object-oriented, high-level language for implementing smart contracts. You can read more about this particular programming language in the <a href="https://solidity.readthedocs.io/">official documentation</a>.</p>
+
+<p>There are pluggings to support Solidity code for most of the popular IDE such as <em>JetBrains IDEA</em>, <em>Sublime Text</em> or <em>emacs</em>. Also you can find a very good online editor provided by Ethereum project called <a href="https://remix.ethereum.org">Remix</a>. Remix also supports testing, debugging and deploying of smart contracts and much more.</p>
+
+<p>For testing propose we are going to write a very simple <code>HelloWorld.sol</code>:</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-solidity" data-lang="solidity"><span style="color:#00a8c8">pragma solidity</span> <span style="color:#f92672">^</span><span style="color:#ae81ff">0</span><span style="color:#111">.</span><span style="color:#ae81ff">5</span><span style="color:#111">.</span><span style="color:#ae81ff">0</span><span style="color:#111">;</span>
+
+<span style="color:#00a8c8">contract</span> <span style="color:#111">HelloBlockchainWorld</span> <span style="color:#111">{</span>
+    <span style="color:#111">constructor</span><span style="color:#111">()</span> <span style="color:#00a8c8">public</span> <span style="color:#111">{</span>
+    <span style="color:#111">}</span>
+
+    <span style="color:#00a8c8">function</span> <span style="color:#111">sayHello</span><span style="color:#111">()</span> <span style="color:#00a8c8">public</span> <span style="color:#00a8c8">pure</span> <span style="color:#00a8c8">returns</span> <span style="color:#111">(</span><span style="color:#00a8c8">string</span> <span style="color:#00a8c8">memory</span> <span style="color:#111">message</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+        <span style="color:#00a8c8">return</span> <span style="color:#d88200">&#34;hello&#34;</span><span style="color:#111">;</span>
+    <span style="color:#111">}</span>
+<span style="color:#111">}</span></code></pre></div>
+<h2 id="compilation">Compilation</h2>
+
+<p>In order to deploy and then interact with the written smart contract, we need to
+compile it to be deployed into our EVM (Ethereum Virtual Machine).</p>
+
+<p>As a result of the compilation, you should get two things:
+- <strong>ABI</strong>: Application Binary Interface, is the standard way to interact with contracts in the Ethereum ecosystem, both from outside the blockchain and for contract-to-contract interaction.
+- <strong>Bytecode</strong>: Assembly representation of the contract in hexadecimal format.</p>
+
+<p>How do we compile our smart contract? There are several alternatives that we will show you next.</p>
+
+<h3 id="option-1-solidity-compiler">Option 1: Solidity Compiler</h3>
+
+<p>Solidity project provides a binary compiler, <em>solc</em>, to compile solidity code. You can find
+instructions about how to install it on every popular OS in their <a href="https://solidity.readthedocs.io/en/latest/installing-solidity.html">documentation</a>.</p>
+
+<p>Once you completed the installation steps you should be capable to run the following command on a terminal to obtain the compiler version installed.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$&gt; solc --version
+
+solc, the solidity compiler commandline interface
+Version: <span style="color:#ae81ff">0</span>.5.0+commit.1d4f565a.Linux.g++</code></pre></div>
+<p>Assuming we stored our HelloWorld example in <code>/tmp/example/helloworld.sol</code>, first we are going to create a destination folder for the <em>build</em> elements:</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$&gt; mkdir /tmp/example/build</code></pre></div>
+<p>Then, we execute the next:</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$&gt; solc --abi --bin /tmp/example/helloworld.sol -o /tmp/example/build/ --overwrite</code></pre></div>
+<p>As the result from the above command it was generated two files, one containing the ABI representation of the contract <code>HelloBlockchainWorld.abi</code> and another one with the bytecode <code>HelloBlockchainWorld.bin</code>.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/tmp/example/build/
+├── HelloBlockchainWorld.abi
+└── HelloBlockchainWorld.bin</code></pre></div>
+<h3 id="option-2-remix">Option 2: Remix</h3>
+
+<p>Another alternative is to use the online tool of Remix. For that, we need to:
+1. Paste our <em>helloworld.sol</em> code
+2. Click on <em>Start to compile</em> and wait for compilation to finish.
+3. Click on <em>ABI</em> and paste the clipboard content into a file named <code>HelloBlockchainWorld.abi</code>.
+4. Click on <em>Bytecode</em> and paste the clipboard content into a file named <code>HelloBlockchainWorld.bin</code>.</p>
+
+<p><img src="/img/guides/solc_remix_edited.png" alt="login" /></p>
+
+<h3 id="option-3-nodejs-truffle">Option 3: NodeJS &amp; Truffle</h3>
+
+<p>Truffle is a testing framework for Ethereum written in javascript. Truffle  provides a full set of tools to compile, deploy and debug smart contracts using the Ethereum Virtual Machine (EVM).</p>
+
+<p>To install truffle, and assuming you already got <strong>npm</strong> installed in your system, you only need to run the follow:</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$&gt; npm install -g truffle</code></pre></div>
+<p>Once truffle is installed you have to create a new empty &ldquo;project&rdquo;.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$&gt; truffle init /tmp/example/truffle</code></pre></div>
+<p>Now you should have the following folder structure under <code>/tmp/example/truffle</code></p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">├── contracts
+│   └── Migrations.sol
+├── migrations
+│   └── 1_initial_migration.js
+├── <span style="color:#111">test</span>
+└── truffle-config.js</code></pre></div>
+<p>inside <code>truffle-config.js</code> you have to define which version of solidity compiler you want to use, along with other solidity options, but for now we are only going to define a fixed version of solidity according to the version we defined in the smart contract implementation</p>
+
+<pre><code>...
+// Configure your compilers
+  compilers: {
+    solc: {
+      version: &quot;0.5.0&quot;,    // Fetch exact version from solc-bin (default: truffle's version)
+      // docker: true,        // Use &quot;0.5.1&quot; you've installed locally with docker (default: false)
+      // settings: {          // See the solidity docs for advice about optimization and evmVersion
+      //  optimizer: {
+      //    enabled: false,
+      //    runs: 200
+      //  },
+      //  evmVersion: &quot;byzantium&quot;
+      // }
+    }
+  }
+...
+</code></pre>
+
+<p>Truffle will compile every contract under &lsquo;/contracts&rsquo;, therefore
+we have to copy/move our <code>helloworld.sol</code> file into <code>/tmp/example/truffle/contracts</code></p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$&gt; cp /tmp/example/helloworld.sol /tmp/example/truffle/contracts/</code></pre></div>
+<p>We remove the unnecessary file <code>/migrations/1_initial_migration.js</code>:</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$&gt; rm migrations/1_initial_migration.js</code></pre></div>
+<p>And at the end we run the compilation:</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$&gt; truffle compile
+
+
+Compiling your contracts...
+<span style="color:#f92672">===========================</span>
+&gt; Compiling ./contracts/helloworld.sol
+&gt; Artifacts written to /tmp/example/truffle/build/contracts
+&gt; Compiled successfully using:
+   - solc: <span style="color:#ae81ff">0</span>.5.0+commit.1d4f565a.Emscripten.clang</code></pre></div>
+<p>As result of above command we will obtain a json file <code>build/contracts/HelloBlockchainWorld.json</code>
+which contains the <strong>abi</strong> and the <strong>bytecode</strong>.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat build/contracts/HelloBlockchainWorld.json <span style="color:#111">|</span> jq <span style="color:#d88200">&#39;.abi&#39;</span>
+<span style="color:#f92672">[</span>
+  <span style="color:#f92672">{</span>
+    <span style="color:#d88200">&#34;inputs&#34;</span>: <span style="color:#f92672">[]</span>,
+    <span style="color:#d88200">&#34;payable&#34;</span>: false,
+    <span style="color:#d88200">&#34;stateMutability&#34;</span>: <span style="color:#d88200">&#34;nonpayable&#34;</span>,
+    <span style="color:#d88200">&#34;type&#34;</span>: <span style="color:#d88200">&#34;constructor&#34;</span>
+  <span style="color:#f92672">}</span>,
+  ...
+<span style="color:#f92672">]</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat build/contracts/HelloBlockchainWorld.json <span style="color:#111">|</span> jq <span style="color:#d88200">&#39;.bytecode&#39;</span>
+<span style="color:#d88200">&#34;0x608060405234801561001057600080fd5b5061013f806100206000396000f....&#34;</span></code></pre></div>
+<p><em>Note: <code>jq</code> is a tool to extract json content in bash</em></p>
+
+<h2 id="deploy">Deploy</h2>
+
+<p>In order to deploy an smart contract we will need to have an unlock account holding
+enough funds. To unlock the account we are going to use <a href="/getting-started/install/#geth"><code>geth</code></a>.</p>
+
+<p>We attach <em>geth</em> to our running local node and execute <code>personal.unlockAccount()</code> over the
+account we desire to unlock.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$&gt; geth attach http://localhost:8545
+
+Welcome to the Geth JavaScript console!
+
+instance: ./v1.8.27/linux-amd64/go1.10.3
+ modules: debug:1.0 eth:1.0 net:1.0 personal:1.0 rpc:1.0 web3:1.0
+
+&gt; personal.unlockAccount<span style="color:#f92672">(</span><span style="color:#d88200">&#34;0xc916cfe5c83dd4fc3c3b0bf2ec2d4e401782875e&#34;</span><span style="color:#f92672">)</span>
+Passphrase: 
+true</code></pre></div>
+<h3 id="option-1-console-geth">Option 1: Console (<code>Geth</code>)</h3>
+
+<p>First, we need to attach our terminal to our node</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$&gt; geth attach http://localhost:8545</code></pre></div>
+<p><em>Note: Every following statement is executed on geth terminal</em></p>
+
+<p>We assign the content of the file generated during the compilation of the smart contract to two variables.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#f92672">&gt;</span> <span style="color:#00a8c8">var</span> <span style="color:#75af00">bin</span> <span style="color:#f92672">=</span> <span style="color:#f92672">&lt;</span><span style="color:#d88200">&#34;HelloBlockchainWorld.bin&#34;</span> <span style="color:#75af00">file</span> <span style="color:#75af00">content</span><span style="color:#f92672">&gt;</span>
+<span style="color:#f92672">&gt;</span> <span style="color:#00a8c8">var</span> <span style="color:#75af00">abi</span> <span style="color:#f92672">=</span> <span style="color:#f92672">&lt;</span><span style="color:#d88200">&#34;HelloBlockchainWorld.abi&#34;</span> <span style="color:#75af00">file</span> <span style="color:#75af00">content</span><span style="color:#f92672">&gt;</span>
+</code></pre></div>
+<p>Create a contract template object based on the <em>abi</em> and calculate the estimated gas for the transaction of deployment:</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#00a8c8">var</span> <span style="color:#75af00">contractTemplate</span> <span style="color:#f92672">=</span> <span style="color:#75af00">web3</span><span style="color:#111">.</span><span style="color:#75af00">eth</span><span style="color:#111">.</span><span style="color:#75af00">contract</span><span style="color:#111">(</span><span style="color:#75af00">abi</span><span style="color:#111">);</span>
+<span style="color:#00a8c8">var</span> <span style="color:#75af00">estimatedGas</span> <span style="color:#f92672">=</span> <span style="color:#75af00">eth</span><span style="color:#111">.</span><span style="color:#75af00">estimateGas</span><span style="color:#111">({</span><span style="color:#75af00">data</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#34;0x&#34;</span> <span style="color:#f92672">+</span> <span style="color:#75af00">bin</span><span style="color:#111">})</span>
+</code></pre></div>
+<p>Send contract deploy transaction, The contract deployment is an asynchronous call therefore in order to track the process, we will add a callback function which logs the execution progress:</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75af00">contractTemplate</span><span style="color:#111">.</span><span style="color:#00a8c8">new</span><span style="color:#111">({</span><span style="color:#75af00">from</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#34;0xc916cfe5c83dd4fc3c3b0bf2ec2d4e401782875e&#34;</span><span style="color:#111">,</span> <span style="color:#75af00">data</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#34;0x&#34;</span> <span style="color:#f92672">+</span> <span style="color:#75af00">bin</span><span style="color:#111">,</span> <span style="color:#75af00">gas</span><span style="color:#f92672">:</span> <span style="color:#75af00">estimatedGas</span><span style="color:#111">},</span> 
+  <span style="color:#00a8c8">function</span><span style="color:#111">(</span><span style="color:#75af00">err</span><span style="color:#111">,</span> <span style="color:#75af00">contract</span><span style="color:#111">){</span>  
+   <span style="color:#00a8c8">if</span><span style="color:#111">(</span><span style="color:#75af00">err</span><span style="color:#111">){</span>
+     <span style="color:#75af00">console</span><span style="color:#111">.</span><span style="color:#75af00">log</span><span style="color:#111">(</span><span style="color:#d88200">&#34;Error sending transaction: &#34;</span><span style="color:#111">,</span> <span style="color:#75af00">err</span><span style="color:#111">);</span>
+     <span style="color:#00a8c8">return</span><span style="color:#111">;</span>
+   <span style="color:#111">}</span>
+   <span style="color:#00a8c8">if</span><span style="color:#111">(</span><span style="color:#f92672">!</span><span style="color:#75af00">contract</span><span style="color:#111">.</span><span style="color:#75af00">address</span><span style="color:#111">){</span>
+     <span style="color:#75af00">console</span><span style="color:#111">.</span><span style="color:#75af00">log</span><span style="color:#111">(</span><span style="color:#d88200">&#34;Transaction hash: &#34;</span> <span style="color:#f92672">+</span> <span style="color:#75af00">contract</span><span style="color:#111">.</span><span style="color:#75af00">transactionHash</span><span style="color:#111">)</span>
+     <span style="color:#00a8c8">return</span><span style="color:#111">;</span>
+   <span style="color:#111">}</span>
+   <span style="color:#75af00">console</span><span style="color:#111">.</span><span style="color:#75af00">log</span><span style="color:#111">(</span><span style="color:#d88200">&#34;Contract deployed at: &#34;</span> <span style="color:#f92672">+</span> <span style="color:#75af00">contract</span><span style="color:#111">.</span><span style="color:#75af00">address</span><span style="color:#111">);</span>
+  <span style="color:#111">});</span>
+</code></pre></div>
+<h3 id="option-2-remix-1">Option 2: Remix</h3>
+
+<p>Remix also integrates the utilities required to deploy and interact with smart contracts.  In case you want to connect to the node running on your local machine you will need to authorized by the usage of the following flags <code>--rpcvhost</code> and <code>--rpccorsdomain</code>:</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$&gt; lightchain run --datadir<span style="color:#f92672">=</span><span style="color:#d88200">${</span><span style="color:#111">HOME</span><span style="color:#d88200">}</span>  --rpc --rpcaddr <span style="color:#ae81ff">0</span>.0.0.0 -rpcapi eth,net,web3,personal,debug --rpccorsdomain<span style="color:#f92672">=</span>* --rpcvhosts<span style="color:#f92672">=</span>localhost</code></pre></div>
+<p>Now we have our environment ready we go back to <em>Remix</em> dashboard and click in <strong>Run</strong>.
+Select <em>Web3 Provider</em> from the <em>Environment</em> selector and paste the local rpc address <code>http://localhost:8545</code>.
+<em>from</em> account unlocked at the beginning.</p>
+
+<p>Click <strong>Deploy</strong> and if everything went successfully you will see a transaction receipt as
+the one on the next screenshot.</p>
+
+<p><img src="/img/guides/solc_remix_deploy_edited.png" alt="remix" /></p>
+
+<h3 id="option-3-truffle">Option 3: Truffle</h3>
+
+<p>In <code>truffle-config.js</code> you need to update the <em>development</em> network and modify it as required, to connect to a running ethereum node. Also we indicate which <strong>from</strong> account is going to be use as default message sender for every transaction.</p>
+
+<pre><code>...
+  networks: {
+    development: {
+      host: &quot;127.0.0.1&quot;,     // Localhost (default: none)
+      port: 8545,            // Standard Ethereum port (default: none)
+      network_id: &quot;*&quot;,       // Any network (default: none)
+      from: &quot;0xc916cfe5c83dd4fc3c3b0bf2ec2d4e401782875e&quot;,
+      gasPrice: &quot;500000000000&quot;
+    },
+    ...
+  }
+...
+</code></pre>
+
+<p><em>SUPER IMPORTANT NOTE: Lightchain networks use 500 gwei as <em>gasPrice</em></em></p>
+
+<p>We create a new migration file <code>/migrations/2_hello_world.js</code> with the following code:</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#00a8c8">const</span> <span style="color:#75af00">HelloBlockchainWorld</span> <span style="color:#f92672">=</span> <span style="color:#75af00">artifacts</span><span style="color:#111">.</span><span style="color:#75af00">require</span><span style="color:#111">(</span><span style="color:#d88200">&#34;HelloBlockchainWorld&#34;</span><span style="color:#111">);</span>
+
+<span style="color:#75af00">module</span><span style="color:#111">.</span><span style="color:#75af00">exports</span> <span style="color:#f92672">=</span> <span style="color:#00a8c8">function</span><span style="color:#111">(</span><span style="color:#75af00">deployer</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+  <span style="color:#75af00">deployer</span><span style="color:#111">.</span><span style="color:#75af00">deploy</span><span style="color:#111">(</span><span style="color:#75af00">HelloBlockchainWorld</span><span style="color:#111">);</span>
+<span style="color:#111">};</span>
+</code></pre></div>
+<p>And finally we trigger the deployment:</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$&gt; truffle deploy --reset --network<span style="color:#f92672">=</span>development</code></pre></div>
+<p><em>Note: Remember that the <em>from</em> account MUST unlock it before we run the deployment. You
+can see how to do it at the top of this section.</em></p>
+
+<p>Output:</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">2_hellow_world.js
+<span style="color:#f92672">=================</span>
+
+   Deploying <span style="color:#d88200">&#39;HelloBlockchainWorld&#39;</span>
+   --------------------------------
+   &gt; transaction hash:    0x734944fc76af2c71bfee528c94abba2a5c71575140fede9ab26e8ee332fde3e2
+   &gt; Blocks: <span style="color:#ae81ff">0</span>            Seconds: <span style="color:#ae81ff">0</span>
+   &gt; contract address:    0x0f5d5bEb0766C7a26198Bf82EBF1B2df3dEA09e5
+   &gt; block number:        <span style="color:#ae81ff">90</span>
+   &gt; block timestamp:     <span style="color:#ae81ff">1560868779</span>
+   &gt; account:             0xc916Cfe5c83dD4FC3c3B0Bf2ec2d4e401782875e
+   &gt; balance:             <span style="color:#ae81ff">299999995</span>.447825
+   &gt; gas used:            <span style="color:#ae81ff">104043</span>
+   &gt; gas price:           <span style="color:#ae81ff">500</span> gwei
+   &gt; value sent:          <span style="color:#ae81ff">0</span> ETH
+   &gt; total cost:          <span style="color:#ae81ff">0</span>.0520215 ETH
+
+   &gt; Saving artifacts
+   -------------------------------------
+   &gt; Total cost:           <span style="color:#ae81ff">0</span>.0520215 ETH</code></pre></div>
+<p>From the output above we can see that our HelloWorld smart contract was deployed
+at the address <em>0x0f5d5bEb0766C7a26198Bf82EBF1B2df3dEA09e5</em> and the deployment cost
+was <em>0.052 ETH</em>.</p>
+
+<p>Congratulations! You have just deployed your first Lightstreams Smart Contract!! Well done!</p>
+
+
+
+    
+    
+          <footer class=" footline" >
+	
+</footer>
+  </div>
+</div>
+
+<div id="navigation">
+</div>
+
+</section>
+<div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+  <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+</div>    
+
+<script src="/js/clipboard.min.js"></script>
+<script src="/js/featherlight.min.js"></script>
+<script src="/js/html5shiv-printshiv.min.js"></script>
+
+<script src="/js/modernizr.custom.71422.js"></script>
+<script src="/js/docdock.js"></script>
+<script src="/theme-original/script.js"></script>
+
+
+    
+
+    
+    
+
+    
+  </body>
+</html>

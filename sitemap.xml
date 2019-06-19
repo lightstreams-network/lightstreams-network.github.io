@@ -19,15 +19,11 @@
   </url>
   
   <url>
+    <loc>https://docs.lightstreams.network/guides/lightchain-node-setup/</loc>
+  </url>
+  
+  <url>
     <loc>https://docs.lightstreams.network/</loc>
-  </url>
-  
-  <url>
-    <loc>https://docs.lightstreams.network/guides/file-sharing/</loc>
-  </url>
-  
-  <url>
-    <loc>https://docs.lightstreams.network/guides/peer-to-peer-ecommerce/</loc>
   </url>
   
   <url>
@@ -39,7 +35,15 @@
   </url>
   
   <url>
+    <loc>https://docs.lightstreams.network/guides/file-sharing/</loc>
+  </url>
+  
+  <url>
     <loc>https://docs.lightstreams.network/getting-started/quick-start/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.lightstreams.network/guides/peer-to-peer-ecommerce/</loc>
   </url>
   
   <url>
@@ -55,10 +59,6 @@
   </url>
   
   <url>
-    <loc>https://docs.lightstreams.network/guides/mainnet-node-setup/</loc>
-  </url>
-  
-  <url>
     <loc>https://docs.lightstreams.network/cli-docs/</loc>
   </url>
   
@@ -68,6 +68,10 @@
   
   <url>
     <loc>https://docs.lightstreams.network/http-api/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.lightstreams.network/guides/deploy-smart-contracts/</loc>
   </url>
   
   <url>
