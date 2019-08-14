@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-07-08T14:38:20 CEST">
+<meta name="revised" content="2019-08-14T11:14:19 CEST">
 <title>Quick start :: Lightstreams Documentation</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/nucleus.css" rel="stylesheet">
@@ -24,9 +24,22 @@
     display:none !important;
   }
 </style>
-<meta name="description" content="">
+  <meta name="description" content="">
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-127729085-3"></script>
+  <script>
+    function initGA() {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-127729085-3');
+      console.log('inited');
+    }
 
-
+    if (window.location.hostname !== 'localhost') {
+      initGA();
+    }
+  </script>
     
   </head>
   <body data-url="/getting-started/quick-start/">
@@ -228,6 +241,24 @@
       <a href="/cli-docs/leth/shop/">leth shop</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
+    <li data-nav-id="/cli-docs/leth/shop/buy/" class="dd-item
+        ">
+      <div>
+      <a href="/cli-docs/leth/shop/buy/">leth shop buy</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/cli-docs/leth/shop/create/" class="dd-item
+        ">
+      <div>
+      <a href="/cli-docs/leth/shop/create/">leth shop create</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/cli-docs/leth/shop/sell/" class="dd-item
+        ">
+      <div>
+      <a href="/cli-docs/leth/shop/sell/">leth shop sell</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/cli-docs/leth/storage/" class="dd-item haschildren
