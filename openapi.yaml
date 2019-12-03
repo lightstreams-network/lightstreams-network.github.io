@@ -4,8 +4,6 @@ info:
   version: 0.1.0
   title: Lightstreams Gateway API
   termsOfService: 'http://www.lightstreams.network/terms'
-  contact:
-    email: info@lightstreams.io
   license:
     name: GPLv3
     url: 'https://www.gnu.org/licenses/gpl.html'
