@@ -1,0 +1,957 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "description": "Documentation for the Lightstreams Gateway API",
+    "version": "0.1.0",
+    "title": "Lightstreams Gateway API",
+    "termsOfService": "http://www.lightstreams.network/terms",
+    "contact": {
+      "email": "info@lightstreams.io"
+    },
+    "license": {
+      "name": "GPLv3",
+      "url": "https://www.gnu.org/licenses/gpl.html"
+    }
+  },
+  "paths": {
+    "/user/signup": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "signup",
+        "description": "Create a new user on the gateway",
+        "operationId": "userSignup",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "account": {
+                      "type": "string",
+                      "example": "0xE41b5C21671C22f1f054F1896d18b4773Dd9deC0",
+                      "description": "the account address that was created on the gateway"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "password"
+                ],
+                "properties": {
+                  "password": {
+                    "type": "string",
+                    "example": "yourpassword"
+                  }
+                }
+              }
+            }
+          },
+          "description": "request body",
+          "required": true
+        }
+      }
+    },
+    "/user/signin": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "signin",
+        "description": "Sign in a user into the system",
+        "operationId": "userSignin",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "token": {
+                      "type": "string",
+                      "example": "eyJibG9ja2NoYWluIjoiRVRIIiwiZXRoX2FkZHJlc3MiOiIweDRGNWFERWRDYTZkODY5RTlGNUY3ZENmNEI3QTlkRmE4MjMxYTA5NWYiLCJpYXQiOjI1LCJlYXQiOjEwMjV9.78mSE4Z9SiHO9fcY5vtCZpK-rdDGuJXpW4qEOzyH9-Zy5HySKGVH9aB-j_ixUb0q91S-I9_Cktj_OVl0LcRvmgE",
+                      "description": "the account address that was created on the gateway"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "account",
+                  "password"
+                ],
+                "properties": {
+                  "account": {
+                    "type": "string",
+                    "example": "0xE41b5C21671C22f1f054F1896d18b4773Dd9deC0",
+                    "description": "account address"
+                  },
+                  "password": {
+                    "type": "string",
+                    "example": "yourpassword",
+                    "description": "the password that unlocks the account"
+                  }
+                }
+              }
+            }
+          },
+          "description": "Password to sign in the user",
+          "required": true
+        }
+      }
+    },
+    "/wallet/balance": {
+      "get": {
+        "tags": [
+          "Wallet"
+        ],
+        "summary": "balance",
+        "description": "Get wallet balance from an account",
+        "operationId": "walletBalance",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "account",
+            "description": "account",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "balance": {
+                      "type": "string",
+                      "example": "100",
+                      "description": "current balance in wei"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/wallet/transfer": {
+      "post": {
+        "tags": [
+          "Wallet"
+        ],
+        "summary": "transfer",
+        "description": "Transfer funds to an account",
+        "operationId": "walletTransfer",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "balance": {
+                      "type": "string",
+                      "example": "100",
+                      "description": "current balance in wei"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "from",
+                  "password",
+                  "to",
+                  "amount_wei"
+                ],
+                "properties": {
+                  "from": {
+                    "type": "string",
+                    "example": "0xE41b5C21671C22f1f054F1896d18b4773Dd9deC0",
+                    "description": "account address to transfer funds from"
+                  },
+                  "password": {
+                    "type": "string",
+                    "example": "yourpassword",
+                    "description": "the password that unlocks the account"
+                  },
+                  "to": {
+                    "type": "string",
+                    "example": "0x50c9406f0942711b6e2e28301CE86bFbF42eBE3F",
+                    "description": "account address to transfer funds to"
+                  },
+                  "amount_wei": {
+                    "type": "string",
+                    "example": "1200000000000000000",
+                    "description": "amount in wei"
+                  }
+                }
+              }
+            }
+          },
+          "description": "Password to sign in the user",
+          "required": true
+        }
+      }
+    },
+    "/storage/add": {
+      "post": {
+        "tags": [
+          "Storage"
+        ],
+        "summary": "add",
+        "description": "Add a new file",
+        "operationId": "storageAdd",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "meta": {
+                      "type": "string",
+                      "example": "0x50c9406f0942711b6e2e28301CE86bFbF42eBE3F",
+                      "description": "address of the file metadata"
+                    },
+                    "acl": {
+                      "type": "string",
+                      "example": "0x5307C0F1146233884B3A9BC857738d8bDe0802E4",
+                      "description": "address of the ACL for the file"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "description": "file to add",
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "owner": {
+                    "description": "address of the owner of the file",
+                    "type": "string"
+                  },
+                  "password": {
+                    "description": "the password that unlocks the owner",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "file",
+                  "owner",
+                  "password"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "/storage/fetch": {
+      "get": {
+        "tags": [
+          "Storage"
+        ],
+        "summary": "fetch",
+        "description": "Fetch a file",
+        "operationId": "storageFetch",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "meta",
+            "description": "address of the file meta data",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "token",
+            "description": "token received after succesfull authentication (signin)",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/octet-stream": {
+                "examples": {
+                  "response": {
+                    "value": "****STORED FILE RAW DATA****"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/acl/grant": {
+      "post": {
+        "tags": [
+          "ACL"
+        ],
+        "summary": "grant",
+        "description": "Grant certain file permissions to an account",
+        "operationId": "aclGrant",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "is_granted": {
+                      "type": "string",
+                      "example": "true",
+                      "description": "a boolean that is true when the grant was executed succesfully"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "acl",
+                  "owner",
+                  "password",
+                  "to",
+                  "permission"
+                ],
+                "properties": {
+                  "acl": {
+                    "type": "string",
+                    "example": "0x7251e7005dba3abb0aee4e772a5ff378a8eea885",
+                    "description": "ACL address obtained after storing a file"
+                  },
+                  "owner": {
+                    "type": "string",
+                    "example": "0xE41b5C21671C22f1f054F1896d18b4773Dd9deC0",
+                    "description": "account address of file's owner"
+                  },
+                  "password": {
+                    "type": "string",
+                    "example": "yourpassword",
+                    "description": "the password that unlocks the account"
+                  },
+                  "to": {
+                    "type": "string",
+                    "example": "0x50c9406f0942711b6e2e28301CE86bFbF42eBE3F",
+                    "description": "account address that will receive the permissions"
+                  },
+                  "permission": {
+                    "type": "string",
+                    "enum": [
+                      "read",
+                      "write",
+                      "admin"
+                    ],
+                    "example": "read",
+                    "description": "permission type to grant"
+                  }
+                }
+              }
+            }
+          },
+          "description": "request body",
+          "required": true
+        }
+      }
+    },
+    "/acl/grant-public": {
+      "post": {
+        "tags": [
+          "ACL"
+        ],
+        "summary": "grantPublic",
+        "description": "Grant public access to a file",
+        "operationId": "aclGrantPublic",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "is_granted": {
+                      "type": "string",
+                      "example": "true",
+                      "description": "a boolean that is true when the grant was executed succesfully"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "acl",
+                  "owner",
+                  "password"
+                ],
+                "properties": {
+                  "acl": {
+                    "type": "string",
+                    "example": "0x7251e7005dba3abb0aee4e772a5ff378a8eea885",
+                    "description": "ACL address obtained after storing a file"
+                  },
+                  "owner": {
+                    "type": "string",
+                    "example": "0xE41b5C21671C22f1f054F1896d18b4773Dd9deC0",
+                    "description": "account address of file's owner"
+                  },
+                  "password": {
+                    "type": "string",
+                    "example": "yourpassword",
+                    "description": "the password that unlocks the account"
+                  }
+                }
+              }
+            }
+          },
+          "description": "request body",
+          "required": true
+        }
+      }
+    },
+    "/acl/revoke-public": {
+      "post": {
+        "tags": [
+          "ACL"
+        ],
+        "summary": "revokePublic",
+        "description": "Revoke public access to a file",
+        "operationId": "aclRevoke",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "is_revoked": {
+                      "type": "string",
+                      "example": "true",
+                      "description": "a boolean that is true when the revoke was executed succesfully"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "acl",
+                  "owner",
+                  "password"
+                ],
+                "properties": {
+                  "acl": {
+                    "type": "string",
+                    "example": "0x7251e7005dba3abb0aee4e772a5ff378a8eea885",
+                    "description": "ACL address obtained after storing a file"
+                  },
+                  "owner": {
+                    "type": "string",
+                    "example": "0xE41b5C21671C22f1f054F1896d18b4773Dd9deC0",
+                    "description": "account address of file's owner"
+                  },
+                  "password": {
+                    "type": "string",
+                    "example": "yourpassword",
+                    "description": "the password that unlocks the account"
+                  }
+                }
+              }
+            }
+          },
+          "description": "request body",
+          "required": true
+        }
+      }
+    },
+    "/shop/create": {
+      "post": {
+        "tags": [
+          "Shop"
+        ],
+        "summary": "create",
+        "description": "Creates an online shop, smart contract, for selling/buying digital content",
+        "operationId": "shopCreate",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "shop": {
+                      "type": "string",
+                      "example": "0xshopIDF16F003897fb927e22438cb1b820f79879",
+                      "description": "the shop smart contract address"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "from",
+                  "password"
+                ],
+                "properties": {
+                  "from": {
+                    "type": "string",
+                    "example": "0xE41b5C21671C22f1f054F1896d18b4773Dd9deC0",
+                    "description": "shop owner account address"
+                  },
+                  "password": {
+                    "type": "string",
+                    "example": "yourpassword",
+                    "description": "the password that unlocks the from account"
+                  }
+                }
+              }
+            }
+          },
+          "description": "request body",
+          "required": true
+        }
+      }
+    },
+    "/shop/sell": {
+      "post": {
+        "tags": [
+          "Shop"
+        ],
+        "summary": "sell",
+        "description": "Puts an ACL permission to digital content for sale in owner's online shop",
+        "operationId": "shopSell",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "string",
+                      "example": "true",
+                      "description": "whenever the ACL is successfully on sale now"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "shop",
+                  "from",
+                  "password",
+                  "acl",
+                  "price_wei"
+                ],
+                "properties": {
+                  "shop": {
+                    "type": "string",
+                    "example": "0xshopIDF16F003897fb927e22438cb1b820f79879",
+                    "description": "shop contract address"
+                  },
+                  "from": {
+                    "type": "string",
+                    "example": "0xE41b5C21671C22f1f054F1896d18b4773Dd9deC0",
+                    "description": "shop owner account address"
+                  },
+                  "password": {
+                    "type": "string",
+                    "example": "yourpassword",
+                    "description": "the password that unlocks the from account"
+                  },
+                  "acl": {
+                    "type": "string",
+                    "example": "0x32b480cCf1f6ccc6ABd3C1bfEecCd8D12b2Db3f8",
+                    "description": "the ACL to sell"
+                  },
+                  "price_wei": {
+                    "type": "string",
+                    "example": "1000000000000000000",
+                    "description": "the ACL price possible buyers must pay to get ACL Read Permission"
+                  }
+                }
+              }
+            }
+          },
+          "description": "request body",
+          "required": true
+        }
+      }
+    },
+    "/shop/buy": {
+      "post": {
+        "tags": [
+          "Shop"
+        ],
+        "summary": "buy",
+        "description": "Buys the ACL Read Permission to digital content from owner's online shop",
+        "operationId": "shopBuy",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "string",
+                      "example": "true",
+                      "description": "whenever the ACL Read Permission is successfully bought now"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "shop",
+                  "from",
+                  "password",
+                  "acl",
+                  "price_wei"
+                ],
+                "properties": {
+                  "shop": {
+                    "type": "string",
+                    "example": "0xshopIDF16F003897fb927e22438cb1b820f79879",
+                    "description": "shop contract address"
+                  },
+                  "from": {
+                    "type": "string",
+                    "example": "0xE41b5C21671C22f1f054F1896d18b4773Dd9deC0",
+                    "description": "account address buying ACL"
+                  },
+                  "password": {
+                    "type": "string",
+                    "example": "yourpassword",
+                    "description": "the password that unlocks the from account"
+                  },
+                  "acl": {
+                    "type": "string",
+                    "example": "0x32b480cCf1f6ccc6ABd3C1bfEecCd8D12b2Db3f8",
+                    "description": "the ACL to buy"
+                  }
+                }
+              }
+            }
+          },
+          "description": "request body",
+          "required": true
+        }
+      }
+    },
+    "/erc20/balance": {
+      "get": {
+        "tags": [
+          "ERC20"
+        ],
+        "summary": "balance",
+        "description": "Get balance of any erc20 token",
+        "operationId": "erc20Balance",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "erc20_address",
+            "description": "address of the erc20 token contract",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "account",
+            "description": "account address for which to check the balance",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "balance": {
+                      "type": "string",
+                      "example": "10000",
+                      "description": "current balance of erc20 token"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/erc20/transfer": {
+      "post": {
+        "tags": [
+          "ERC20"
+        ],
+        "summary": "transfer",
+        "description": "Transfer erc20 token to an account",
+        "operationId": "erc20Transfer",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "balance": {
+                      "type": "string",
+                      "example": "10000",
+                      "description": "current balance of erc20 token"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "erc20_address",
+                  "from",
+                  "password",
+                  "to",
+                  "amount"
+                ],
+                "properties": {
+                  "erc20_address": {
+                    "type": "string",
+                    "example": "0x7251e7005dba3abb0aee4e772a5ff378a8eea885",
+                    "description": "ERC20 token address"
+                  },
+                  "from": {
+                    "type": "string",
+                    "example": "0xE41b5C21671C22f1f054F1896d18b4773Dd9deC0",
+                    "description": "account address to transfer funds from"
+                  },
+                  "password": {
+                    "type": "string",
+                    "example": "yourpassword",
+                    "description": "the password that unlocks the account"
+                  },
+                  "to": {
+                    "type": "string",
+                    "example": "0x50c9406f0942711b6e2e28301CE86bFbF42eBE3F",
+                    "description": "account address to transfer funds to"
+                  },
+                  "amount": {
+                    "type": "string",
+                    "example": "120",
+                    "description": "amount in erc20 tokens"
+                  }
+                }
+              }
+            }
+          },
+          "description": "request body",
+          "required": true
+        }
+      }
+    },
+    "/erc20/purchase": {
+      "post": {
+        "tags": [
+          "ERC20"
+        ],
+        "summary": "purchase",
+        "description": "Purchase erc20 tokens",
+        "operationId": "erc20Purchase",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "tokens": {
+                      "type": "string",
+                      "example": "100",
+                      "description": "Amount of purchased tokens"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "erc20_address",
+                  "account",
+                  "password",
+                  "to",
+                  "amount_wei"
+                ],
+                "properties": {
+                  "erc20_address": {
+                    "type": "string",
+                    "example": "0x7251e7005dba3abb0aee4e772a5ff378a8eea885",
+                    "description": "ERC20 token address (ICO compatible)"
+                  },
+                  "account": {
+                    "type": "string",
+                    "example": "0xE41b5C21671C22f1f054F1896d18b4773Dd9deC0",
+                    "description": "account address to transfer funds from"
+                  },
+                  "password": {
+                    "type": "string",
+                    "example": "yourpassword",
+                    "description": "the password that unlocks the account"
+                  },
+                  "amount_wei": {
+                    "type": "string",
+                    "example": "120",
+                    "description": "amount in wei to purchase tokens"
+                  }
+                }
+              }
+            }
+          },
+          "description": "request body",
+          "required": true
+        }
+      }
+    }
+  },
+  "externalDocs": {
+    "description": "Read more about Lightstreams",
+    "url": "https://www.lightstreams.network"
+  },
+  "servers": [
+    {
+      "url": "https://gateway.sirius.lightstreams.io/"
+    }
+  ],
+  "components": {
+    "schemas": {
+      "Meta": {
+        "type": "object",
+        "required": [
+          "meta"
+        ],
+        "properties": {
+          "meta": {
+            "type": "string",
+            "example": "0x50c9406f0942711b6e2e28301CE86bFbF42eBE3F",
+            "description": "address of the file meta data"
+          }
+        }
+      }
+    }
+  }
+}
