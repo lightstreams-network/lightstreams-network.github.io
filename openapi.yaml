@@ -194,6 +194,129 @@ paths:
                 - file
                 - owner
                 - password
+  /storage/add-with-acl:
+    post:
+      tags:
+        - Storage
+      summary: add-with-acl
+      description: Add a new file using an already deployed acl
+      operationId: storageAddWithAcl
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  meta:
+                    type: string
+                    example: '0x50c9406f0942711b6e2e28301CE86bFbF42eBE3F'
+                    description: address of the file metadata
+                  acl:
+                    type: string
+                    example: '0x5307C0F1146233884B3A9BC857738d8bDe0802E4'
+                    description: address of the ACL for the file
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  description: file to add
+                  type: string
+                  format: binary
+                owner:
+                  description: address of the owner of the file
+                  type: string
+                acl:
+                  description: address of acl smart contract
+                  type: string
+              required:
+                - file
+                - owner
+                - acl
+  /storage/update:
+    post:
+      tags:
+        - Storage
+      summary: update
+      description: 'Creates a new version of the file, linking to previous file meta and reusing its ACL'
+      operationId: storageUpdate
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  meta:
+                    type: string
+                    example: '0x50c9406f0942711b6e2e28301CE86bFbF42eBE3F'
+                    description: address of the new file metadata
+                  acl:
+                    type: string
+                    example: '0x5307C0F1146233884B3A9BC857738d8bDe0802E4'
+                    description: address of the ACL for the file
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                owner:
+                  description: address of the owner current file
+                  type: string
+                meta:
+                  description: address of the file meta data
+                  type: string
+              required:
+                - file
+                - meta
+  /storage/meta:
+    get:
+      tags:
+        - Storage
+      summary: meta
+      description: Fetch meta data information about file
+      operationId: storageMeta
+      parameters:
+        - in: query
+          name: meta
+          description: address of the file meta data
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  hash:
+                    type: string
+                    example: QmeQq6Br9xS5GbDNqJeE4XxMstssioSbSRoLDmg9Cvq81G
+                    description: Metadata json file ipfs hash
+                  filename:
+                    type: string
+                    example: mySecretFile.txt
+                    description: Original file name
+                  ext:
+                    type: string
+                    example: txt
+                    description: File extension
+                  acl:
+                    type: string
+                    example: '0x5307C0F1146233884B3A9BC857738d8bDe0802E4'
+                    description: Address of the ACL for the file
+                  prev_meta_hash:
+                    type: string
+                    example: '0x50c9406f0942711b6e2e28301CE86bFbF42eBE3F'
+                    description: Address of previous metadata content (in case of update)
   /storage/fetch:
     get:
       tags:
