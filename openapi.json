@@ -843,7 +843,7 @@
                   },
                   "amount": {
                     "type": "string",
-                    "example": "120",
+                    "example": "1000000000000000000",
                     "description": "amount in erc20 tokens"
                   }
                 }
@@ -912,7 +912,7 @@
                   },
                   "amount_wei": {
                     "type": "string",
-                    "example": "120",
+                    "example": "1000000000000000000",
                     "description": "amount in wei to purchase tokens"
                   }
                 }

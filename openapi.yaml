@@ -586,7 +586,7 @@ paths:
                   description: account address to transfer funds to
                 amount:
                   type: string
-                  example: '120'
+                  example: '1000000000000000000'
                   description: amount in erc20 tokens
         description: request body
         required: true
@@ -635,7 +635,7 @@ paths:
                   description: the password that unlocks the account
                 amount_wei:
                   type: string
-                  example: '120'
+                  example: '1000000000000000000'
                   description: amount in wei to purchase tokens
         description: request body
         required: true
