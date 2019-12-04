@@ -535,7 +535,7 @@ paths:
                 properties:
                   balance:
                     type: string
-                    example: '10000'
+                    example: '1000000000000000000'
                     description: current balance of erc20 token
   /erc20/transfer:
     post:
@@ -554,7 +554,7 @@ paths:
                 properties:
                   balance:
                     type: string
-                    example: '10000'
+                    example: '565000000000000000000'
                     description: current balance of erc20 token
       requestBody:
         content:
@@ -607,7 +607,7 @@ paths:
                 properties:
                   tokens:
                     type: string
-                    example: '100'
+                    example: '15000000000000000000'
                     description: Amount of purchased tokens
       requestBody:
         content:
