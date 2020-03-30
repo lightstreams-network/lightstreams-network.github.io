@@ -241,12 +241,12 @@
                   "properties": {
                     "meta": {
                       "type": "string",
-                      "example": "0x50c9406f0942711b6e2e28301CE86bFbF42eBE3F",
+                      "example": "QmbVtvd1rD9pDHpx7AUqrsh3CoCMW3Na3g4fAwXJxyaawz",
                       "description": "address of the file metadata"
                     },
                     "acl": {
                       "type": "string",
-                      "example": "0x5307C0F1146233884B3A9BC857738d8bDe0802E4",
+                      "example": "0x7000f85C4065643435E8A350655F3153c7dd030E",
                       "description": "address of the ACL for the file"
                     }
                   }
@@ -267,7 +267,7 @@
                     "format": "binary"
                   },
                   "owner": {
-                    "description": "address of the owner of the file",
+                    "description": "file owner address",
                     "type": "string"
                   },
                   "password": {
@@ -304,12 +304,12 @@
                   "properties": {
                     "meta": {
                       "type": "string",
-                      "example": "0x50c9406f0942711b6e2e28301CE86bFbF42eBE3F",
+                      "example": "QmbVtvd1rD9pDHpx7AUqrsh3CoCMW3Na3g4fAwXJxyaawz",
                       "description": "address of the file metadata"
                     },
                     "acl": {
                       "type": "string",
-                      "example": "0x5307C0F1146233884B3A9BC857738d8bDe0802E4",
+                      "example": "0x7000f85C4065643435E8A350655F3153c7dd030E",
                       "description": "address of the ACL for the file"
                     }
                   }
@@ -349,13 +349,151 @@
         }
       }
     },
+    "/storage/add-raw": {
+      "post": {
+        "tags": [
+          "Storage"
+        ],
+        "summary": "add-raw",
+        "description": "Add a new raw file (text, json, etc.)",
+        "operationId": "storageAddRaw",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "meta": {
+                      "type": "string",
+                      "example": "QmbVtvd1rD9pDHpx7AUqrsh3CoCMW3Na3g4fAwXJxyaawz",
+                      "description": "address of the file metadata"
+                    },
+                    "acl": {
+                      "type": "string",
+                      "example": "0x7000f85C4065643435E8A350655F3153c7dd030E",
+                      "description": "address of the ACL for the file"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "description": "raw string to add",
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "ext": {
+                    "description": "extension describing the raw content (txt, json, etc.)",
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "owner": {
+                    "description": "address of the owner of the raw content",
+                    "type": "string"
+                  },
+                  "password": {
+                    "description": "the password that unlocks the owner",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "data",
+                  "ext",
+                  "owner",
+                  "password"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "/storage/add-raw-with-acl": {
+      "post": {
+        "tags": [
+          "Storage"
+        ],
+        "summary": "add-raw-with-acl",
+        "description": "Add a new raw file (text, json, etc.) linked to an existing ACL",
+        "operationId": "storageAddRawWithAcl",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "meta": {
+                      "type": "string",
+                      "example": "QmbVtvd1rD9pDHpx7AUqrsh3CoCMW3Na3g4fAwXJxyaawz",
+                      "description": "address of the file metadata"
+                    },
+                    "acl": {
+                      "type": "string",
+                      "example": "0x7000f85C4065643435E8A350655F3153c7dd030E",
+                      "description": "address of the ACL for the file"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "description": "raw string to add",
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "ext": {
+                    "description": "extension describing the raw content (txt, json, etc.)",
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "owner": {
+                    "description": "address of the owner of the raw content",
+                    "type": "string"
+                  },
+                  "acl": {
+                    "description": "address of acl smart contract",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "data",
+                  "ext",
+                  "owner",
+                  "acl"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
     "/storage/update": {
       "post": {
         "tags": [
           "Storage"
         ],
         "summary": "update",
-        "description": "Creates a new version of the file, linking to previous file meta and reusing its ACL",
+        "description": "Create a new version of the file, linking to previous file meta and reusing its ACL",
         "operationId": "storageUpdate",
         "responses": {
           "200": {
@@ -367,12 +505,12 @@
                   "properties": {
                     "meta": {
                       "type": "string",
-                      "example": "0x50c9406f0942711b6e2e28301CE86bFbF42eBE3F",
-                      "description": "address of the new file metadata"
+                      "example": "QmbVtvd1rD9pDHpx7AUqrsh3CoCMW3Na3g4fAwXJxyaawz",
+                      "description": "address of the file metadata"
                     },
                     "acl": {
                       "type": "string",
-                      "example": "0x5307C0F1146233884B3A9BC857738d8bDe0802E4",
+                      "example": "0x7000f85C4065643435E8A350655F3153c7dd030E",
                       "description": "address of the ACL for the file"
                     }
                   }
@@ -387,8 +525,13 @@
               "schema": {
                 "type": "object",
                 "properties": {
+                  "file": {
+                    "description": "file to add",
+                    "type": "string",
+                    "format": "binary"
+                  },
                   "owner": {
-                    "description": "address of the owner current file",
+                    "description": "address of the owner of the new file",
                     "type": "string"
                   },
                   "meta": {
@@ -398,6 +541,76 @@
                 },
                 "required": [
                   "file",
+                  "owner",
+                  "meta"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "/storage/update-raw": {
+      "post": {
+        "tags": [
+          "Storage"
+        ],
+        "summary": "update-raw",
+        "description": "Create a new version of the file, linking to previous file meta and reusing its ACL",
+        "operationId": "storageUpdateRaw",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "meta": {
+                      "type": "string",
+                      "example": "QmbVtvd1rD9pDHpx7AUqrsh3CoCMW3Na3g4fAwXJxyaawz",
+                      "description": "address of the file metadata"
+                    },
+                    "acl": {
+                      "type": "string",
+                      "example": "0x7000f85C4065643435E8A350655F3153c7dd030E",
+                      "description": "address of the ACL for the file"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "description": "raw string to add",
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "ext": {
+                    "description": "extension describing the raw content (.txt, .json, etc.)",
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "owner": {
+                    "description": "address of the current file owner",
+                    "type": "string"
+                  },
+                  "meta": {
+                    "description": "address of the file meta data",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "data",
+                  "ext",
+                  "owner",
                   "meta"
                 ]
               }
@@ -433,14 +646,9 @@
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "hash": {
-                      "type": "string",
-                      "example": "QmeQq6Br9xS5GbDNqJeE4XxMstssioSbSRoLDmg9Cvq81G",
-                      "description": "Metadata json file ipfs hash"
-                    },
                     "filename": {
                       "type": "string",
-                      "example": "mySecretFile.txt",
+                      "example": "smart_vault_rocks.txt",
                       "description": "Original file name"
                     },
                     "ext": {
@@ -448,14 +656,24 @@
                       "example": "txt",
                       "description": "File extension"
                     },
+                    "owner": {
+                      "type": "string",
+                      "example": null,
+                      "description": "File owner address"
+                    },
+                    "hash": {
+                      "type": "string",
+                      "example": "QmXT5yfwk9zpVHZZ9WYzAFiSV3N2YAx8nFqd5w3t2jrsvo",
+                      "description": "Hash of the protected file"
+                    },
                     "acl": {
                       "type": "string",
-                      "example": "0x5307C0F1146233884B3A9BC857738d8bDe0802E4",
+                      "example": "0x7000f85C4065643435E8A350655F3153c7dd030E",
                       "description": "Address of the ACL for the file"
                     },
                     "prev_meta_hash": {
                       "type": "string",
-                      "example": "0x50c9406f0942711b6e2e28301CE86bFbF42eBE3F",
+                      "example": "",
                       "description": "Address of previous metadata content (in case of update)"
                     }
                   }
@@ -466,14 +684,14 @@
         }
       }
     },
-    "/storage/fetch": {
+    "/storage/stream": {
       "get": {
         "tags": [
           "Storage"
         ],
-        "summary": "fetch",
-        "description": "Fetch a file",
-        "operationId": "storageFetch",
+        "summary": "stream",
+        "description": "Stream a file",
+        "operationId": "storageStream",
         "parameters": [
           {
             "in": "query",
@@ -487,7 +705,7 @@
           {
             "in": "query",
             "name": "token",
-            "description": "token received after succesfull authentication (signin)",
+            "description": "token received after succesfull authentication (/user/signin)",
             "required": true,
             "schema": {
               "type": "string"
@@ -501,7 +719,27 @@
               "application/octet-stream": {
                 "examples": {
                   "response": {
-                    "value": "****STORED FILE RAW DATA****"
+                    "value": "Smart Vault Rocks!"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string",
+                      "example": {
+                        "message": "token 'eyJibG9xxx.yyyGBw' is not valid. token has expired by 56888 blocks. Expiry block 796257, Current block: 853145",
+                        "code": "ERROR_UNKNOWN"
+                      },
+                      "description": "The reason of the failure"
+                    }
                   }
                 }
               }
@@ -575,7 +813,8 @@
                     "enum": [
                       "read",
                       "write",
-                      "admin"
+                      "admin",
+                      "noaccess"
                     ],
                     "example": "read",
                     "description": "permission type to grant"
@@ -879,8 +1118,7 @@
                   "shop",
                   "from",
                   "password",
-                  "acl",
-                  "price_wei"
+                  "acl"
                 ],
                 "properties": {
                   "shop": {
@@ -911,207 +1149,15 @@
           "required": true
         }
       }
-    },
-    "/erc20/balance": {
-      "get": {
-        "tags": [
-          "ERC20"
-        ],
-        "summary": "balance",
-        "description": "Get balance of any erc20 token",
-        "operationId": "erc20Balance",
-        "parameters": [
-          {
-            "in": "query",
-            "name": "erc20_address",
-            "description": "address of the erc20 token contract",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "in": "query",
-            "name": "account",
-            "description": "account address for which to check the balance",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "balance": {
-                      "type": "string",
-                      "example": "1000000000000000000",
-                      "description": "current balance of erc20 token"
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/erc20/transfer": {
-      "post": {
-        "tags": [
-          "ERC20"
-        ],
-        "summary": "transfer",
-        "description": "Transfer erc20 token to an account",
-        "operationId": "erc20Transfer",
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "balance": {
-                      "type": "string",
-                      "example": "565000000000000000000",
-                      "description": "current balance of erc20 token"
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "required": [
-                  "erc20_address",
-                  "from",
-                  "password",
-                  "to",
-                  "amount"
-                ],
-                "properties": {
-                  "erc20_address": {
-                    "type": "string",
-                    "example": "0x7251e7005dba3abb0aee4e772a5ff378a8eea885",
-                    "description": "ERC20 token address"
-                  },
-                  "from": {
-                    "type": "string",
-                    "example": "0xE41b5C21671C22f1f054F1896d18b4773Dd9deC0",
-                    "description": "account address to transfer funds from"
-                  },
-                  "password": {
-                    "type": "string",
-                    "example": "yourpassword",
-                    "description": "the password that unlocks the account"
-                  },
-                  "to": {
-                    "type": "string",
-                    "example": "0x50c9406f0942711b6e2e28301CE86bFbF42eBE3F",
-                    "description": "account address to transfer funds to"
-                  },
-                  "amount": {
-                    "type": "string",
-                    "example": "1000000000000000000",
-                    "description": "amount in erc20 tokens"
-                  }
-                }
-              }
-            }
-          },
-          "description": "request body",
-          "required": true
-        }
-      }
-    },
-    "/erc20/purchase": {
-      "post": {
-        "tags": [
-          "ERC20"
-        ],
-        "summary": "purchase",
-        "description": "Purchase erc20 tokens",
-        "operationId": "erc20Purchase",
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "tokens": {
-                      "type": "string",
-                      "example": "15000000000000000000",
-                      "description": "Amount of purchased tokens"
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "required": [
-                  "erc20_address",
-                  "account",
-                  "password",
-                  "to",
-                  "amount_wei"
-                ],
-                "properties": {
-                  "erc20_address": {
-                    "type": "string",
-                    "example": "0x7251e7005dba3abb0aee4e772a5ff378a8eea885",
-                    "description": "ERC20 token address (ICO compatible)"
-                  },
-                  "account": {
-                    "type": "string",
-                    "example": "0xE41b5C21671C22f1f054F1896d18b4773Dd9deC0",
-                    "description": "account address to transfer funds from"
-                  },
-                  "password": {
-                    "type": "string",
-                    "example": "yourpassword",
-                    "description": "the password that unlocks the account"
-                  },
-                  "amount_wei": {
-                    "type": "string",
-                    "example": "1000000000000000000",
-                    "description": "amount in wei to purchase tokens"
-                  }
-                }
-              }
-            }
-          },
-          "description": "request body",
-          "required": true
-        }
-      }
     }
   },
   "externalDocs": {
     "description": "Read more about Lightstreams",
-    "url": "https://www.lightstreams.network"
+    "url": "https://lightstreams.network"
   },
   "servers": [
     {
-      "url": "https://gateway.sirius.lightstreams.io/"
+      "url": "https://gateway.sirius.lightstreams.io"
     }
   ],
   "components": {
