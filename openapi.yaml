@@ -796,7 +796,7 @@ externalDocs:
   description: Read more about Lightstreams
   url: 'https://lightstreams.network'
 servers:
-  - url: 'https://gateway.sirius.lightstreams.io'
+  - url: 'http://localhost:9091'
 components:
   schemas:
     Meta:
