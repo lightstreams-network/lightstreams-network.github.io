@@ -794,7 +794,7 @@ paths:
         required: true
 externalDocs:
   description: Read more about Lightstreams
-  url: 'https://lightstreams.network'
+  url: 'https://docs.lightstreams.network'
 servers:
   - url: 'http://localhost:9091'
 components:
