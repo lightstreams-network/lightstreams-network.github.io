@@ -2,7 +2,7 @@
   "openapi": "3.0.0",
   "info": {
     "description": "Documentation for the Smart Vault API",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "title": "Smart Vault API",
     "termsOfService": "http://www.lightstreams.network/terms",
     "license": {
